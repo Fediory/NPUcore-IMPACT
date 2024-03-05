@@ -1,0 +1,13 @@
+[target.riscv64gc-unknown-none-elf]
+rustflags = [
+    "-Clink-arg=-Tsrc/linker.ld", "-Cforce-frame-pointers=yes"
+]
+
+[target.loongarch64-unknown-linux-gnu]
+rustflags = [
+    "-Clink-arg=-Tsrc/linker-2k500.ld",
+    "-Cforce-frame-pointers=yes",
+    "-Clink-arg=-nostdlib",
+    "-Clink-arg=-static"
+]
+linker = "loongarch64-unknown-linux-gnu-gcc"
