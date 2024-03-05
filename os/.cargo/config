@@ -1,0 +1,9 @@
+[build]
+target = "loongarch64-unknown-linux-gnu"
+
+[target.loongarch64-unknown-linux-gnu]
+rustflags = ["-Clink-arg=-Tsrc/linker.ld", "-Clink-arg=-nostdlib", "-Clink-arg=-static"]
+# Add "-Ctarget-feature=-unaligned-access" when ready.
+linker = "loongarch64-unknown-linux-gnu-gcc"
+
+

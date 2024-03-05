@@ -1,0 +1,26 @@
+#!/bin/sh
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+ln -s "$SCRIPTPATH"/../tmp/qemu /tmp
+BIOS="$SCRIPTPATH"/u-boot-with-spl.bin
+#BIOS=./u-boot.bin
+truncate -s 1M $BIOS
+QEMU="$SCRIPTPATH"/../tmp/qemu/bin/qemu-system-loongarch64
+TFTP_DIR="$SCRIPTPATH"/../../../easy-fs-fuse
+OS="$SCRIPTPATH"/nand.dat
+#OS=os.ui
+[ -e "$OS" ] || dd if=/dev/zero bs=1M count=$(((256*(2048+64)/2048)))|tr '\000' '\377' > "$OS"
+#2cda
+#eca1
+
+#-net nic -net user,net=10.0.2.1/24,tftp=$(pwd)
+SERIAL=2 DEBUG_UNALIGN=1 DEBUG_GMAC_PHYAD=0 DEBUG_MYNAND=cs=0,id=0x2cda DEBUG_MYSPIFLASH=gd25q128 "$QEMU"\
+         -M ls2k500 -drive if=pflash,file=$BIOS \
+         -m 2048M \
+         -D $SCRIPTPATH/qemu.log \
+         -serial stdio \
+         -drive if=mtd,file="$OS" \
+         -net nic -net user,net=192.168.1.2/24,tftp=$TFTP_DIR \
+         -net nic -net user,net=10.0.3.0/24\
+         -vnc 0.0.0.0:0 \
+         -smp threads=1\
+         -s $@

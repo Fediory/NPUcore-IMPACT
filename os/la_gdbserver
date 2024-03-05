@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+set timeout -1
+spawn {*}$argv
+expect "Please press Enter to activate this console."
+send "\r"
+expect "/ #"
+send "busybox ip addr add 192.168.1.3/24 dev eth0\r"
+expect "/ #"
+send "cd tmp/ejtag-debug\r"
+expect "/tmp/ejtag-debug #"
+send "./la_dbg_tool_gpio \r"
+expect "cpu0 -"
+send "source configs/config.ls1a500\r"
+expect "cpu0 -"
+send "gdbserver\r"
+expect 50010
+send "\001\r"
+close

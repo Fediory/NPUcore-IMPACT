@@ -1,0 +1,5 @@
+# 电脑产生的文件 - 使用 minicom 中的设置菜单以变更参数。
+pu rtscts           No
+pu port             /dev/ttyUSB0
+pu updir            /path/to/project1466467-172876/easy-fs-fuse
+pu addcarreturn     Yes
