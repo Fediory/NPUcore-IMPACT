@@ -53,3 +53,7 @@ pub fn sleep(period_ms: usize) {
         sys_yield();
     }
 }
+
+pub fn shutdown() -> isize{
+    sys_shutdown()
+}

@@ -2,7 +2,7 @@ TARGET := riscv64gc-unknown-none-elf
 TESTDIR := ./user_C_program/user
 MODE := debug
 
-ifeq ($(BOARD), 2k500)
+ifeq ($(BOARD), 2k1000)
 	TARGET := loongarch64-unknown-linux-gnu
 endif
 ifeq ($(BOARD), laqemu)
@@ -18,7 +18,7 @@ endif
 build: c-user rust-user
 
 env:
-	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add $(TARGET)
+	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add loongarch64-unknown-linux-gnu
 	-cargo install --list |grep cargo-binutils |grep "v0.2.0">/dev/null || cargo install cargo-binutils --vers ~0.2
 	-rustup component add rust-src
 	-rustup component add llvm-tools-preview

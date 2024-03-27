@@ -40,3 +40,13 @@ Doc/**/*.org
 Doc/**/*.tex
 Doc/**/*.jpg
 Doc/**/*.png
+
+# gdb
+gdb-12.1/
+适配qemu-2k1000评测提示.md
+
+# qemu
+util/qemu/2k1000/mnt
+util/qemu-2k1000/2k1000/mnt
+util/qemu/qemu.log
+util/qemu/2k1000/2kfs.img

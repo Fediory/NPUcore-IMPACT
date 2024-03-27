@@ -168,3 +168,7 @@ pub fn sys_exec(path: &str, args: &[*const u8], envp: &[*const u8]) -> isize {
 pub fn sys_waitpid(pid: isize, exit_code: *mut i32) -> isize {
     syscall(SYSCALL_WAIT4, [pid as usize, exit_code as usize, 0])
 }
+
+pub fn sys_shutdown() -> isize {
+    syscall(SYSCALL_SHUTDOWN, [0, 0, 0])
+}
