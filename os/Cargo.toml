@@ -34,7 +34,7 @@ log_off = ["log/max_level_off"]
 
 # LoongArch Boards:
 la64 = []
-board_2k500 = ["oom_handler", "la64"]
+board_2k1000 = ["oom_handler", "la64"]
 board_laqemu = ["oom_handler", "la64"]
 # END of LoongArch Boards.
 

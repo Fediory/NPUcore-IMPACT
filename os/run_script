@@ -15,9 +15,7 @@ proc test_cmd {file_name num} {
 
 if  { $bin_name != "qemu-system-riscv64" } {
     expect "Device(s) found"
-    send "m"
-    expect "Device(s) found"
-    send "m"
+    send "mmmmmmmmmmmmmmmmmm"
     expect "Update kernel"
     send "\033\[B\r"
 
@@ -34,18 +32,8 @@ if  { $bin_name != "qemu-system-riscv64" } {
     send "bootm\n"
 }
 
-test_cmd "lua_testcode.sh\n" $sleep_time 
-test_cmd "busybox_testcode.sh\n" $sleep_time 
-test_cmd "lmbench_testcode.sh\n" $sleep_time 
+test_cmd "run-all.sh\n" $sleep_time 
+# test_cmd "busybox_testcode.sh\n" $sleep_time 
+# test_cmd "lmbench_testcode.sh\n" $sleep_time 
 
-# expect "\[1m\[32mNPUCore\[0m:\[1m\[34m/\[0m#"
-# sleep 3
-# send "lua_testcode.sh\n"
-# expect "\[1m\[32mNPUCore\[0m:\[1m\[34m/\[0m#"
-# sleep 3
-# send "busybox_testcode.sh\n"
-# expect "\[1m\[32mNPUCore\[0m:\[1m\[34m/\[0m#"
-# sleep 3
-# send "lmbench_testcode.sh\n"
-# send "while true; do lmbench_testcode.sh; echo \"hi\";done\r"
 interact

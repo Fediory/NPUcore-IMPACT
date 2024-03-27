@@ -1,0 +1,18 @@
+#!/usr/bin/expect -f
+set timeout -1
+spawn {*}$argv
+set bin_name [lindex $argv 0];
+
+expect "Device(s) found"
+send "ccccc\n"
+
+
+expect "=>"
+send "tftpboot uImage\n\n"
+
+
+expect "Bytes transferred"
+expect "=>"
+send "bootm\n"
+
+interact
