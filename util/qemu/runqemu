@@ -1,0 +1,30 @@
+#!/bin/bash
+DISK=/tmp/disk
+SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+QEMU="$SCRIPTPATH"/bin/qemu-system-loongarch64
+[ -e $DISK ] || { truncate -s 32M $DISK;echo -e 'n\n\n\n\n\n\nw\nq\n'| fdisk /tmp/disk; }
+SUDO=$(if [ $(whoami) = "root" ];then echo -n "";else echo -n "sudo";fi)
+TFTP_DIR="$SCRIPTPATH"/../../easy-fs-fuse
+
+ls2k()
+{
+BIOS="$SCRIPTPATH"/2k1000/u-boot-with-spl.bin
+DEBUG_UNALIGN=1 DEBUG_GMAC_PHYAD=0 DEBUG_MYNAND=cs=0,id=0x2cda DEBUG_MYSPIFLASH=gd25q128 $QEMU \
+    -M ls2k \
+    -serial stdio \
+    -drive if=pflash,file=$BIOS  \
+    -m 1024 \
+    -device usb-kbd,bus=usb-bus.0 -device usb-tablet,bus=usb-bus.0 \
+    -device usb-storage,drive=udisk \
+    -vnc :0 -D /tmp/qemu.log \
+    -drive if=none,id=udisk,file=$DISK \
+    -net nic -net user,net=192.168.1.2/24,tftp=$TFTP_DIR \
+    -smp threads=1\
+    -D "$SCRIPTPATH"/qemu.log \
+    -s -hda "$SCRIPTPATH"/2k1000/2kfs.img \
+    -k "$SCRIPTPATH"/share/qemu/keymaps/en-us
+}
+
+# sh "$SCRIPTPATH"/2k1000/create_qemu_img.sh
+ls2k "$@"
+
