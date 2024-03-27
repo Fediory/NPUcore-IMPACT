@@ -119,7 +119,7 @@ ifeq ($(BOARD), 2k1000)
 	@echo $(CURDIR)
 	@./fat $(MINITERM_START_CMD) $(LA_2K1000_PORT_FREQ) 
 else ifeq ($(BOARD), laqemu)
-	@./la_fat.exp $(QEMU_2K1000)
+	@./la_fat $(QEMU_2K1000)
 endif
 
 
