@@ -108,6 +108,7 @@ fat32:
 ifneq ($(BOARD),2k1000)
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
 else
+	@sudo mkdir "$(U_FAT32_DIR)"
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
 endif
 
@@ -165,7 +166,7 @@ endif
 new-gdb: build gdb
 gdb:
 ifeq ($(BOARD),laqemu)
-	./run_script $(QEMU_2K1000) "-S"
+	./la_fat $(QEMU_2K1000) "-S"
 else ifeq ($(BOARD), 2k1000)
 	@./la_gdbserver minicom -D $(LA_DEBUGGER_PORT_FREQ)
 endif

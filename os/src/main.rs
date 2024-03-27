@@ -37,7 +37,8 @@ mod task;
 mod timer;
 
 use crate::arch::{bootstrap_init, machine_init};
-use crate::arch::config::{DISK_IMAGE_BASE};
+use crate::arch::config::DISK_IMAGE_BASE;
+
 #[cfg(feature = "la64")]
 core::arch::global_asm!(include_str!("arch/la64/entry.asm"));
 core::arch::global_asm!(include_str!("arch/la64/load_img.S"));
@@ -85,6 +86,7 @@ fn move_to_high_address() {
 
 #[no_mangle]
 pub fn rust_main() -> ! {
+    println!("[kernel] NPUcore-IMAPCT!!! ENTER!");
     bootstrap_init();
     mem_clear();
     console::log_init();

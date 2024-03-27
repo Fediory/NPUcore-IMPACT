@@ -253,7 +253,6 @@ impl DirectoryTreeNode {
         special_use: bool,
     ) -> Result<Arc<dyn File>, isize> {
         log::debug!("[open]: cwd: {}, path: {}", self.get_cwd(), path);
-
         const BUSYBOX_PATH: &str = "/busybox";
         const REDIRECT_TO_BUSYBOX: [&str; 4] = ["/touch", "/rm", "/ls", "/grep"];
         let path = if REDIRECT_TO_BUSYBOX.contains(&path) {
