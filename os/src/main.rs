@@ -37,9 +37,10 @@ mod task;
 mod timer;
 
 use crate::arch::{bootstrap_init, machine_init};
-
+use crate::arch::config::{DISK_IMAGE_BASE};
 #[cfg(feature = "la64")]
 core::arch::global_asm!(include_str!("arch/la64/entry.asm"));
+core::arch::global_asm!(include_str!("arch/la64/load_img.S"));
 
 fn mem_clear() {
     extern "C" {
@@ -61,11 +62,33 @@ fn mem_clear() {
     }
 }
 
+fn move_to_high_address() {
+    extern "C" {
+        fn simg();
+        fn eimg();
+    }
+    unsafe {
+        let img = core::slice::from_raw_parts(
+            simg as usize as *mut u8,
+            eimg as usize - simg as usize
+        );
+        // 从DISK_IMAGE_BASE到MEMORY_END
+        let mem_disk = core::slice::from_raw_parts_mut(
+            DISK_IMAGE_BASE as *mut u8,
+            0x800_0000
+        );
+        mem_disk.fill(0);
+        mem_disk[..img.len()].copy_from_slice(img);
+    }
+}
+
+
 #[no_mangle]
 pub fn rust_main() -> ! {
     bootstrap_init();
     mem_clear();
     console::log_init();
+    move_to_high_address();
     println!("[kernel] Console initialized.");
     mm::init();
     // note that remap_test is currently NOT supported by LA64, for the whole kernel space is RW!

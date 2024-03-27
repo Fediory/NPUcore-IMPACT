@@ -13,39 +13,39 @@ if [ $? -ne 0 ] ; then
   echo "create image failed"
   exit -1
 fi
-
-sudo qemu-nbd -c /dev/nbd0 ./2kfs.img
+sudo modprobe nbd maxparts=12
+sudo qemu-nbd -c /dev/nbd1 ./2kfs.img
 
 if [ $? -ne 0 ] ; then
   echo "connect image to nbd device failed!"
   echo "please install nbd kernel module first!"
   echo "   modprobe nbd maxparts=12"
-  echo "if /dev/nbd0 is already taken, change all nbd0 in this script to another one such as nbd1"
+  echo "if /dev/nbd1 is already taken, change all nbd1 in this script to another one such as nbd1"
   exit -2
 fi
 
-sudo echo -e 'n\n\n\n\n\n\nw\nq\n'| sudo fdisk /dev/nbd0
+sudo echo -e 'n\n\n\n\n\n\nw\nq\n'| sudo fdisk /dev/nbd1
 
 if [ $? -ne 0 ] ; then
   echo "disk partition failed"
   exit -3
 fi
 
-sudo mkfs.ext4 /dev/nbd0p1
+sudo mkfs.ext4 /dev/nbd1p1
 
 if [ $? -ne 0 ] ; then
   echo "mkfs.ext4 failed"
   exit -4
 fi
 
-sudo mount /dev/nbd0p1 /mnt
+sudo mount /dev/nbd1p1 /mnt
 
 if [ $? -ne 0 ] ; then
-  echo "mount /dev/nbd0p1 failed"
+  echo "mount /dev/nbd1p1 failed"
   exit -5
 fi
 
-sudo bash -c "lzcat /tmp/qemu/2k1000/rootfs-la.cpio.lzma | cpio -idmv -D /mnt &> ./cpio.log"
+sudo bash -c "lzcat ./rootfs-la.cpio.lzma | cpio -idmv -D /mnt &> ./cpio.log"
 
 if [ $? -ne 0 ] ; then
   echo "unpack rootfs failed"
@@ -54,11 +54,11 @@ fi
 
 sudo mkdir /mnt/boot 
 
-sudo cp /tmp/qemu/2k1000/uImage /mnt/boot/
+sudo cp ./uImage /mnt/boot/
 
 sudo umount /mnt
 
-sudo qemu-nbd -d /dev/nbd0
+sudo qemu-nbd -d /dev/nbd1
 
 echo "done"
 

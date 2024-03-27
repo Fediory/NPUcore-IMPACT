@@ -75,7 +75,7 @@ then
     "$SUDO" mkdir -p ${U_FAT32_DIR}/fs/syscall
 fi
 
-try_copy ../user/user_C_program/user/build/${ARCH}  ${U_FAT32_DIR}/fs/syscall
+# try_copy ../user/user_C_program/user/build/${ARCH}  ${U_FAT32_DIR}/fs/syscall
 try_copy ../user/busybox_lua_testsuites/${ARCH} ${U_FAT32_DIR}/fs/
 try_copy ../user/loongarch64/${ARCH} ${U_FAT32_DIR}/fs/
 try_copy ../user/disk/${ARCH} ${U_FAT32_DIR}/fs/
