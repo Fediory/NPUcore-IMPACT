@@ -14,26 +14,25 @@ pub extern "C" fn _start() -> ! {
 
 #[no_mangle]
 fn main() -> i32 {
-    let path = "/BIN/BASH\0";
+    let path = "/bin/bash\0";
     let environ = [
-        "SHELL=/BASH\0".as_ptr(),
+        "SHELL=/bash\0".as_ptr(),
         "PWD=/\0".as_ptr(),
-        "LOGNAME=ROOT\0".as_ptr(),
+        "LOGNAME=root\0".as_ptr(),
         "MOTD_SHOWN=pam\0".as_ptr(),
-        "HOME=/ROOT\0".as_ptr(),
+        "HOME=/root\0".as_ptr(),
         "LANG=C.UTF-8\0".as_ptr(),
         "TERM=vt220\0".as_ptr(),
-        "USER=ROOT\0".as_ptr(),
+        "USER=root\0".as_ptr(),
         "SHLVL=0\0".as_ptr(),
-        "OLDPWD=/ROOT\0".as_ptr(),
+        "OLDPWD=/root\0".as_ptr(),
         "PS1=\x1b[1m\x1b[32mNPUcore-IMPACT\x1b[0m:\x1b[1m\x1b[34m\\w\x1b[0m\\$ \0".as_ptr(),
-        "_=/BIN/BASH\0".as_ptr(),
-        "PATH=/:/BIN\0".as_ptr(),
+        "_=/bin/bash\0".as_ptr(),
+        "PATH=/:/bin\0".as_ptr(),
         "LD_LIBRARY_PATH=/\0".as_ptr(),
         core::ptr::null(),
     ];
     if fork() == 0 {
-        user_lib::println!("0");
         exec(path, &[path.as_ptr() as *const u8, core::ptr::null()], &environ);
     } else {
         loop {
