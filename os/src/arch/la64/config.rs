@@ -9,7 +9,7 @@ pub const PAGE_SIZE_BITS: usize = PAGE_SIZE.trailing_zeros() as usize;
 pub const PTE_WIDTH: usize = 8;
 pub const PTE_WIDTH_BITS: usize = PTE_WIDTH.trailing_zeros() as usize;
 pub const DIR_WIDTH: usize = PAGE_SIZE_BITS - PTE_WIDTH_BITS;
-
+pub const DIRTY_WIDTH: usize = 0x100_0000;
 #[cfg(debug_assertions)]
 pub const KSTACK_PG_NUM_SHIFT: usize = 16usize.trailing_zeros() as usize;
 #[cfg(not(debug_assertions))]

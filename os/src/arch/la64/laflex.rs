@@ -2,7 +2,7 @@ use super::{tlb::tlb_invalidate, tlb_global_invalidate};
 use crate::{
     config::{
         MEMORY_HIGH_BASE, MEMORY_HIGH_BASE_VPN, MEMORY_SIZE, PAGE_SIZE, PAGE_SIZE_BITS, PALEN,
-        VA_MASK, VPN_SEG_MASK,
+        VA_MASK, VPN_SEG_MASK,DIRTY_WIDTH,
     },
     mm::{address::*, frame_alloc, FrameTracker, MapPermission, PageTable},
 };
@@ -10,7 +10,7 @@ use _core::convert::TryFrom;
 use alloc::{sync::Arc, vec::Vec};
 use bitflags::*;
 use log::trace;
-static mut DIRTY: [bool; MEMORY_SIZE / PAGE_SIZE] = [false; MEMORY_SIZE / PAGE_SIZE];
+static mut DIRTY: [bool; DIRTY_WIDTH] = [false; DIRTY_WIDTH];
 use super::register::MemoryAccessType;
 
 bitflags! {

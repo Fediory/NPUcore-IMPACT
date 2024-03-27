@@ -6,7 +6,6 @@ pub mod board;
 pub mod board;
 pub mod config;
 pub mod laflex;
-mod ls_nand;
 mod sbi;
 pub mod switch;
 pub mod time;
