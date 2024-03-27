@@ -106,12 +106,12 @@ endif
 
 fat32:
 ifneq ($(BOARD),2k1000)
-	./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
+	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
 else
-	./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
+	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
 endif
 
-remake-qemu-flash-fat-img: fat32 qemu-flash-fat-img
+remake-qemu-flash-fat-img: fat32 env build qemu-flash-fat-img
 
 qemu-flash-fat-img:
 ifeq ($(BOARD), 2k1000)
