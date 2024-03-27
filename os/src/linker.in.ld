@@ -1,6 +1,6 @@
-#ifdef la2k500
+#ifdef la2k1000
 #define ARCH_LOONGARCH64
-BASE_ADDRESS = 0x0000000000000000;
+BASE_ADDRESS = 0x0000000090000000;
 #endif
 
 #if defined(fu740) || defined(qemu)

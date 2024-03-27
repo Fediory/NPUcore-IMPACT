@@ -1,8 +1,8 @@
-#[cfg(feature = "board_2k500")]
-#[path = "board/2k500.rs"]
+#[cfg(feature = "board_2k1000")]
+#[path = "board/2k1000.rs"]
 pub mod board;
 #[cfg(feature = "board_laqemu")]
-#[path = "board/2k500.rs"]
+#[path = "board/2k1000.rs"]
 pub mod board;
 pub mod config;
 pub mod laflex;
@@ -106,7 +106,7 @@ pub fn bootstrap_init() {
         .set_ptbase(PAGE_SIZE_BITS)
         .set_ptwidth(DIR_WIDTH)
         .set_dir1_base(PAGE_SIZE_BITS + DIR_WIDTH)
-        .set_dir1_width(DIR_WIDTH) // 512*512*4096 should be enough for 256MiB of 2k500.
+        .set_dir1_width(DIR_WIDTH) // 512*512*4096 should be enough for 256MiB of 2k1000.
         .set_dir2_base(0)
         .set_dir2_width(0)
         .set_pte_width(PTE_WIDTH)
