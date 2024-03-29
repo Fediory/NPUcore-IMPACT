@@ -18,7 +18,7 @@ set(BIN_DIR bin)
 if (${ARCH} STREQUAL riscv32 OR ${ARCH} STREQUAL riscv64)
    set(PREFIX ${ARCH}-unknown-elf-)
 elseif (${ARCH} STREQUAL loongarch64)
-   set(PREFIX ${ARCH}-unknown-linux-gnu-)
+   set(PREFIX ${ARCH}-linux-gnu-)
 endif()
 
 set(CMAKE_ASM_COMPILER      ${PREFIX}gcc)

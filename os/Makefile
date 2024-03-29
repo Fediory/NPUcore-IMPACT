@@ -23,8 +23,8 @@ ifeq ($(BOARD), 2K1000)
 endif
 
 # Binutils
-OBJCOPY := loongarch64-unknown-linux-gnu-objcopy
-OBJDUMP := loongarch64-unknown-linux-gnu-objdump
+OBJCOPY := loongarch64-linux-gnu-objcopy
+OBJDUMP := loongarch64-linux-gnu-objdump
 READELF := loongarch64-linux-gnu-readelf
 
 ifndef LOG
@@ -106,6 +106,7 @@ endif
 
 fat32:
 ifneq ($(BOARD),2k1000)
+	cd ../util/qemu/2k1000 && sh create_qemu_img.sh && cd ../../../os
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
 else
 	@sudo mkdir "$(U_FAT32_DIR)"

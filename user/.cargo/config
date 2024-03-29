@@ -10,4 +10,4 @@ rustflags = [
     "-Clink-arg=-nostdlib",
     "-Clink-arg=-static"
 ]
-linker = "loongarch64-unknown-linux-gnu-gcc"
+linker = "loongarch64-linux-gnu-gcc"
