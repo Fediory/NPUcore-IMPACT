@@ -173,7 +173,7 @@ pub fn trap_handler() -> ! {
     let cause = get_exception_cause();
     let stval = get_bad_addr();
     let badi = get_bad_instruction();
-    log::info!("[trap_handler]Cause:{:?}", cause);
+    log::debug!("[trap_handler]Cause:{:?}", cause);
     match cause {
         Trap::Exception(Exception::Syscall) => {
             // jump to next instruction anyway

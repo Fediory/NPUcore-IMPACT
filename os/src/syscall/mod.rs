@@ -125,7 +125,7 @@ pub fn syscall(syscall_id: usize, args: [usize; 6]) -> isize {
         && ![
             //black list
             SYSCALL_YIELD,
-            // SYSCALL_READ,
+            SYSCALL_READ,
             SYSCALL_WRITE,
             SYSCALL_GETDENTS64,
             SYSCALL_READV,

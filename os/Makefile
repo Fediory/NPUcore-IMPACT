@@ -23,8 +23,8 @@ ifeq ($(BOARD), 2K1000)
 endif
 
 # Binutils
-OBJCOPY := loongarch64-linux-gnu-objcopy
-OBJDUMP := loongarch64-linux-gnu-objdump
+OBJCOPY := loongarch64-unknown-linux-gnu-objcopy
+OBJDUMP := loongarch64-unknown-linux-gnu-objdump
 READELF := loongarch64-linux-gnu-readelf
 
 ifndef LOG

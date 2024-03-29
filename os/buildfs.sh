@@ -67,6 +67,7 @@ try_copy(){
 
 for programname in $(ls ../user/src/bin)
 do
+    echo ${programname%.rs} copied.
     "$SUDO" cp -r ../user/target/${TARGET}/${MODE}/${programname%.rs} ${U_FAT32_DIR}/fs/${programname%.rs}
 done
 
@@ -82,4 +83,3 @@ try_copy ../user/disk/${ARCH} ${U_FAT32_DIR}/fs/
 
 "$SUDO" umount ${U_FAT32_DIR}/fs
 echo "DONE"
-return 0

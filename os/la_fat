@@ -15,11 +15,11 @@ expect "Bytes transferred"
 expect "=>"
 send "bootm\n"
 
-proc test_cmd {file_name num} {
-    expect "\[1m\[32mNPUcore-IMPACT\[0m:\[1m\[34m/\[0m#"
-    sleep $num
-    send $file_name
-}
+# proc test_cmd {file_name num} {
+#     expect "\[1m\[32mNPUcore-IMPACT\[0m:\[1m\[34m/\[0m#"
+#     sleep $num
+#     send $file_name
+# }
 
 
 # test_cmd "run-all.sh\n" 0

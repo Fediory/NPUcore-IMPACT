@@ -431,8 +431,8 @@ pub fn sys_pipe2(pipefd: usize, flags: u32) -> isize {
         Ok(fd) => fd,
         Err(errno) => {
             println!("error pipe");
-            return errno
-        },
+            return errno;
+        }
     };
 
     info!(
@@ -545,9 +545,6 @@ pub fn sys_dup3(oldfd: usize, newfd: usize, flags: u32) -> isize {
         Ok(fd) => fd as isize,
         Err(errno) => errno,
     }
-
-    
-    
 }
 
 // This syscall is not complete at all, only /read proc/self/exe
@@ -662,21 +659,22 @@ pub fn sys_fstat(fd: usize, statbuf: *mut u8) -> isize {
     SUCCESS
 }
 
-pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, flags: u32,) -> isize {
+pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, _flags: u32) -> isize {
     let token = current_user_token();
     let path = match translated_str(token, path) {
         Ok(path) => path,
         Err(errno) => return errno,
     };
 
+    info!("[sys_statx] dirfd: {dirfd}, path: {path}");
 
-    let flags = match OpenFlags::from_bits(flags) {
-        Some(flags) => flags,
-        None => {
-            warn!("[sys_statx] unknown flags");
-            return EINVAL;
-        }
-    };
+    // let flags = match OpenFlags::from_bits(flags) {
+    //     Some(flags) => flags,
+    //     None => {
+    //         warn!("[sys_statx] unknown flags: {flags}");
+    //         return EINVAL;
+    //     }
+    // };
 
     let task = current_task().unwrap();
     let file_descriptor = match dirfd {
@@ -690,9 +688,11 @@ pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, flags: u32,) -> is
         }
     };
 
-    match file_descriptor.open(&path, flags, false) {
+    match file_descriptor.open(&path, OpenFlags::O_RDONLY, false) {
         Ok(file_descriptor) => {
-            if copy_to_user(token, &file_descriptor.get_stat(), buf as *mut Stat).is_err() {
+            let stat = file_descriptor.get_stat().into();
+            info!("[sys_statx] stat: {stat:?}");
+            if copy_to_user(token, &stat, buf as *mut Statx).is_err() {
                 log::error!("[sys_fstatat] Failed to copy to {:?}", buf);
                 return EFAULT;
             };
@@ -701,8 +701,6 @@ pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, flags: u32,) -> is
         Err(errno) => errno,
     }
 }
-
-
 
 #[repr(C)]
 #[derive(Clone, Copy)]

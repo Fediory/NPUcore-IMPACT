@@ -741,7 +741,10 @@ impl MapArea {
     ) -> Option<(VirtPageNum, VirtPageNum)> {
         let area_start_vpn = self.inner.vpn_range.get_start();
         let area_end_vpn = self.inner.vpn_range.get_end();
-        if end_vpn < area_start_vpn || start_vpn >= area_end_vpn {
+        if start_vpn == area_end_vpn {
+            warn!("[check_overlapping] Is this correct?");
+        }
+        if end_vpn < area_start_vpn || start_vpn > area_end_vpn {
             return None;
         } else {
             let start = if start_vpn > area_start_vpn {

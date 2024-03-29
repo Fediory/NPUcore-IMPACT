@@ -180,6 +180,78 @@ impl Stat {
     }
 }
 
+#[derive(Clone, Copy, Debug)]
+#[repr(C)]
+struct StatxTimestamp {
+    tv_sec: i64,
+    tv_nsec: u32,
+}
+
+impl From<TimeSpec> for StatxTimestamp {
+    fn from(value: TimeSpec) -> Self {
+        Self {
+            tv_sec: value.tv_sec as i64,
+            tv_nsec: value.tv_nsec as u32,
+        }
+    }
+}
+
+#[derive(Clone, Copy, Debug)]
+#[repr(C)]
+pub struct Statx {
+    stx_mask: u32,
+    stx_blksize: u32,
+    stx_attributes: u64,
+    stx_nlink: u32,
+    stx_uid: u32,
+    stx_gid: u32,
+    stx_mode: u16,
+    stx_ino: u64,
+    stx_size: u64,
+    stx_blocks: u64,
+    stx_attributes_mask: u64,
+    stx_atime: StatxTimestamp,
+    stx_btime: StatxTimestamp,
+    stx_ctime: StatxTimestamp,
+    stx_mtime: StatxTimestamp,
+    stx_rdev_major: u32,
+    stx_rdev_minor: u32,
+    stx_dev_major: u32,
+    stx_dev_minor: u32,
+    stx_mnt_id: u64,
+    stx_dio_mem_align: u32,
+    stx_dio_offset_align: u32,
+}
+
+impl From<Stat> for Statx {
+    fn from(value: Stat) -> Self {
+        Self {
+            stx_mask: 0, // TODO
+            stx_blksize: value.st_blksize,
+            stx_attributes: 0, // TODO
+            stx_nlink: value.st_nlink,
+            stx_uid: value.st_uid,
+            stx_gid: value.st_gid,
+            stx_mode: (value.st_mode & u16::MAX as u32) as u16,
+            stx_ino: value.st_ino,
+            stx_size: value.st_size as u64,
+            stx_blocks: value.st_blocks,
+            stx_attributes_mask: 0,
+            stx_atime: value.st_atime.into(),
+            stx_btime: TimeSpec::new().into(), // TODO
+            stx_ctime: value.st_ctime.into(),
+            stx_mtime: value.st_mtime.into(),
+            stx_rdev_major: value.st_rdev as u32, // TODO
+            stx_rdev_minor: 0,                    // TODO
+            stx_dev_major: value.st_dev as u32,   // TODO
+            stx_dev_minor: 0,                     // TODO
+            stx_mnt_id: 0,                        // TODO
+            stx_dio_mem_align: 0,                 // TODO
+            stx_dio_offset_align: 0,              // TODO
+        }
+    }
+}
+
 const NAME_LIMIT: usize = 128;
 #[derive(Clone, Copy, Debug)]
 #[repr(C)]
