@@ -385,6 +385,9 @@ pub fn sys_close(fd: usize) -> isize {
 /// # Warning
 /// Only O_CLOEXEC is supported now
 pub fn sys_pipe2(pipefd: usize, flags: u32) -> isize {
+    // println!("enter pipe2");
+
+    // judging flags
     const VALID_FLAGS: OpenFlags = OpenFlags::from_bits_truncate(
         0o2000000 /* O_CLOEXEC */ | 0o40000 /* O_DIRECT */ | 0o4000, /* O_NONBLOCK */
     );
@@ -408,11 +411,12 @@ pub fn sys_pipe2(pipefd: usize, flags: u32) -> isize {
             return EINVAL;
         }
     };
+
     let task = current_task().unwrap();
     let mut fd_table = task.files.lock();
     let (pipe_read, pipe_write) = make_pipe();
     let read_fd = match fd_table.insert(FileDescriptor::new(
-        flags.contains(OpenFlags::O_CLOEXEC),
+        flags.contains(OpenFlags::O_CLOEXEC) || flags.contains(OpenFlags::O_RDONLY),
         false,
         pipe_read,
     )) {
@@ -425,25 +429,29 @@ pub fn sys_pipe2(pipefd: usize, flags: u32) -> isize {
         pipe_write,
     )) {
         Ok(fd) => fd,
-        Err(errno) => return errno,
+        Err(errno) => {
+            println!("error pipe");
+            return errno
+        },
     };
+
+    info!(
+        "[sys_pipe2] read_fd: {}, write_fd: {}, flags: {:?}",
+        read_fd, write_fd, flags
+    );
 
     let token = task.get_user_token();
     if copy_to_user_array(
         token,
         [read_fd as u32, write_fd as u32].as_ptr(),
         pipefd as *mut u32,
-        2,
+        4,
     )
     .is_err()
     {
         log::error!("[sys_pipe2] Failed to copy to {:?}", pipefd);
         return EFAULT;
     };
-    info!(
-        "[sys_pipe2] read_fd: {}, write_fd: {}, flags: {:?}",
-        read_fd, write_fd, flags
-    );
     SUCCESS
 }
 
@@ -481,6 +489,7 @@ pub fn sys_getdents64(fd: usize, dirp: *mut u8, count: usize) -> isize {
 }
 
 pub fn sys_dup(oldfd: usize) -> isize {
+    // println!("enter dup");
     let task = current_task().unwrap();
     let mut fd_table = task.files.lock();
     let old_file_descriptor = match fd_table.get_ref(oldfd) {
@@ -526,11 +535,19 @@ pub fn sys_dup3(oldfd: usize, newfd: usize, flags: u32) -> isize {
         Ok(file_descriptor) => file_descriptor.clone(),
         Err(errno) => return errno,
     };
-    file_descriptor.set_cloexec(is_cloexec);
+    // println!("{}",is_cloexec);
+
+    if is_cloexec {
+        file_descriptor.set_cloexec(is_cloexec);
+    }
+
     match fd_table.insert_at(file_descriptor, newfd) {
         Ok(fd) => fd as isize,
         Err(errno) => errno,
     }
+
+    
+    
 }
 
 // This syscall is not complete at all, only /read proc/self/exe
@@ -644,6 +661,48 @@ pub fn sys_fstat(fd: usize, statbuf: *mut u8) -> isize {
     };
     SUCCESS
 }
+
+pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, flags: u32,) -> isize {
+    let token = current_user_token();
+    let path = match translated_str(token, path) {
+        Ok(path) => path,
+        Err(errno) => return errno,
+    };
+
+
+    let flags = match OpenFlags::from_bits(flags) {
+        Some(flags) => flags,
+        None => {
+            warn!("[sys_statx] unknown flags");
+            return EINVAL;
+        }
+    };
+
+    let task = current_task().unwrap();
+    let file_descriptor = match dirfd {
+        AT_FDCWD => task.fs.lock().working_inode.as_ref().clone(),
+        fd => {
+            let fd_table = task.files.lock();
+            match fd_table.get_ref(fd) {
+                Ok(file_descriptor) => file_descriptor.clone(),
+                Err(errno) => return errno,
+            }
+        }
+    };
+
+    match file_descriptor.open(&path, flags, false) {
+        Ok(file_descriptor) => {
+            if copy_to_user(token, &file_descriptor.get_stat(), buf as *mut Stat).is_err() {
+                log::error!("[sys_fstatat] Failed to copy to {:?}", buf);
+                return EFAULT;
+            };
+            SUCCESS
+        }
+        Err(errno) => errno,
+    }
+}
+
+
 
 #[repr(C)]
 #[derive(Clone, Copy)]

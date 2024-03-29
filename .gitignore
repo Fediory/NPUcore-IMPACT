@@ -10,6 +10,7 @@ os/new_cmd
 
 # kernel build
 os/target/
+kernel.bin
 
 # user programs build
 user/riscv64/

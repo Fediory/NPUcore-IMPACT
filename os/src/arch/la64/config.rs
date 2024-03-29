@@ -3,6 +3,7 @@ pub const MEMORY_SIZE: usize = 0x1000_0000;
 pub const USER_STACK_SIZE: usize = PAGE_SIZE * 40;
 pub const USER_HEAP_SIZE: usize = PAGE_SIZE * 20;
 pub const SYSTEM_TASK_LIMIT: usize = 128;
+pub const DEFAULT_FD_LIMIT: usize = 128;
 pub const SYSTEM_FD_LIMIT: usize = 256;
 pub const PAGE_SIZE: usize = 0x1000;
 pub const PAGE_SIZE_BITS: usize = PAGE_SIZE.trailing_zeros() as usize;

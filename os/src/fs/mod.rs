@@ -18,7 +18,7 @@ pub use self::fat32::{BlockDevice, DiskInodeType};
 
 use self::{cache::PageCache, directory_tree::DirectoryTreeNode, file_trait::File};
 use crate::{
-    config::SYSTEM_FD_LIMIT,
+    config::{SYSTEM_FD_LIMIT,DEFAULT_FD_LIMIT},
     mm::{Frame, UserBuffer},
     syscall::errno::*,
 };
@@ -265,7 +265,7 @@ pub struct FdTable {
 
 #[allow(unused)]
 impl FdTable {
-    pub const DEFAULT_FD_LIMIT: usize = 64;
+    pub const DEFAULT_FD_LIMIT: usize = DEFAULT_FD_LIMIT;
     pub const SYSTEM_FD_LIMIT: usize = SYSTEM_FD_LIMIT;
     pub fn new(inner: Vec<Option<FileDescriptor>>) -> Self {
         Self {
