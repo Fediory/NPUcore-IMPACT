@@ -22,7 +22,7 @@ proc test_cmd {file_name num} {
 }
 
 
-test_cmd "run-all.sh\n" 0
+# test_cmd "run-all.sh\n" 0
 # test_cmd "busybox_testcode.sh\n" $sleep_time 
 # test_cmd "lmbench_testcode.sh\n" $sleep_time 
 

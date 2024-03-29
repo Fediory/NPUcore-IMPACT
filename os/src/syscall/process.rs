@@ -24,6 +24,11 @@ use core::mem::size_of;
 use log::{debug, error, info, trace, warn};
 use num_enum::FromPrimitive;
 
+use crate::arch::shutdown;
+pub fn sys_shutdown() -> isize {
+    shutdown()
+}
+
 pub fn sys_exit(exit_code: u32) -> ! {
     exit_current_and_run_next((exit_code & 0xff) << 8);
 }

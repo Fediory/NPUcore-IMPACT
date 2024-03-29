@@ -1,13 +1,13 @@
 #!/bin/sh
 
 tests="
+execve
 brk
 chdir
 clone
 close
 dup2
 dup
-execve
 exit
 fork
 getcwd
