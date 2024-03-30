@@ -237,7 +237,7 @@ impl File for OSInode {
                     .bits()
             }
         };
-        let dev_high_32:u64 = (crate::makedev!(8, 0) >> 32);
+        let dev_high_32: u64 = (crate::makedev!(8, 0) >> 32);
         Statx::new(
             dev_high_32 as u32,
             0,

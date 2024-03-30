@@ -2,9 +2,9 @@ use crate::arch::BLOCK_SZ;
 use crate::fs::poll::{ppoll, pselect, FdSet, PollFd};
 use crate::fs::*;
 use crate::mm::{
-    copy_from_user, copy_from_user_array, copy_to_user, copy_to_user_array, copy_to_user_string,
-    translated_byte_buffer, translated_byte_buffer_append_to_existing_vec, translated_refmut,
-    translated_str, try_get_from_user, MapPermission, UserBuffer, VirtAddr, copy_to_user_debug,
+    copy_from_user, copy_from_user_array, copy_to_user, copy_to_user_array, copy_to_user_debug,
+    copy_to_user_string, translated_byte_buffer, translated_byte_buffer_append_to_existing_vec,
+    translated_refmut, translated_str, try_get_from_user, MapPermission, UserBuffer, VirtAddr,
 };
 use crate::task::{current_task, current_user_token};
 use crate::timer::TimeSpec;
@@ -659,7 +659,7 @@ pub fn sys_fstat(fd: usize, statbuf: *mut u8) -> isize {
     SUCCESS
 }
 
-pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, _flags: u32) -> isize {
+pub fn sys_statx(dirfd: usize, path: *const u8, _flags: u32, _mask: u32, buf: *mut u8) -> isize {
     let token = current_user_token();
     let path = match translated_str(token, path) {
         Ok(path) => path,
@@ -691,7 +691,7 @@ pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, _flags: u32) -> is
     match file_descriptor.open(&path, OpenFlags::O_RDWR, false) {
         Ok(file_descriptor) => {
             let statx = &file_descriptor.get_statx();
-            println!("[sys_statx] statx: {:?}",statx);
+            println!("[sys_statx] statx: {:?}", statx);
             if copy_to_user_debug(token, statx, buf as *mut Statx).is_err() {
                 log::error!("[sys_statx] Failed to copy to {:?}", buf);
                 return EFAULT;

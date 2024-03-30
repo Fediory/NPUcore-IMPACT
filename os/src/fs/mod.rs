@@ -18,7 +18,7 @@ pub use self::fat32::{BlockDevice, DiskInodeType};
 
 use self::{cache::PageCache, directory_tree::DirectoryTreeNode, file_trait::File};
 use crate::{
-    config::{SYSTEM_FD_LIMIT,DEFAULT_FD_LIMIT},
+    config::{DEFAULT_FD_LIMIT, SYSTEM_FD_LIMIT},
     mm::{Frame, UserBuffer},
     syscall::errno::*,
 };

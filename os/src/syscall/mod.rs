@@ -201,8 +201,9 @@ pub fn syscall(syscall_id: usize, args: [usize; 6]) -> isize {
         SYSCALL_STATX => sys_statx(
             args[0],
             args[1] as *const u8,
-            args[2] as *mut u8,
+            args[2] as u32,
             args[3] as u32,
+            args[4] as *mut u8,
         ),
         SYSCALL_FTRUNCATE => sys_ftruncate(args[0], args[1] as isize),
         SYSCALL_FSYNC => sys_fsync(args[0]),
