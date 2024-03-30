@@ -51,6 +51,10 @@ impl File for Hwclock {
         todo!()
     }
 
+    fn get_statx(&self) -> crate::fs::Statx {
+        todo!()
+    }
+
     fn get_file_type(&self) -> DiskInodeType {
         DiskInodeType::File
     }

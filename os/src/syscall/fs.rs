@@ -4,7 +4,7 @@ use crate::fs::*;
 use crate::mm::{
     copy_from_user, copy_from_user_array, copy_to_user, copy_to_user_array, copy_to_user_string,
     translated_byte_buffer, translated_byte_buffer_append_to_existing_vec, translated_refmut,
-    translated_str, try_get_from_user, MapPermission, UserBuffer, VirtAddr,
+    translated_str, try_get_from_user, MapPermission, UserBuffer, VirtAddr, copy_to_user_debug,
 };
 use crate::task::{current_task, current_user_token};
 use crate::timer::TimeSpec;
@@ -688,12 +688,12 @@ pub fn sys_statx(dirfd: usize, path: *const u8, buf: *mut u8, _flags: u32) -> is
         }
     };
 
-    match file_descriptor.open(&path, OpenFlags::O_RDONLY, false) {
+    match file_descriptor.open(&path, OpenFlags::O_RDWR, false) {
         Ok(file_descriptor) => {
-            let stat = file_descriptor.get_stat().into();
-            info!("[sys_statx] stat: {stat:?}");
-            if copy_to_user(token, &stat, buf as *mut Statx).is_err() {
-                log::error!("[sys_fstatat] Failed to copy to {:?}", buf);
+            let statx = &file_descriptor.get_statx();
+            println!("[sys_statx] statx: {:?}",statx);
+            if copy_to_user_debug(token, statx, buf as *mut Statx).is_err() {
+                log::error!("[sys_statx] Failed to copy to {:?}", buf);
                 return EFAULT;
             };
             SUCCESS

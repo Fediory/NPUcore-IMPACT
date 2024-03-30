@@ -415,6 +415,26 @@ pub fn copy_to_user<T: 'static + Copy>(
     Ok(())
 }
 
+pub fn copy_to_user_debug<T: 'static + Copy>(
+    token: usize,
+    src: *const T,
+    dst: *mut T,
+) -> Result<(), isize> {
+    let size = core::mem::size_of::<T>();
+    // A nice predicate. Well done!
+    // Re: Thanks!
+    if VirtAddr::from(dst as usize).floor() == VirtAddr::from(dst as usize + size - 1).floor() {
+        println!("1");
+        let tr = translated_refmut(token, dst);
+        // unsafe { core::ptr::copy_nonoverlapping(src, tr?, 1) };
+    // use UserBuffer to write across user space pages
+    } else {
+        UserBuffer::new(translated_byte_buffer(token, dst as *mut u8, size)?)
+            .write(unsafe { core::slice::from_raw_parts(src as *const u8, size) });
+    }
+    Ok(())
+}
+
 /// Copy `*src: T` to kernel space.
 /// `src` is a pointer in user space, `dst` is a pointer in kernel space.
 #[inline(always)]

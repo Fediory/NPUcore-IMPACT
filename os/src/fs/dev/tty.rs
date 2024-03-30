@@ -1,7 +1,7 @@
 use crate::arch::console_getchar;
 use crate::fs::directory_tree::DirectoryTreeNode;
 use crate::fs::file_trait::File;
-use crate::fs::layout::Stat;
+use crate::fs::layout::{Stat,Statx};
 use crate::fs::DiskInodeType;
 use crate::fs::StatMode;
 use crate::mm::{copy_from_user, copy_to_user};
@@ -219,6 +219,24 @@ impl File for Teletype {
             StatMode::S_IFCHR.bits() | 0o666,
             1,
             crate::makedev!(0x88, 0),
+            0,
+            0,
+            0,
+            0,
+        )
+    }
+
+    fn get_statx(&self) -> Statx {
+        let dev_high_32:u64 = (crate::makedev!(0,5) >> 32);
+        let rdev_high_32:u64 = (crate::makedev!(0x88,0) >> 32);
+        Statx::new(
+            dev_high_32 as u32,
+            0,
+            1,
+            StatMode::S_IFCHR.bits() as u16 | 0x1B6,
+            1,
+            rdev_high_32 as u32,
+            0,
             0,
             0,
             0,

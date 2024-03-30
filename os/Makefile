@@ -14,7 +14,7 @@ LDBOARD = la2k1000
 
 SDDEV := $(shell lsblk -do NAME | grep sd | tail -1)
 SDCARD := /dev/$(SDDEV)
-
+LOG=trace
 # Disassembly
 DISASM ?= -x
 

@@ -22,6 +22,7 @@ pub trait File: DowncastSync {
     fn write_user(&self, offset: Option<usize>, buf: UserBuffer) -> usize;
     fn get_size(&self) -> usize;
     fn get_stat(&self) -> Stat;
+    fn get_statx(&self) -> Statx;
     fn get_file_type(&self) -> DiskInodeType;
     fn is_dir(&self) -> bool {
         self.get_file_type() == DiskInodeType::Directory

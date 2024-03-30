@@ -226,6 +226,32 @@ impl File for OSInode {
             ctime,
         )
     }
+    fn get_statx(&self) -> Statx {
+        let (size, atime, mtime, ctime, ino) = self.inner.stat_lock(&self.inner.read());
+        let st_mod: u32 = {
+            if self.inner.is_dir() {
+                (StatMode::S_IFDIR | StatMode::S_IRWXU | StatMode::S_IRWXG | StatMode::S_IRWXO)
+                    .bits()
+            } else {
+                (StatMode::S_IFREG | StatMode::S_IRWXU | StatMode::S_IRWXG | StatMode::S_IRWXO)
+                    .bits()
+            }
+        };
+        let dev_high_32:u64 = (crate::makedev!(8, 0) >> 32);
+        Statx::new(
+            dev_high_32 as u32,
+            0,
+            ino,
+            st_mod as u16,
+            1,
+            0,
+            0,
+            size as u64,
+            atime,
+            mtime,
+            ctime,
+        )
+    }
     fn get_file_type(&self) -> DiskInodeType {
         self.inner.get_file_type()
     }

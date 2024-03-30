@@ -1,5 +1,5 @@
 use crate::fs::directory_tree::DirectoryTreeNode;
-use crate::fs::layout::Stat;
+use crate::fs::layout::{Stat,Statx};
 use crate::fs::DiskInodeType;
 use crate::fs::StatMode;
 use crate::syscall::errno::*;
@@ -365,6 +365,23 @@ impl File for Pipe {
             1,
             StatMode::S_IFIFO.bits() | 0o666,
             1,
+            0,
+            0,
+            0,
+            0,
+            0,
+        )
+    }
+
+    fn get_statx(&self) -> Statx {
+        let dev_high_32:u64 = (crate::makedev!(0, 5) >> 32);
+        Statx::new(
+            dev_high_32 as u32,
+            0,
+            1,
+            StatMode::S_IFIFO.bits() as u16 | 0x1B6,
+            1,
+            0,
             0,
             0,
             0,

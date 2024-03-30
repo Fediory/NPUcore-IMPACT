@@ -4,29 +4,29 @@ use crate::{arch::BLOCK_SZ, timer::TimeSpec};
 
 bitflags! {
     pub struct OpenFlags: u32 {
-        const O_RDONLY      =   0o0;
-        const O_WRONLY      =   0o1;
-        const O_RDWR        =   0o2;
+        const O_RDONLY      =   0;
+        const O_WRONLY      =   1;
+        const O_RDWR        =   1 << 1;
 
-        const O_CREAT       =   0o100;
-        const O_EXCL        =   0o200;
-        const O_NOCTTY      =   0o400;
-        const O_TRUNC       =   0o1000;
+        const O_CREAT       =   1 << 6;
+        const O_EXCL        =   1 << 7;
+        const O_NOCTTY      =   1 << 8;
+        const O_TRUNC       =   1 << 9;
 
-        const O_APPEND      =   0o2000;
-        const O_NONBLOCK    =   0o4000;
-        const O_DSYNC       =   0o10000;
-        const O_SYNC        =   0o4010000;
-        const O_RSYNC       =   0o4010000;
-        const O_DIRECTORY   =   0o200000;
-        const O_NOFOLLOW    =   0o400000;
-        const O_CLOEXEC     =   0o2000000;
-        const O_ASYNC       =   0o20000;
-        const O_DIRECT      =   0o40000;
-        const O_LARGEFILE   =   0o100000;
-        const O_NOATIME     =   0o1000000;
-        const O_PATH        =   0o10000000;
-        const O_TMPFILE     =   0o20200000;
+        const O_APPEND      =   1 << 10;
+        const O_NONBLOCK    =   1 << 11;
+        const O_DSYNC       =   1 << 12;
+        const O_SYNC        =   1 << 12 | 1 << 20;
+        const O_RSYNC       =   1 << 12 | 1 << 20;
+        const O_ASYNC       =   1 << 13;
+        const O_DIRECT      =   1 << 14;
+        const O_LARGEFILE   =   1 << 15;
+        const O_DIRECTORY   =   1 << 16;
+        const O_NOFOLLOW    =   1 << 17;
+        const O_NOATIME     =   1 << 18;
+        const O_CLOEXEC     =   1 << 19;
+        const O_PATH        =   1 << 21;
+        const O_TMPFILE     =   1 << 16 | 1 << 22;
     }
 }
 
@@ -223,31 +223,53 @@ pub struct Statx {
     stx_dio_offset_align: u32,
 }
 
-impl From<Stat> for Statx {
-    fn from(value: Stat) -> Self {
+impl Statx {
+    pub fn new(
+        stx_dev_major: u32,
+        stx_dev_minor: u32,
+        stx_ino: u64,
+        stx_mode: u16,
+        stx_nlink: u32,
+        stx_rdev_major: u32,
+        stx_rdev_minor: u32,
+        stx_size: u64,
+        stx_atime_sec: i64,
+        stx_mtime_sec: i64,
+        stx_ctime_sec: i64,
+    ) -> Self {
+        const BLK_SIZE: u32 = BLOCK_SZ as u32;
         Self {
-            stx_mask: 0, // TODO
-            stx_blksize: value.st_blksize,
-            stx_attributes: 0, // TODO
-            stx_nlink: value.st_nlink,
-            stx_uid: value.st_uid,
-            stx_gid: value.st_gid,
-            stx_mode: (value.st_mode & u16::MAX as u32) as u16,
-            stx_ino: value.st_ino,
-            stx_size: value.st_size as u64,
-            stx_blocks: value.st_blocks,
-            stx_attributes_mask: 0,
-            stx_atime: value.st_atime.into(),
-            stx_btime: TimeSpec::new().into(), // TODO
-            stx_ctime: value.st_ctime.into(),
-            stx_mtime: value.st_mtime.into(),
-            stx_rdev_major: value.st_rdev as u32, // TODO
-            stx_rdev_minor: 0,                    // TODO
-            stx_dev_major: value.st_dev as u32,   // TODO
-            stx_dev_minor: 0,                     // TODO
-            stx_mnt_id: 0,                        // TODO
-            stx_dio_mem_align: 0,                 // TODO
-            stx_dio_offset_align: 0,              // TODO
+            stx_mask: 0,// TODO
+            stx_attributes: 0,// TODO
+            stx_attributes_mask: 0,// TODO
+            stx_dev_major,
+            stx_dev_minor,
+            stx_ino,
+            stx_mode,
+            stx_nlink,
+            stx_uid: 0,     // TODO
+            stx_gid: 0,     // TODO
+            stx_rdev_major,
+            stx_rdev_minor,
+            stx_size,
+            stx_blksize: BLK_SIZE as u32,
+            stx_blocks: (stx_size as u64 + BLK_SIZE as u64 - 1) / BLK_SIZE as u64,
+            stx_atime: StatxTimestamp {
+                tv_sec: stx_atime_sec,
+                tv_nsec: 0,
+            },
+            stx_btime: TimeSpec::new().into(),// TODO
+            stx_mtime: StatxTimestamp {
+                tv_sec: stx_mtime_sec,
+                tv_nsec: 0,
+            },
+            stx_ctime: StatxTimestamp {
+                tv_sec: stx_ctime_sec,
+                tv_nsec: 0,
+            },
+            stx_mnt_id: 0,          // TODO
+            stx_dio_mem_align: 0,   // TODO
+            stx_dio_offset_align: 0,// TODO
         }
     }
 }

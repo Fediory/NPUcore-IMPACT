@@ -16,11 +16,10 @@ DEBUG_UNALIGN=1 DEBUG_GMAC_PHYAD=0 DEBUG_MYNAND=cs=0,id=0x2cda DEBUG_MYSPIFLASH=
     -m 1024 \
     -device usb-kbd,bus=usb-bus.0 -device usb-tablet,bus=usb-bus.0 \
     -device usb-storage,drive=udisk \
-    -vnc :0 -D /tmp/qemu.log \
+    -vnc :0 -D "$SCRIPTPATH"/qemu.log \
     -drive if=none,id=udisk,file=$DISK \
     -net nic -net user,net=192.168.1.2/24,tftp=$TFTP_DIR \
     -smp threads=1\
-    -D "$SCRIPTPATH"/qemu.log \
     -s -hda "$SCRIPTPATH"/2k1000/2kfs.img \
     -k "$SCRIPTPATH"/share/qemu/keymaps/en-us
 }

@@ -108,6 +108,9 @@ impl FileDescriptor {
     pub fn get_stat(&self) -> Stat {
         self.file.get_stat()
     }
+    pub fn get_statx(&self) -> Statx {
+        self.file.get_statx()
+    }
     pub fn open(&self, path: &str, flags: OpenFlags, special_use: bool) -> Result<Self, isize> {
         if path == "" {
             return Ok(self.clone());
