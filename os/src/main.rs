@@ -36,8 +36,8 @@ mod syscall;
 mod task;
 mod timer;
 
-use crate::arch::{bootstrap_init, machine_init};
 use crate::arch::config::DISK_IMAGE_BASE;
+use crate::arch::{bootstrap_init, machine_init};
 
 #[cfg(feature = "la64")]
 core::arch::global_asm!(include_str!("arch/la64/entry.asm"));
@@ -69,20 +69,14 @@ fn move_to_high_address() {
         fn eimg();
     }
     unsafe {
-        let img = core::slice::from_raw_parts(
-            simg as usize as *mut u8,
-            eimg as usize - simg as usize
-        );
+        let img =
+            core::slice::from_raw_parts(simg as usize as *mut u8, eimg as usize - simg as usize);
         // 从DISK_IMAGE_BASE到MEMORY_END
-        let mem_disk = core::slice::from_raw_parts_mut(
-            DISK_IMAGE_BASE as *mut u8,
-            0x800_0000
-        );
+        let mem_disk = core::slice::from_raw_parts_mut(DISK_IMAGE_BASE as *mut u8, 0x800_0000);
         mem_disk.fill(0);
         mem_disk[..img.len()].copy_from_slice(img);
     }
 }
-
 
 #[no_mangle]
 pub fn rust_main() -> ! {

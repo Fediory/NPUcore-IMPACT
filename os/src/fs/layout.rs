@@ -239,16 +239,16 @@ impl Statx {
     ) -> Self {
         const BLK_SIZE: u32 = BLOCK_SZ as u32;
         Self {
-            stx_mask: 0,// TODO
-            stx_attributes: 0,// TODO
-            stx_attributes_mask: 0,// TODO
+            stx_mask: u32::MAX,     // TODO
+            stx_attributes: 0,      // TODO
+            stx_attributes_mask: 0, // TODO
             stx_dev_major,
             stx_dev_minor,
             stx_ino,
             stx_mode,
             stx_nlink,
-            stx_uid: 0,     // TODO
-            stx_gid: 0,     // TODO
+            stx_uid: 0, // TODO
+            stx_gid: 0, // TODO
             stx_rdev_major,
             stx_rdev_minor,
             stx_size,
@@ -258,7 +258,7 @@ impl Statx {
                 tv_sec: stx_atime_sec,
                 tv_nsec: 0,
             },
-            stx_btime: TimeSpec::new().into(),// TODO
+            stx_btime: TimeSpec::new().into(), // TODO
             stx_mtime: StatxTimestamp {
                 tv_sec: stx_mtime_sec,
                 tv_nsec: 0,
@@ -267,9 +267,9 @@ impl Statx {
                 tv_sec: stx_ctime_sec,
                 tv_nsec: 0,
             },
-            stx_mnt_id: 0,          // TODO
-            stx_dio_mem_align: 0,   // TODO
-            stx_dio_offset_align: 0,// TODO
+            stx_mnt_id: 0,           // TODO
+            stx_dio_mem_align: 0,    // TODO
+            stx_dio_offset_align: 0, // TODO
         }
     }
 }

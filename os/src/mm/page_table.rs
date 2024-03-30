@@ -4,6 +4,7 @@ use super::memory_set::check_page_fault;
 use super::{MapPermission, PhysAddr, PhysPageNum, StepByOne, VirtAddr, VirtPageNum};
 use alloc::string::String;
 use alloc::vec::Vec;
+use log::info;
 
 pub trait PageTable {
     #[allow(unused)]
@@ -415,7 +416,7 @@ pub fn copy_to_user<T: 'static + Copy>(
     Ok(())
 }
 
-pub fn copy_to_user_debug<T: 'static + Copy>(
+pub fn copy_to_user_debug<T: 'static + Copy + core::fmt::Debug>(
     token: usize,
     src: *const T,
     dst: *mut T,
@@ -424,10 +425,14 @@ pub fn copy_to_user_debug<T: 'static + Copy>(
     // A nice predicate. Well done!
     // Re: Thanks!
     if VirtAddr::from(dst as usize).floor() == VirtAddr::from(dst as usize + size - 1).floor() {
-        println!("1");
-        let tr = translated_refmut(token, dst);
-        // unsafe { core::ptr::copy_nonoverlapping(src, tr?, 1) };
-    // use UserBuffer to write across user space pages
+        let tr = translated_refmut(token, dst)?;
+        info!(
+            "[copy_to_user] from: {src:p}, to: {tr:p}, len: {}",
+            core::mem::size_of::<T>()
+        );
+        unsafe { core::ptr::copy_nonoverlapping(src, tr, 1) };
+        info!("[copy_to_user] Ok");
+        // use UserBuffer to write across user space pages
     } else {
         UserBuffer::new(translated_byte_buffer(token, dst as *mut u8, size)?)
             .write(unsafe { core::slice::from_raw_parts(src as *const u8, size) });
