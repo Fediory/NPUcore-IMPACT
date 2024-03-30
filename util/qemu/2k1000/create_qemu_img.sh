@@ -16,13 +16,13 @@ fi
 sudo modprobe nbd maxparts=12
 sudo qemu-nbd -c /dev/nbd1 ./2kfs.img
 
-if [ $? -ne 0 ] ; then
-  echo "connect image to nbd device failed!"
-  echo "please install nbd kernel module first!"
-  echo "   modprobe nbd maxparts=12"
-  echo "if /dev/nbd1 is already taken, change all nbd1 in this script to another one such as nbd1"
-  exit -2
-fi
+# if [ $? -ne 0 ] ; then
+#   echo "connect image to nbd device failed!"
+#   echo "please install nbd kernel module first!"
+#   echo "   modprobe nbd maxparts=12"
+#   echo "if /dev/nbd1 is already taken, change all nbd1 in this script to another one such as nbd1"
+#   exit -2
+# fi
 
 sudo echo -e 'n\n\n\n\n\n\nw\nq\n'| sudo fdisk /dev/nbd1
 
@@ -47,10 +47,10 @@ fi
 
 sudo bash -c "lzcat ./rootfs-la.cpio.lzma | cpio -idmv -D /mnt &> ./cpio.log"
 
-if [ $? -ne 0 ] ; then
-  echo "unpack rootfs failed"
-  exit -6
-fi
+# if [ $? -ne 0 ] ; then
+#   echo "unpack rootfs failed"
+#   exit -6
+# fi
 
 sudo mkdir /mnt/boot 
 

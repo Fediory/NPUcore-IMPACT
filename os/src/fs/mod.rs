@@ -28,6 +28,7 @@ use alloc::{
     vec::Vec,
 };
 use lazy_static::*;
+use log::warn;
 use spin::Mutex;
 
 lazy_static! {
@@ -336,6 +337,8 @@ impl FdTable {
         match self.inner[fd].take() {
             Some(file_descriptor) => {
                 self.recycled.push(fd as u8);
+                // FIXME: shit here, replace this with balanced binary tree
+                self.recycled.sort_by(|a, b| b.cmp(a));
                 Ok(file_descriptor)
             }
             None => Err(EBADF),
@@ -361,11 +364,13 @@ impl FdTable {
     pub fn insert(&mut self, file_descriptor: FileDescriptor) -> Result<usize, isize> {
         let fd = match self.recycled.pop() {
             Some(fd) => {
+                warn!("[fd_table_insert] recycle: {fd}");
                 self.inner[fd as usize] = Some(file_descriptor);
                 fd as usize
             }
             None => {
                 let current = self.inner.len();
+                warn!("[fd_table_insert] new: {current}");
                 if current == self.soft_limit {
                     return Err(EMFILE);
                 } else {
