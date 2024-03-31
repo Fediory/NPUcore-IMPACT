@@ -1,5 +1,5 @@
 use crate::fs::directory_tree::DirectoryTreeNode;
-use crate::fs::layout::{Stat,Statx};
+use crate::fs::layout::{Stat, Statx};
 use crate::fs::DiskInodeType;
 use crate::fs::StatMode;
 use crate::syscall::errno::*;
@@ -11,6 +11,7 @@ use crate::{fs::file_trait::File, mm::UserBuffer};
 use alloc::boxed::Box;
 use alloc::sync::{Arc, Weak};
 use core::ptr::copy_nonoverlapping;
+use log::warn;
 use spin::Mutex;
 
 pub struct Pipe {
@@ -269,13 +270,13 @@ impl File for Pipe {
         }
         let mut read_size = 0usize;
         loop {
-            let task = current_task().unwrap();
-            let inner = task.acquire_inner_lock();
-            if !inner.sigpending.difference(inner.sigmask).is_empty() {
-                return ERESTART as usize;
-            }
-            drop(inner);
-            drop(task);
+            // let task = current_task().unwrap();
+            // let inner = task.acquire_inner_lock();
+            // if !inner.sigpending.difference(inner.sigmask).is_empty() {
+            //     return ERESTART as usize;
+            // }
+            // drop(inner);
+            // drop(task);
             let mut ring = self.buffer.lock();
             if ring.status == RingBufferStatus::EMPTY {
                 if ring.all_write_ends_closed() {
@@ -374,7 +375,7 @@ impl File for Pipe {
     }
 
     fn get_statx(&self) -> Statx {
-        let dev_high_32:u64 = (crate::makedev!(0, 5) >> 32);
+        let dev_high_32: u64 = (crate::makedev!(0, 5) >> 32);
         Statx::new(
             dev_high_32 as u32,
             0,
