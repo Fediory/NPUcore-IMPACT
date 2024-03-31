@@ -445,7 +445,7 @@ pub fn sys_pipe2(pipefd: usize, flags: u32) -> isize {
         token,
         [read_fd as u32, write_fd as u32].as_ptr(),
         pipefd as *mut u32,
-        4,
+        2,
     )
     .is_err()
     {
@@ -691,7 +691,7 @@ pub fn sys_statx(dirfd: usize, path: *const u8, _flags: u32, _mask: u32, buf: *m
     match file_descriptor.open(&path, OpenFlags::O_RDWR, false) {
         Ok(file_descriptor) => {
             let statx = &file_descriptor.get_statx();
-            println!("[sys_statx] statx: {:?}", statx);
+            info!("[sys_statx] statx: {:?}", statx);
             if copy_to_user_debug(token, statx, buf as *mut Statx).is_err() {
                 log::error!("[sys_statx] Failed to copy to {:?}", buf);
                 return EFAULT;
