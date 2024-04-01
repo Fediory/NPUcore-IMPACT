@@ -126,3 +126,18 @@ get_datm/set_datm:Set Memory Access Type (MAT) for load and store operations whe
 is_watchpoint_enabled/set_watchpoint_enabled:Instruction and data watchpoints enable bit, which is active high.
 
 da/pg:modifying the 3rd & 4th bit
+
+---
+
+now starting making code_tree about mm(*memory_managements*) and syscall(*system_call*) first while reconstructing
+
+here gives a method of reconstructing(*temp*):
+
+1. by moving each **struct** and **impl** together to reform its libs
+
+2. I haven't find the triggers and calls of each lib file, so I just ignore them
+
+>marked at 4.1 - starting reconstruct memo-management
+
+
+
