@@ -139,5 +139,56 @@ here gives a method of reconstructing(*temp*):
 
 >marked at 4.1 - starting reconstruct memo-management
 
+## mm
+
+contructure as below
+
+- main
+    - memory allocation
+        - page -> frame -> single unit
+    - using heap as container
+
+### [address.rs](os\src\mm\address.rs)
+
+this .rs contains defination and function of address(including *Physicaladdr&Virtualaddr*),now reconstucted into [/address](os\src\mm\mm_reconstructed\address).
+
+here's the list of **func**,**struct**,**impl** contains in the addr(which are the options toward address)
+
+- physical addr.
+    - **structs**
+        - PhysAddr (the structure of physical address)
+        - PhysPageNum 
+    - **impl**
+        - From\<usize\> (getting its usize)
+        - From\<PhysPageNum\> (getting its Page Num by lefting its addr.)
+        - PhysAddr (options of Physical Address)
+            - get_ref ***unsafe!***(unwraping itself into ref?)
+            - get_mut ***unsafe!***(unwraping itself into mut_var)
+            - get_bytes_ref ***unsafe!***
+            - get_bytes_mut ***unsafe!***
+        - PhysPage
+            - start_addr (having the start addr. of the page)
+            - offset
+            - get_bytes_array
+            - get_dwords_array
+            - get_mut
+- virtual addr. (*familiar to physical address,**only** differences are given below*)
+    - **structs**
+        - VirtAddr
+        - VirtPageNum
+    - **impl** (***only differences are given***)  
+        - from [VirtAddr.rs](os\src\mm\mm_reconstructed\address\Virt\VirtAddr.rs)   
+            - floor
+            - ceil  
+            - page_offset
+            - aligned
+        - from [VirtPageNum.rs](os\src\mm\mm_reconstructed\address\Virt\VirtPageNum.rs)
+            - indexes
+
+*basic functions* - giving the basic method of processing address, include calculating offset/page index/etc.
+
+
+
+
 
 
