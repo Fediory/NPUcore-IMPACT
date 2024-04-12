@@ -39,6 +39,7 @@ pub const SEG_MASK: usize = !VA_MASK;
 /// e.g. `flag` |= `SEG_MASK`
 pub const VPN_SEG_MASK: usize = SEG_MASK >> PAGE_SIZE_BITS;
 
+pub const HIGH_BASE_EIGHT: usize = 0x8000_0000_0000_0000;
 pub const HIGH_BASE_ZERO: usize = 0x0000_0000_0000_0000;
 
 // manually make usable memory space equal
@@ -65,7 +66,7 @@ pub const MMAP_BASE: usize = 0xFFFF_FF80_0000_0000;
 pub const MMAP_END: usize = 0xFFFF_FFFF_FFFF_0000;
 pub const SKIP_NUM: usize = 1;
 
-pub const DISK_IMAGE_BASE: usize = 0x800_0000 + MEMORY_START;
+pub const DISK_IMAGE_BASE: usize = MEMORY_START + 0x800_0000;
 pub const BUFFER_CACHE_NUM: usize = 256 * 1024 * 1024 / 2048 * 4 / 2048;
 
 pub static mut CLOCK_FREQ: usize = 0;

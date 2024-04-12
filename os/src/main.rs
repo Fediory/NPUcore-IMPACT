@@ -44,6 +44,7 @@ core::arch::global_asm!(include_str!("arch/la64/entry.asm"));
 core::arch::global_asm!(include_str!("arch/la64/load_img.S"));
 
 fn mem_clear() {
+    println!("[kernel] clearing the memory");
     extern "C" {
         fn sbss();
         fn ebss();
@@ -64,6 +65,7 @@ fn mem_clear() {
 }
 
 fn move_to_high_address() {
+    println!("[kernel] moving to high addr.");
     extern "C" {
         fn simg();
         fn eimg();
@@ -80,7 +82,7 @@ fn move_to_high_address() {
 
 #[no_mangle]
 pub fn rust_main() -> ! {
-    println!("[kernel] NPUcore-IMAPCT!!! ENTER!");
+    println!("get in main");
     bootstrap_init();
     mem_clear();
     console::log_init();

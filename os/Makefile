@@ -9,7 +9,7 @@ KERNEL_UIMG = $(KERNEL_ELF).ui
 
 ARCH=${shell echo ${TARGET}|cut -d- -f1 |grep -o "^[a-zA-Z]\+[[:digit:]]*"}
 # BOARD
-BOARD ?= laqemu
+BOARD ?= 2k1000
 LDBOARD = la2k1000
 
 SDDEV := $(shell lsblk -do NAME | grep sd | tail -1)
@@ -108,7 +108,6 @@ ifneq ($(BOARD),2k1000)
 	cd ../util/qemu/2k1000 && sh create_qemu_img.sh && cd ../../../os
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
 else
-	@sudo mkdir "$(U_FAT32_DIR)"
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
 endif
 
@@ -118,7 +117,7 @@ qemu-flash-fat-img:
 ifeq ($(BOARD), 2k1000)
 	@echo $(CURDIR)
 	@./fat $(MINITERM_START_CMD) $(LA_2K1000_PORT_FREQ) 
-else ifeq ($(BOARD), laqemu)
+else ifeq ($(BOARD), 2k1000)
 	@cp ./target/loongarch64-unknown-linux-gnu/debug/os.bin ../os.bin
 	@mv ../os.bin ../kernel.bin
 	@./la_fat $(QEMU_2K1000)

@@ -1,9 +1,6 @@
 #[cfg(feature = "board_2k1000")]
 #[path = "board/2k1000.rs"]
 pub mod board;
-#[cfg(feature = "board_laqemu")]
-#[path = "board/2k1000.rs"]
-pub mod board;
 pub mod config;
 pub mod laflex;
 mod sbi;

@@ -1,4 +1,4 @@
-    .section .text.entry
+   .section .text.entry
     .globl _start
 _start:
     pcaddi      $t0,    0x0
@@ -9,10 +9,8 @@ _start:
     sub.d       $t0,    $t0,    $t0
     addi.d      $t0,    $t0,    0x11
     csrwr       $t0,    0x180
-    pcaddi      $t0,    0x0
-    slli.d      $t0,    $t0,    0x10
-    srli.d      $t0,    $t0,    0x10
-    jirl        $t0,    $t0,    0x10    # 跳0段的下一条指令
+    sub.d       $t0,    $t0,    $t0
+    jirl        $t0,    $t0,    0x28    
     # The barrier
     sub.d       $t0,    $t0,    $t0
     csrwr       $t0,    0x181
