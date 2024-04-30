@@ -398,3 +398,5 @@ I am child process: 5. iteration 2.
 #### [2K1000上板流程](/Doc/2K1000上板流程.md)
 #### [支持LA2k1000Qemu的操作系统适配（初赛）](./Doc/支持LA2k1000Qemu的操作系统适配（初赛）.md)
 #### [添加ext4文件系统步骤](./Doc/添加ext4文件系统步骤.md)
+
+#### [LA初赛测例修复](./Doc/LA初赛测例修复.md)
