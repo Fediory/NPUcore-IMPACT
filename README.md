@@ -1,8 +1,14 @@
-# 项目简介
+# NPUcore-IMPACT!!!
 
-&emsp;&emsp;欢迎来到LA-NPUcore2024的项目主页.
+西北工业大学，“全国大学生计算机系统能力大赛 - 操作系统设计赛(全国)- OS内核实现赛道” 参赛作品。
 
-# 基础环境配置
+队名来源：具有影响力的NPUcore，三个感叹号代表三个队员。
+
+队长：Yixu Feng （yixu-nwpu@mail.nwpu.edu.cn）
+
+队员：Yifei Zhang (yurzhang.oi@gmail.com), Hanchen Zhang (jackwill17611136817@outlook.com)
+
+## 基础环境配置
 1. make、Cmake安装（辅助编译工具）
 执行：
 ``` shell
@@ -49,12 +55,12 @@ sudo apt-get install cmake
    建议尝试`make clean`后， 删除对应文件夹的Cargo.lock， 尝试在Cargo.toml中删除版本限制再重新编译。
 
 
-# 文档信息
+## 文档信息
 &emsp;&emsp;目前除了README， 还有开发文档： 见 Doc/dbg/dbg.pdf, 其中包含了本操作系统移植过程中的各项debug过程。
 &emsp;&emsp;Doc/mm.pdf, 其中包含了本操作系统移植过程中的内存布局的思路和技术细节。
 &emsp;&emsp;Doc/start.pdf, 其中包含了本操作系统移植过程中启动相关的原理和技术细节。
 
-# 运行方式与运行效果
+## 运行方式与运行效果
 直接在根目录命令行`make`即可。 第一次运行推荐先执行一遍从而方便环境的安装和熟悉。
 
 <details close>
@@ -375,20 +381,20 @@ I am child process: 5. iteration 2.
 
 在打印了大量的测试结果后退出执行。
 
-# Makefile可用选项相关解释
+## Makefile可用选项相关解释
 
-## 内核编译与运行
+### 内核编译与运行
 
 注意，在命令后加入LOG=trace可以开启trace及以上的所有log， log从低到高等级分为trace, debug, info, warning, error  
 `make run`: 编译系统，且执行虚拟机测试  
 `make gdb`: 执行开启debug模式(需要配合gdb使用)， 启动虚拟机但不运行  
 
-## 其他
+### 其他
 `make clean`: 清理已经编译的项目（包括用户程序， 系统和FAT镜像）
 
-# 相关问题汇总
+## 相关问题汇总
 
 
-## [2K1000上板流程](/Doc/2K1000上板流程.md)
-## [支持LA2k1000Qemu的操作系统适配（初赛）](./Doc/支持LA2k1000Qemu的操作系统适配（初赛）.md)
-## [添加ext4文件系统步骤](./Doc/添加ext4文件系统步骤.md)
+#### [2K1000上板流程](/Doc/2K1000上板流程.md)
+#### [支持LA2k1000Qemu的操作系统适配（初赛）](./Doc/支持LA2k1000Qemu的操作系统适配（初赛）.md)
+#### [添加ext4文件系统步骤](./Doc/添加ext4文件系统步骤.md)
