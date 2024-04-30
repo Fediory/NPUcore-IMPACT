@@ -21,11 +21,10 @@ sudo apt-get install cmake
         由于LoongArch架构的交叉编译Rust工具链已经合并到上游， 目前不需要我们手动安装。  
         在 `Makefile` 中有自动的检测脚本， 只需要后续的make命令即可。
         
-    + 安装交叉编译工具。本项目使用的为在x86_64下编译产生loongarch64的编译工具。  
-        - Loong Arch GCC 13： https://github.com/LoongsonLab/oscomp-toolchains-for-oskernel
-		```
-        wget https://github.com/LoongsonLab/oscomp-toolchains-for-oskernel/releases/download/gcc-13.2.0-loongarch64/gcc-13.2.0-loongarch64-linux-gnu.tgz
-		
+    + 安装交叉编译工具。本项目使用的为在x86_64下编译产生loongarch64的编译工具。  Loong Arch GCC 13： https://github.com/LoongsonLab/oscomp-toolchains-for-oskernel
+        ```
+		wget https://github.com/LoongsonLab/oscomp-toolchains-for-oskernel/releases/download/gcc-13.2.0-loongarch64/gcc-13.2.0-loongarch64-linux-gnu.tgz
+        
 		tar zxf gcc-13.2.0-loongarch64-linux-gnu.tgz
 		
 		# 在.bashrc中增加交叉编译器路径。假设当前路径为：/opt/gcc-13.2.0-loongarch64-linux-gnu
@@ -56,9 +55,10 @@ sudo apt-get install cmake
 &emsp;&emsp;Doc/start.pdf, 其中包含了本操作系统移植过程中启动相关的原理和技术细节。
 
 # 运行方式与运行效果
-`make`即可。 第一次运行推荐先执行一遍从而方便环境的安装和熟悉。
+直接在根目录命令行`make`即可。 第一次运行推荐先执行一遍从而方便环境的安装和熟悉。
 
-正常情况下， 应当呈现出下列运行效果：  
+<details close>
+<summary><b>正常情况下， 应当呈现出下列运行效果：</b></summary>
 
 ```bash
 ram=0x1f17f00
@@ -371,6 +371,7 @@ I am child process: 5. iteration 2.
 ========== END test_yield ==========
 [initproc] test finish
 ```
+</details>
 
 在打印了大量的测试结果后退出执行。
 
