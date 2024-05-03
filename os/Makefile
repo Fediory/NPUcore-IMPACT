@@ -14,6 +14,7 @@ LDBOARD = la2k1000
 
 SDDEV := $(shell lsblk -do NAME | grep sd | tail -1)
 SDCARD := /dev/$(SDDEV)
+LOG:=trace
 # Disassembly
 DISASM ?= -x
 
@@ -101,14 +102,14 @@ ifeq ($(ARCH), loongarch64)
 	@cp -f $$(pwd)/target/$(TARGET)/$(MODE)/os.ui $(U_IMG)
 endif
 	-@rm src/linker.ld
-#	@$(OBJDUMP) -SC $(KERNEL_ELF) > $(KERNEL_ELF).S
+
 
 fat32:
 ifneq ($(BOARD),2k1000)
 	cd ../util/qemu/2k1000 && sh create_qemu_img.sh && cd ../../../os
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
 else
-	@sudo mkdir "$(U_FAT32_DIR)"
+	if [ ! -d "$(U_FAT32_DIR)" ]; then @sudo mkdir "$(U_FAT32_DIR)"; fi
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
 endif
 
@@ -117,7 +118,7 @@ remake-qemu-flash-fat-img: fat32 env build qemu-flash-fat-img
 qemu-flash-fat-img:
 ifeq ($(BOARD), 2k1000)
 	@echo $(CURDIR)
-	@./fat $(MINITERM_START_CMD) $(LA_2K1000_PORT_FREQ) 
+	@./la_fat $(MINITERM_START_CMD) $(LA_2K1000_PORT_FREQ) 
 else ifeq ($(BOARD), laqemu)
 	@cp ./target/loongarch64-unknown-linux-gnu/debug/os.bin ../os.bin
 	@mv ../os.bin ../kernel.bin

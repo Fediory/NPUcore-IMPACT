@@ -3,15 +3,7 @@
 BASE_ADDRESS = 0x0000000090000000;
 #endif
 
-#if defined(fu740) || defined(qemu)
-BASE_ADDRESS = 0x80200000;
-#define ARCH_RISCV
-#endif
 
-#ifdef k210
-BASE_ADDRESS = 0x80020000;
-#define ARCH_RISCV
-#endif
 
 /*
 *!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

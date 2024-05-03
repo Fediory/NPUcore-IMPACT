@@ -39,6 +39,7 @@ pub const SEG_MASK: usize = !VA_MASK;
 /// e.g. `flag` |= `SEG_MASK`
 pub const VPN_SEG_MASK: usize = SEG_MASK >> PAGE_SIZE_BITS;
 
+pub const HIGH_BASE_EIGHT: usize = 0x8000_0000_0000_0000;
 pub const HIGH_BASE_ZERO: usize = 0x0000_0000_0000_0000;
 
 // manually make usable memory space equal

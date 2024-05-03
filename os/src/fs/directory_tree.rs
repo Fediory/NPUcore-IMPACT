@@ -1,4 +1,5 @@
 use super::fat32::{DiskInodeType, EasyFileSystem};
+use super::lwext4::{};
 use alloc::{
     collections::BTreeMap,
     string::{String, ToString},
@@ -28,6 +29,12 @@ use crate::{
 use crate::mm::tlb_invalidate;
 
 use crate::syscall::errno::*;
+
+#[cfg(feature = "ext4")]
+pub const USE_EXT4: bool = true;
+#[cfg(not(feature = "ext4"))]
+pub const USE_EXT4: bool = false;
+
 
 lazy_static! {
     pub static ref FILE_SYSTEM: Arc<EasyFileSystem> = EasyFileSystem::open(

@@ -1,0 +1,4 @@
+[workspace]
+members = [ "lwext4-mkfs", "lwext4-rs","lwext4-sys"]
+
+resolver = "2"
