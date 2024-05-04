@@ -5,15 +5,16 @@ use crate::mm::UserBuffer;
 use crate::syscall::errno::*;
 use core::panic;
 
-use super::layout::FATDiskInodeType;
+// use super::layout::FATDiskInodeType;
 pub use super::DiskInodeType;
-use super::Inode;
+// use super::Inode;
 use alloc::string::ToString;
 use alloc::sync::{Arc, Weak};
 use alloc::vec::Vec;
 use spin::Mutex;
 
-pub type InodeImpl = Inode;
+pub type Inode = super::vfs::Inode;
+pub type InodeImpl = super::vfs::Inode;
 
 pub struct OSInode {
     readable: bool,

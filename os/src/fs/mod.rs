@@ -1,20 +1,24 @@
 mod cache;
 mod dev;
 pub mod directory_tree;
-mod fat32;
+// mod fat32;
 pub mod file_trait;
 mod filesystem;
+mod inode;
 mod layout;
 pub mod poll;
 #[cfg(feature = "swap")]
 pub mod swap;
+mod vfs;
 
 pub use self::dev::{hwclock::*, null::*, pipe::*, socket::*, tty::*, zero::*};
 use core::slice::{Iter, IterMut};
 
 pub use self::layout::*;
 
-pub use self::fat32::{BlockDevice, DiskInodeType};
+pub trait BlockDevice: crate::drivers::block::BlockDevice {}
+pub type DiskInodeType = lwext4_rs::FileType;
+// pub use self::fat32::{BlockDevice, DiskInodeType};
 
 use self::{cache::PageCache, directory_tree::DirectoryTreeNode, file_trait::File};
 use crate::{

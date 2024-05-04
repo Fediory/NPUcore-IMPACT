@@ -27,16 +27,21 @@ const BLK_PER_PG: usize = PAGE_SIZE / BLOCK_SZ;
 const SWAP_SIZE: usize = 1024 * 1024;
 impl Swap {
     /// size: the number of megabytes in swap
-    pub fn new(size: usize) -> Self {
-        let bit = size * (SWAP_SIZE / PAGE_SIZE); // 1MiB = 4KiB*256
-        let vec_len = bit / usize::MAX.count_ones() as usize;
-        let mut bitmap = Vec::<u64>::with_capacity(vec_len);
-        bitmap.resize(bitmap.capacity(), 0);
-        let blocks = size * (SWAP_SIZE / BLOCK_SZ); // 1MiB = 512B * 2048
+    pub fn new(_size: usize) -> Self {
+        // TODO: impl this in ext4
         Self {
-            bitmap,
-            block_ids: FILE_SYSTEM.alloc_blocks(blocks),
+            bitmap: Vec::new(),
+            block_ids: Vec::new(),
         }
+        // let bit = size * (SWAP_SIZE / PAGE_SIZE); // 1MiB = 4KiB*256
+        // let vec_len = bit / usize::MAX.count_ones() as usize;
+        // let mut bitmap = Vec::<u64>::with_capacity(vec_len);
+        // bitmap.resize(bitmap.capacity(), 0);
+        // let blocks = size * (SWAP_SIZE / BLOCK_SZ); // 1MiB = 512B * 2048
+        // Self {
+        //     bitmap,
+        //     block_ids: FILE_SYSTEM.alloc_blocks(blocks),
+        // }
     }
     fn read_page(block_ids: &[usize], buf: &mut [u8]) {
         assert!(block_ids[0] + BLK_PER_PG - 1 == block_ids[BLK_PER_PG - 1]);

@@ -902,6 +902,9 @@ pub struct ext4_blockdev {
     pub fs: *mut ext4_fs,
     pub journal: *mut ::core::ffi::c_void,
 }
+// FIXME: are these correct???
+unsafe impl Sync for ext4_blockdev {}
+unsafe impl Send for ext4_blockdev {}
 extern "C" {
     #[doc = "@brief   Block device initialization.\n @param   bdev block device descriptor\n @return  standard error code"]
     pub fn ext4_block_init(bdev: *mut ext4_blockdev) -> ::core::ffi::c_int;

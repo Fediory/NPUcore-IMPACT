@@ -2,6 +2,7 @@ mod block_dev;
 mod mem_blk;
 mod virtio_blk;
 pub use block_dev::BlockDevice;
+use lwext4_rs::BlockDeviceInterface;
 pub use mem_blk::MemBlockWrapper;
 pub use virtio_blk::VirtIOBlock;
 

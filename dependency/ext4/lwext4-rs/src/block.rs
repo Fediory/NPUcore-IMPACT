@@ -3,6 +3,7 @@ use crate::types::MountStats;
 use alloc::boxed::Box;
 use alloc::ffi::CString;
 use alloc::string::String;
+use alloc::sync::Arc;
 use alloc::vec;
 use alloc::vec::Vec;
 use core::ffi::c_int as errno_t;

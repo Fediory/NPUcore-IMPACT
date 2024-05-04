@@ -56,7 +56,8 @@ impl File for Hwclock {
     }
 
     fn get_file_type(&self) -> DiskInodeType {
-        DiskInodeType::File
+        DiskInodeType::from_char('-')
+        // DiskInodeType::File
     }
 
     fn info_dirtree_node(

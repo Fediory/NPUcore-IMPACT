@@ -1,5 +1,7 @@
-use super::fat32::{DiskInodeType, EasyFileSystem};
-use super::lwext4::{};
+// use super::fat32::EasyFileSystem;
+type EasyFileSystem = lwext4_rs::FileSystem<crate::arch::BlockDeviceImpl>;
+type DiskInodeType = lwext4_rs::FileType;
+
 use alloc::{
     collections::BTreeMap,
     string::{String, ToString},
@@ -7,6 +9,7 @@ use alloc::{
     vec::Vec,
 };
 use lazy_static::*;
+use lwext4_rs::{BlockDevice, MountHandle, RegisterHandle};
 use spin::{Mutex, MutexGuard, RwLock, RwLockWriteGuard};
 
 use super::{
@@ -18,10 +21,10 @@ use super::{
     Hwclock,
 };
 use crate::{
-    drivers::BLOCK_DEVICE,
+    arch::BlockDeviceImpl,
     fs::{
-        fat32::inode::{InodeImpl, OSInode},
         filesystem::FS,
+        inode::{InodeImpl, OSInode},
     },
 };
 
@@ -35,12 +38,19 @@ pub const USE_EXT4: bool = true;
 #[cfg(not(feature = "ext4"))]
 pub const USE_EXT4: bool = false;
 
-
 lazy_static! {
-    pub static ref FILE_SYSTEM: Arc<EasyFileSystem> = EasyFileSystem::open(
-        BLOCK_DEVICE.clone(),
-        Arc::new(Mutex::new(BlockCacheManager::new()))
-    );
+    pub static ref FILE_SYSTEM: EasyFileSystem = EasyFileSystem::new(
+        MountHandle::mount(
+            RegisterHandle::register(BlockDevice::new(BlockDeviceImpl::new()), "shit".to_string()).unwrap(),
+            "/".to_string(),
+            true,
+            false,
+        ).unwrap()
+    ).unwrap();
+    // pub static ref FILE_SYSTEM: Arc<EasyFileSystem> = EasyFileSystem::open(
+    //     BLOCK_DEVICE.clone(),
+    //     Arc::new(Mutex::new(BlockCacheManager::new()))
+    // );
     pub static ref ROOT: Arc<DirectoryTreeNode> = {
         let inode = DirectoryTreeNode::new(
             "".to_string(),
@@ -315,7 +325,8 @@ impl DirectoryTreeNode {
                         if !flags.contains(OpenFlags::O_CREAT) {
                             return Err(ENOENT);
                         }
-                        let new_file = match inode.create(last_comp, DiskInodeType::File) {
+                        let new_file = match inode.create(last_comp, DiskInodeType::from_char('-'))
+                        {
                             Ok(file) => file,
                             Err(errno) => return Err(errno),
                         };
@@ -395,7 +406,7 @@ impl DirectoryTreeNode {
                     return Err(EEXIST);
                 }
                 Err(ENOENT) => {
-                    let new_file = match inode.create(last_comp, DiskInodeType::Directory) {
+                    let new_file = match inode.create(last_comp, DiskInodeType::from_char('d')) {
                         Ok(file) => file,
                         Err(errno) => return Err(errno),
                     };
@@ -561,6 +572,9 @@ impl DirectoryTreeNode {
                 new_par_file.link_child(old_last_comp, old_file)?;
             }
             FS::Null => return Err(EACCES),
+            FS::EXT4 => {
+                unimplemented!()
+            }
         }
         *value.father.lock() = Arc::downgrade(&new_par_inode.get_arc());
         new_lock.lock().as_mut().unwrap().insert(new_key, value);
