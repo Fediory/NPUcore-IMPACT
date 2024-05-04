@@ -55,24 +55,25 @@ fn main() -> i32 {
         }
     }
     //     let schedule_text: &str = "
+    // \0
     // run-all.sh\0
     // ";
-    //     let mut exit_code: i32 = 0;
-    //     for line in schedule_text.lines() {
-    //         let argv = [
-    //             path.as_ptr(),
-    //             "-c\0".as_ptr(),
-    //             line.as_ptr(),
-    //             core::ptr::null(),
-    //         ];
-    //         let pid = fork();
-    //         if pid == 0 {
-    //             exec(path, &argv, &environ);
-    //         } else {
-    //             waitpid(pid as usize, &mut exit_code);
+    //         let mut exit_code: i32 = 0;
+    //         for line in schedule_text.lines() {
+    //             let argv = [
+    //                 path.as_ptr(),
+    //                 "-c\0".as_ptr(),
+    //                 line.as_ptr(),
+    //                 core::ptr::null(),
+    //             ];
+    //             let pid = fork();
+    //             if pid == 0 {
+    //                 exec(path, &argv, &environ);
+    //             } else {
+    //                 waitpid(pid as usize, &mut exit_code);
+    //             }
     //         }
-    //     }
 
-    shutdown();
+    //     shutdown();
     0
 }

@@ -54,6 +54,6 @@ pub fn sleep(period_ms: usize) {
     }
 }
 
-pub fn shutdown() -> isize{
+pub fn shutdown() -> isize {
     sys_shutdown()
 }

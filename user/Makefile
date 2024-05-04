@@ -2,13 +2,7 @@ TARGET := riscv64gc-unknown-none-elf
 TESTDIR := ./user_C_program/user
 MODE := debug
 
-ifeq ($(BOARD), 2k1000)
-	TARGET := loongarch64-unknown-linux-gnu
-endif
-ifeq ($(BOARD), laqemu)
-	TARGET := loongarch64-unknown-linux-gnu
-endif
-
+TARGET := loongarch64-unknown-linux-gnu
 
 ARCH=${shell echo ${TARGET}|cut -d- -f1 |grep -o "^[a-zA-Z]\+[[:digit:]]*"}
 ifeq ($(ARCH), loongarch64)

@@ -1,4 +1,3 @@
-
 #[path = "board/2k1000.rs"]
 pub mod board;
 pub mod config;

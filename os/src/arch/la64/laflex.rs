@@ -1,8 +1,8 @@
 use super::{tlb::tlb_invalidate, tlb_global_invalidate};
 use crate::{
     config::{
-        MEMORY_HIGH_BASE, MEMORY_HIGH_BASE_VPN, MEMORY_SIZE, PAGE_SIZE, PAGE_SIZE_BITS, PALEN,
-        VA_MASK, VPN_SEG_MASK,DIRTY_WIDTH,
+        DIRTY_WIDTH, MEMORY_HIGH_BASE, MEMORY_HIGH_BASE_VPN, MEMORY_SIZE, PAGE_SIZE,
+        PAGE_SIZE_BITS, PALEN, VA_MASK, VPN_SEG_MASK,
     },
     mm::{address::*, frame_alloc, FrameTracker, MapPermission, PageTable},
 };

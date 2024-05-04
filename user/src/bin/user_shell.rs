@@ -94,7 +94,12 @@ pub fn main() -> i32 {
                             close(output_fd);
                         }
                         // child process
-                        if exec(args_copy[0].as_str(), args_addr.as_slice(), &[0 as *const u8]) == -1 {
+                        if exec(
+                            args_copy[0].as_str(),
+                            args_addr.as_slice(),
+                            &[0 as *const u8],
+                        ) == -1
+                        {
                             println!("Error when executing!");
                             return -4;
                         }
