@@ -21,5 +21,5 @@ rust-project.json
 
 ext_images
 .idea
-lwext4-sys/lwext4
-lwext4-sys/src/ext4.rs
+# lwext4-sys/lwext4
+# lwext4-sys/src/ext4.rs
