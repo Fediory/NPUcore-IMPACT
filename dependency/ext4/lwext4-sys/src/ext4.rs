@@ -2001,6 +2001,9 @@ pub struct ext4_file {
     #[doc = "@brief   Actual file position."]
     pub fpos: u64,
 }
+// FIXME: make compiler happy :)
+unsafe impl Sync for ext4_file {}
+unsafe impl Send for ext4_file {}
 #[doc = "@brief   Directory entry descriptor."]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]

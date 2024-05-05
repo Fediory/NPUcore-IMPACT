@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::process::Command;
 use std::{env, fs};
 
@@ -16,16 +16,29 @@ fn main() {
             .expect("failed to clone lwext4");
         assert_eq!(cp.success(), true);
     }
-    let os = env::var("CARGO_CFG_TARGET_OS").unwrap();
-    if os == "none" {
-        build_for_none(&lwext4);
-    } else {
-        build_for_os(&lwext4);
-    }
+    build_shit(&lwext4);
+    // let os = env::var("CARGO_CFG_TARGET_OS").unwrap();
+    // if os == "none" {
+    //     build_for_none(&lwext4);
+    // } else {
+    //     build_for_os(&lwext4);
+    // }
     println!("cargo:rustc-link-lib=static=lwext4");
     println!(
         "cargo:rerun-if-changed={}",
         PathBuf::from("ext4.h").canonicalize().unwrap().display()
+    );
+}
+
+fn build_shit(lwext4: &Path) {
+    let dst = cmake::Config::new(lwext4)
+        .define("LIB_ONLY", "1")
+        .define("INSTALL_LIB", "1")
+        .build();
+
+    println!(
+        "cargo:rustc-link-search=native={}",
+        dst.join("lib").display()
     );
 }
 
@@ -89,7 +102,7 @@ fn generates_bindings(lwext4: &PathBuf, build_dir: &str) {
         .clang_arg(format!("-I{}/{}/include", lwext4.display(), build_dir))
         .use_core()
         .layout_tests(false)
-        .parse_callbacks(Box::new(bindgen::CargoCallbacks))
+        .parse_callbacks(Box::new(bindgen::CargoCallbacks::new()))
         .generate()
         .unwrap();
     bindings.write_to_file("src/ext4.rs").unwrap();

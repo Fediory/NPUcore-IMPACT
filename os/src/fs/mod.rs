@@ -2,14 +2,15 @@ mod cache;
 mod dev;
 pub mod directory_tree;
 // mod fat32;
+mod ext4_file;
 pub mod file_trait;
 mod filesystem;
-mod inode;
+// mod inode;
 mod layout;
 pub mod poll;
 #[cfg(feature = "swap")]
 pub mod swap;
-mod vfs;
+// mod vfs;
 
 pub use self::dev::{hwclock::*, null::*, pipe::*, socket::*, tty::*, zero::*};
 use core::slice::{Iter, IterMut};

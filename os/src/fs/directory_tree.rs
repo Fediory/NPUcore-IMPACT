@@ -1,5 +1,5 @@
 // use super::fat32::EasyFileSystem;
-type EasyFileSystem = lwext4_rs::FileSystem<crate::arch::BlockDeviceImpl>;
+pub type EasyFileSystem = lwext4_rs::FileSystem<crate::arch::BlockDeviceImpl>;
 type DiskInodeType = lwext4_rs::FileType;
 
 use alloc::{
@@ -9,7 +9,7 @@ use alloc::{
     vec::Vec,
 };
 use lazy_static::*;
-use lwext4_rs::{BlockDevice, MountHandle, RegisterHandle};
+use lwext4_rs::{BlockDevice, MountHandle, OpenOptions, RegisterHandle};
 use spin::{Mutex, MutexGuard, RwLock, RwLockWriteGuard};
 
 use super::{
@@ -24,7 +24,7 @@ use crate::{
     arch::BlockDeviceImpl,
     fs::{
         filesystem::FS,
-        inode::{InodeImpl, OSInode},
+        // inode::{InodeImpl, OSInode},
     },
 };
 
@@ -55,7 +55,8 @@ lazy_static! {
         let inode = DirectoryTreeNode::new(
             "".to_string(),
             Arc::new(FileSystem::new(FS::Fat32)),
-            OSInode::new(InodeImpl::root_inode(&FILE_SYSTEM)),
+            Arc::new(OpenOptions::new().open("/").unwrap()),
+            // OSInode::new(Arc::new()),
             Weak::new(),
         );
         inode.add_special_use();
@@ -567,13 +568,15 @@ impl DirectoryTreeNode {
         };
         match old_inode.filesystem.fs_type {
             FS::Fat32 => {
-                let old_file = old_inode.file.downcast_ref::<OSInode>().unwrap();
-                let new_par_file = new_par_inode.file.downcast_ref::<OSInode>().unwrap();
-                new_par_file.link_child(old_last_comp, old_file)?;
+                // let old_file = old_inode.file.downcast_ref::<OSInode>().unwrap();
+                // let new_par_file = new_par_inode.file.downcast_ref::<OSInode>().unwrap();
+                // new_par_file.link_child(old_last_comp, old_file)?;
+                unimplemented!()
             }
             FS::Null => return Err(EACCES),
             FS::EXT4 => {
-                unimplemented!()
+                FILE_SYSTEM.rename(old_path, new_path).unwrap();
+                // unimplemented!()
             }
         }
         *value.father.lock() = Arc::downgrade(&new_par_inode.get_arc());

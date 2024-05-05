@@ -29,6 +29,7 @@ pub use debug::*;
 pub use dir::{DirEntry, ReadDir};
 pub use error::{Error, Result};
 pub use file::File;
+pub use file::OpenOptions;
 pub use fs::FileSystem;
 pub use mkfs::{BuildExtFs, FsBuilder};
 pub use types::{

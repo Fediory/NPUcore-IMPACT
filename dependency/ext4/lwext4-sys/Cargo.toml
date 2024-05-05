@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 
 [build-dependencies]
-bindgen = "0.65"
+cmake = "0.1.50"
+bindgen = "0.69.4"

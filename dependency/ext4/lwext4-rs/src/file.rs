@@ -20,7 +20,7 @@ pub struct OpenOptions {
 }
 
 impl OpenOptions {
-    pub(super) fn new() -> Self {
+    pub fn new() -> Self {
         Self {
             read: false,
             write: false,
