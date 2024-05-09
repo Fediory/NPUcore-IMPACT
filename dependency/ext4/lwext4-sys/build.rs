@@ -3,7 +3,7 @@ use std::{env};
 
 fn main() {
     let out_dir = PathBuf::from(env::var("OUT_DIR").unwrap());
-    let lwext4 = out_dir.join("../../../../../lwext4-c");
+    let lwext4 = out_dir.join("../../../../../../../dependency/ext4/lwext4-c");
     build_ext4(&lwext4);
     println!("cargo:rustc-link-lib=static=lwext4");
     println!(

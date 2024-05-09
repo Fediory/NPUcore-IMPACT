@@ -36,7 +36,6 @@ return b;
 t_block user_extend_heap(t_block last, size_t size)
 {
     t_block b;
-    //TODO: 链接os中的sbrk，后同
     b = sys_sbrk(0);//定位到当前break位置
     if(sys_sbrk(sizeof(struct s_block) + size) == (void*)-1) 
         return NULL;
@@ -101,7 +100,7 @@ void *ext4_user_malloc(size_t size)
     t_block b, last;
     size_t s;
 
-    s = align4(size);
+    s = ALIGN4_HI(size);
     if(USER_HEAP_BASE)
     {
         //first find a block
@@ -141,7 +140,7 @@ void *ext4_user_calloc(size_t numitems, size_t size)
     if(new)
     {
         //因为申请的内存总是4的倍数，所以这里我们以4字节为单位初始化
-        s = align4(numitems * size) >> 2; 
+        s = ALIGN4_HI(numitems * size) >> 2; 
         for(i = 0; i < s; ++i)
             new[i] = 0;
     }
@@ -175,7 +174,7 @@ void ext4_user_free(void *p)
                 b->prev->next = NULL;
             else//当前block就是整个heap仅存的
                 USER_HEAP_BASE = NULL;//则重置base
-            brk(b);//调整break指针到b地址位置
+            sys_brk(b);//调整break指针到b地址位置
         }
         //否则不能调整break
     }
@@ -191,7 +190,7 @@ void *ext4_user_realloc(void *p, size_t size)
         return ext4_user_malloc(size);
     if(user_valid_addr(p))
     {
-        s = align4(size);
+        s = ALIGN4_HI(size);
         b = get_block(p);//得到对应的block
         if(b->size >= s)//如果size变小了，考虑split
         {
@@ -224,6 +223,72 @@ void *ext4_user_realloc(void *p, size_t size)
         return p;//当前block数据区大于size时
     }
     return NULL;
+}
+
+size_t strlen(char* str)
+{
+	char* start = str;
+	while (*str != '\0')
+	{
+		str++;
+	}
+	return str - start;
+}
+
+
+size_t strcmp(char *s1,char *s2)
+{
+    while(*s1==*s2&&*s1!='\0')
+    {
+        s1++;
+        s2++;
+    }
+    return *s1-*s2;
+}
+
+
+size_t strncmp(char* str1, char* str2, size_t count)
+{
+	while(count--)
+	{
+		for (; (*str1 == *str2) && (*str1) && (*str2); str1++, str2++);
+			return *str1 - *str2;
+	}
+	return 0;
+}
+
+
+void swap(char* buf1, char* buf2,size_t size)
+{
+	size_t i = 0;
+	char temp = 0;
+	for (i = 0; i < size; i++)
+	{
+		temp = *buf1;
+		*buf1 = *buf2;
+		*buf2 = temp;
+		buf1++;
+		buf2++;
+	}
+}
+
+//先用bubble sort验证是否通过编译
+void qsort(void* base, size_t num, size_t size,size_t (*cmp)(const void*,const void*))
+{
+	size_t i = 0;
+	for (i = 0; i < num - 1; i++)
+	{
+		size_t j = 0;
+		for (j = 0; j < num - 1 - i; j++)
+		{
+			//假设需要升序，>0就交换
+			if (cmp((char*)base + j * size, (char*)base + (j + 1) * size) > 0)//两个元素比较，需要将arr[j]，arr[j+1]的地址传给cmp
+			{
+				//交换函数
+				swap((char*)base + j * size, (char*)base + (j + 1) * size,size);
+			}
+		}
+	}
 }
 
 /**

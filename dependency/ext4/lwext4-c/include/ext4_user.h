@@ -38,15 +38,20 @@ typedef struct s_block *t_block;
 
 struct s_block{
     size_t   size;//数据区大小
-    t_block  next;//指向下个块的指针
     int      free;//是否是空闲块
-    struct s_block *next;
+    struct s_block *next; //指向下个块的指针
     struct s_block *prev;
     void     *ptr;
     char     data[1];
 };
 
+// FOLLOW libc strlen, strcmp, strncmp
+size_t strlen(char* str);
+size_t strcmp(char *s1,char *s2);
+size_t strncmp(char* str1,char* str2, size_t n);
+void qsort(void* base, size_t num, size_t size,size_t (*cmp)(const void*,const void*));
 
+#define ALIGN4_HI(val) (((val)+3) & (~3))
 
 #ifdef __cplusplus
 }
