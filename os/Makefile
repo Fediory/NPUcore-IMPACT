@@ -18,6 +18,11 @@ LOG:=trace
 # Disassembly
 DISASM ?= -x
 
+
+# img, choose EXT4 or FAT32
+IMG_FS ?= EXT4
+
+
 ifeq ($(BOARD), 2K1000)
 	BOARD = 2K1000
 endif
@@ -64,7 +69,13 @@ RUST_LA_TOOLCHAIN = $(shell rustup show |grep "\(la\|loongarch\)\(64\)\?" |cut -
 
 
 # build: env $(KERNEL_BIN) $(FS_IMG) fat32
-all: user remake-qemu-flash-fat-img
+all: 
+ifeq ($(IMG_FS), EXT4)
+	make user remake-qemu-flash-ext4-img
+else ($(IMG_FS), FAT32)
+	make user remake-qemu-flash-fat-img
+endif
+
 build: env $(KERNEL_BIN)
 env: # switch-toolchain
 	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add $(TARGET)
@@ -125,6 +136,27 @@ else ifeq ($(BOARD), laqemu)
 	@./la_fat $(QEMU_2K1000)
 endif
 
+
+ext4:
+ifneq ($(BOARD),2k1000)
+	cd ../util/qemu/2k1000 && sh create_qemu_img.sh && cd ../../../os
+	@./buildext4.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" "laqemu" $(MODE)
+else
+	if [ ! -d "$(U_FAT32_DIR)" ]; then @sudo mkdir "$(U_FAT32_DIR)"; fi
+	@./buildext4.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
+endif
+
+remake-qemu-flash-ext4-img: ext4 env build qemu-flash-ext4-img
+
+qemu-flash-ext4-img:
+ifeq ($(BOARD), 2k1000)
+	@echo $(CURDIR)
+	@./la_fat $(MINITERM_START_CMD) $(LA_2K1000_PORT_FREQ) 
+else ifeq ($(BOARD), laqemu)
+	@cp ./target/loongarch64-unknown-linux-gnu/debug/os.bin ../os.bin
+	@mv ../os.bin ../kernel.bin
+	@./la_fat $(QEMU_2K1000)
+endif
 
 src/linker.ld: .FORCE
 	-@rm src/linker.ld

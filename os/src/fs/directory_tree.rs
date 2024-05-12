@@ -33,10 +33,10 @@ use crate::mm::tlb_invalidate;
 
 use crate::syscall::errno::*;
 
-#[cfg(feature = "ext4")]
-pub const USE_EXT4: bool = true;
-#[cfg(not(feature = "ext4"))]
-pub const USE_EXT4: bool = false;
+// #[cfg(feature = "ext4")]
+// pub const USE_EXT4: bool = true;
+// #[cfg(not(feature = "ext4"))]
+// pub const USE_EXT4: bool = false;
 
 lazy_static! {
     pub static ref FILE_SYSTEM: EasyFileSystem = EasyFileSystem::new(
@@ -55,7 +55,7 @@ lazy_static! {
         let inode = DirectoryTreeNode::new(
             "".to_string(),
             Arc::new(FileSystem::new(FS::Fat32)),
-            Arc::new(OpenOptions::new().open("/").unwrap()),
+            Arc::new(OpenOptions::new().read(true).write(true).open("/").unwrap()),
             // OSInode::new(Arc::new()),
             Weak::new(),
         );
