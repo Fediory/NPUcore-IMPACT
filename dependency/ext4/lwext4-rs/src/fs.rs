@@ -26,8 +26,11 @@ impl<T: BlockDeviceInterface> Drop for FileSystem<T> {
 impl<T: BlockDeviceInterface> FileSystem<T> {
     pub fn new(mp: MountHandle<T>) -> Result<Self> {
         unsafe {
+            log::info!("fs1");
             errno_to_result(ext4_journal_start(mp.mount_point.as_ptr()))?;
+            log::info!("fs2");
             errno_to_result(ext4_cache_write_back(mp.mount_point.as_ptr(), true))?;
+            log::info!("fs3");
         }
         Ok(FileSystem { mp })
     }

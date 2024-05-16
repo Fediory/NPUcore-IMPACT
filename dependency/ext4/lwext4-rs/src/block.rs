@@ -163,6 +163,7 @@ impl<T: BlockDeviceInterface> MountHandle<T> {
                 read_only,
             ))?;
             if journal_recovery {
+                log::info!("journal recovery start");
                 errno_to_result(ext4_recover(c_mount_point.as_ptr()))?;
             }
         };

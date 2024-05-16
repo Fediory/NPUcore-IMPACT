@@ -26,7 +26,8 @@ echo
 "$SUDO" touch ${U_EXT4}
 "$SUDO" dd if=/dev/zero of=${U_EXT4} bs=1M count=50
 echo Making ext4 image with BLK_SZ=${BLK_SZ}
-"$SUDO" mkfs.ext4 -F 32 ${U_EXT4} -S ${BLK_SZ}
+"$SUDO" ../util/lwext4-mkfs -i ${U_EXT4} -b ${BLK_SZ} -e 4 -v
+# "$SUDO" mkfs.ext4 ${U_EXT4} -S ${BLK_SZ}
 "$SUDO" fdisk -l ${U_EXT4}
 
 if test -e ${U_EXT4_DIR}/fs
@@ -36,12 +37,12 @@ fi
 
 "$SUDO" mkdir ${U_EXT4_DIR}/fs
 
-"$SUDO" mount -f ${U_EXT4} ${U_EXT4_DIR}/fs
+"$SUDO" mount -o remount,rw -f ${U_EXT4} ${U_EXT4_DIR}/fs
 if [ $? ]
 then
     "$SUDO" umount ${U_EXT4}
 fi
-"$SUDO" mount ${U_EXT4} ${U_EXT4_DIR}/fs
+"$SUDO" mount -o remount,rw ${U_EXT4} ${U_EXT4_DIR}/fs
 
 # build root
 "$SUDO" mkdir -p ${U_EXT4_DIR}/fs/lib

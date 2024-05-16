@@ -2047,6 +2047,8 @@ extern "C" {
         mount_point: *const ::core::ffi::c_char,
         read_only: bool,
     ) -> ::core::ffi::c_int;
+
+    pub fn ext4_get_mount(mount_point: *const ::core::ffi::c_char) -> *mut ext4_mountpoint;
 }
 extern "C" {
     #[doc = "@brief   Umount operation.\n\n @param   mount_point Mount point.\n\n @return  Standard error code"]

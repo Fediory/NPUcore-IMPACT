@@ -37,7 +37,12 @@ impl BlockDevice for MemBlockWrapper {
 
 impl lwext4_rs::BlockDeviceInterface for MemBlockWrapper {
     fn open(&mut self) -> lwext4_rs::Result<lwext4_rs::BlockDeviceConfig> {
-        todo!()
+        Ok(lwext4_rs::BlockDeviceConfig {
+            block_size: BLOCK_SZ as u32,
+            block_count: 999,
+            part_size: BLOCK_SZ as u64 * 2,
+            part_offset: 0,
+        })
     }
 
     fn read_block(
@@ -64,14 +69,14 @@ impl lwext4_rs::BlockDeviceInterface for MemBlockWrapper {
     }
 
     fn close(&mut self) -> lwext4_rs::Result<()> {
-        todo!()
+        Ok(())
     }
 
     fn lock(&mut self) -> lwext4_rs::Result<()> {
-        todo!()
+        Ok(())
     }
 
     fn unlock(&mut self) -> lwext4_rs::Result<()> {
-        todo!()
+        Ok(())
     }
 }

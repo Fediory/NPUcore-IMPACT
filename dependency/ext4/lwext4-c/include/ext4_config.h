@@ -79,7 +79,8 @@ extern "C" {
 
 #define CONFIG_DIR_INDEX_ENABLE (CONFIG_SUPPORTED_FCOM & EXT4_FCOM_DIR_INDEX)
 #define CONFIG_EXTENT_ENABLE (CONFIG_SUPPORTED_FINCOM & EXT4_FINCOM_EXTENTS)
-#define CONFIG_META_CSUM_ENABLE (CONFIG_SUPPORTED_FRO_COM & EXT4_FRO_COM_METADATA_CSUM)
+#define CONFIG_META_CSUM_ENABLE                                                \
+	(CONFIG_SUPPORTED_FRO_COM & EXT4_FRO_COM_METADATA_CSUM)
 
 /*****************************************************************************/
 
@@ -128,12 +129,10 @@ extern "C" {
 #define CONFIG_BLOCK_DEV_CACHE_SIZE 8
 #endif
 
-
 /**@brief   Maximum block device name*/
 #ifndef CONFIG_EXT4_MAX_BLOCKDEV_NAME
 #define CONFIG_EXT4_MAX_BLOCKDEV_NAME 32
 #endif
-
 
 /**@brief   Maximum block device count*/
 #ifndef CONFIG_EXT4_BLOCKDEVS_COUNT
@@ -160,7 +159,6 @@ extern "C" {
 #ifndef CONFIG_MAX_TRUNCATE_SIZE
 #define CONFIG_MAX_TRUNCATE_SIZE (16ul * 1024ul * 1024ul)
 #endif
-
 
 /**@brief Unaligned access switch on/off*/
 #ifndef CONFIG_UNALIGNED_ACCESS

@@ -40,20 +40,21 @@
  */
 
 #include <ext4_config.h>
-#include <ext4_types.h>
-#include <ext4_misc.h>
-#include <ext4_errno.h>
 #include <ext4_debug.h>
+#include <ext4_errno.h>
+#include <ext4_misc.h>
+#include <ext4_types.h>
 
-#include <ext4_super.h>
 #include <ext4_crc32.h>
+#include <ext4_super.h>
 
 uint32_t ext4_block_group_cnt(struct ext4_sblock *s)
 {
 	uint64_t blocks_count = ext4_sb_get_blocks_cnt(s);
 	uint32_t blocks_per_group = ext4_get32(s, blocks_per_group);
 
-	uint32_t block_groups_count = (uint32_t)(blocks_count / blocks_per_group);
+	uint32_t block_groups_count =
+	    (uint32_t)(blocks_count / blocks_per_group);
 
 	if (blocks_count % blocks_per_group)
 		block_groups_count++;
@@ -70,7 +71,8 @@ uint32_t ext4_blocks_in_group_cnt(struct ext4_sblock *s, uint32_t bgid)
 	if (bgid < block_group_count - 1)
 		return blocks_per_group;
 
-	return (uint32_t)(total_blocks - ((block_group_count - 1) * blocks_per_group));
+	return (uint32_t)(total_blocks -
+			  ((block_group_count - 1) * blocks_per_group));
 }
 
 uint32_t ext4_inodes_in_group_cnt(struct ext4_sblock *s, uint32_t bgid)
@@ -90,7 +92,7 @@ static uint32_t ext4_sb_csum(struct ext4_sblock *s)
 {
 
 	return ext4_crc32c(EXT4_CRC32_INIT, s,
-			offsetof(struct ext4_sblock, checksum));
+			   offsetof(struct ext4_sblock, checksum));
 }
 #else
 #define ext4_sb_csum(...) 0
@@ -130,32 +132,52 @@ int ext4_sb_read(struct ext4_blockdev *bdev, struct ext4_sblock *s)
 
 bool ext4_sb_check(struct ext4_sblock *s)
 {
+	os_log("sb check 1");
+
 	if (ext4_get16(s, magic) != EXT4_SUPERBLOCK_MAGIC)
 		return false;
+
+	os_log("sb check 1");
 
 	if (ext4_get32(s, inodes_count) == 0)
 		return false;
 
+	os_log("sb check 1");
+
 	if (ext4_sb_get_blocks_cnt(s) == 0)
 		return false;
+
+	os_log("sb check 1");
 
 	if (ext4_get32(s, blocks_per_group) == 0)
 		return false;
 
+	os_log("sb check 1");
+
 	if (ext4_get32(s, inodes_per_group) == 0)
 		return false;
+
+	os_log("sb check 1");
 
 	if (ext4_get16(s, inode_size) < 128)
 		return false;
 
+	os_log("sb check 1");
+
 	if (ext4_get32(s, first_inode) < 11)
 		return false;
+
+	os_log("sb check 1");
 
 	if (ext4_sb_get_desc_size(s) < EXT4_MIN_BLOCK_GROUP_DESCRIPTOR_SIZE)
 		return false;
 
+	os_log("sb check 1");
+
 	if (ext4_sb_get_desc_size(s) > EXT4_MAX_BLOCK_GROUP_DESCRIPTOR_SIZE)
 		return false;
+
+	os_log("sb check 1");
 
 	if (!ext4_sb_verify_csum(s))
 		return false;
@@ -233,7 +255,7 @@ uint32_t ext4_bg_num_gdb(struct ext4_sblock *s, uint32_t group)
 	uint32_t first_meta_bg = ext4_sb_first_meta_bg(s);
 	uint32_t metagroup = group / dsc_per_block;
 
-	if (!ext4_sb_feature_incom(s,EXT4_FINCOM_META_BG) ||
+	if (!ext4_sb_feature_incom(s, EXT4_FINCOM_META_BG) ||
 	    metagroup < first_meta_bg)
 		return ext4_bg_num_gdb_nometa(s, group);
 

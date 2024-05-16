@@ -12,6 +12,8 @@ mod standard;
 extern crate alloc;
 extern crate core;
 
+use core::ffi::CStr;
+
 #[cfg(feature = "std")]
 pub use standard::*;
 
@@ -35,3 +37,15 @@ pub use mkfs::{BuildExtFs, FsBuilder};
 pub use types::{
     DebugFlags, FileTimes, FileType, FsType, MetaDataExt, Metadata, MountStats, Permissions, Time,
 };
+
+#[no_mangle]
+pub extern "C" fn os_log(str: *const ::core::ffi::c_char) {
+    let str = unsafe { CStr::from_ptr(str) };
+    log::info!("{str:?}");
+}
+
+#[no_mangle]
+pub extern "C" fn os_var_log(name: *const ::core::ffi::c_char, value: ::core::ffi::c_int) {
+    let name = unsafe { CStr::from_ptr(name) };
+    log::info!("{name:?}: {value}");
+}

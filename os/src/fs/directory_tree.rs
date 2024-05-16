@@ -2,6 +2,8 @@
 pub type EasyFileSystem = lwext4_rs::FileSystem<crate::arch::BlockDeviceImpl>;
 type DiskInodeType = lwext4_rs::FileType;
 
+use core::{any::Any, borrow::Borrow};
+
 use alloc::{
     collections::BTreeMap,
     string::{String, ToString},
@@ -41,17 +43,21 @@ use crate::syscall::errno::*;
 lazy_static! {
     pub static ref FILE_SYSTEM: EasyFileSystem = EasyFileSystem::new(
         MountHandle::mount(
-            RegisterHandle::register(BlockDevice::new(BlockDeviceImpl::new()), "shit".to_string()).unwrap(),
+            RegisterHandle::register(BlockDevice::new(BlockDeviceImpl::new()), "shit".to_string())
+                .unwrap(),
             "/".to_string(),
-            true,
             false,
-        ).unwrap()
-    ).unwrap();
-    // pub static ref FILE_SYSTEM: Arc<EasyFileSystem> = EasyFileSystem::open(
-    //     BLOCK_DEVICE.clone(),
-    //     Arc::new(Mutex::new(BlockCacheManager::new()))
-    // );
+            false,
+        )
+        .unwrap()
+    )
+    .unwrap();
+}
+
+lazy_static! {
     pub static ref ROOT: Arc<DirectoryTreeNode> = {
+        FILE_SYSTEM.readdir("/").unwrap();
+
         let inode = DirectoryTreeNode::new(
             "".to_string(),
             Arc::new(FileSystem::new(FS::Fat32)),

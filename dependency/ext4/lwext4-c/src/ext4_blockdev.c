@@ -35,17 +35,18 @@
  */
 
 #include <ext4_config.h>
-#include <ext4_types.h>
-#include <ext4_misc.h>
-#include <ext4_errno.h>
 #include <ext4_debug.h>
+#include <ext4_errno.h>
+#include <ext4_misc.h>
+#include <ext4_types.h>
 
 #include <ext4_blockdev.h>
 #include <ext4_fs.h>
 #include <ext4_journal.h>
+#include <os_logger.h>
 
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 static void ext4_bdif_lock(struct ext4_blockdev *bdev)
 {
@@ -90,10 +91,8 @@ int ext4_block_init(struct ext4_blockdev *bdev)
 	int rc;
 	ext4_assert(bdev);
 	ext4_assert(bdev->bdif);
-	ext4_assert(bdev->bdif->open &&
-		   bdev->bdif->close &&
-		   bdev->bdif->bread &&
-		   bdev->bdif->bwrite);
+	ext4_assert(bdev->bdif->open && bdev->bdif->close &&
+		    bdev->bdif->bread && bdev->bdif->bwrite);
 
 	if (bdev->bdif->ph_refctr) {
 		bdev->bdif->ph_refctr++;
@@ -193,7 +192,7 @@ int ext4_block_cache_shake(struct ext4_blockdev *bdev)
 	bdev->bc->dont_shake = true;
 
 	while (!RB_EMPTY(&bdev->bc->lru_root) &&
-		ext4_bcache_is_full(bdev->bc)) {
+	       ext4_bcache_is_full(bdev->bc)) {
 
 		buf = ext4_buf_lowest_lru(bdev->bc);
 		ext4_assert(buf);
@@ -201,7 +200,6 @@ int ext4_block_cache_shake(struct ext4_blockdev *bdev)
 			r = ext4_block_flush_buf(bdev, buf);
 			if (r != EOK)
 				break;
-
 		}
 
 		ext4_bcache_drop_buf(bdev->bc, buf);
@@ -221,8 +219,12 @@ int ext4_block_get_noread(struct ext4_blockdev *bdev, struct ext4_block *b,
 	if (!bdev->bdif->ph_refctr)
 		return EIO;
 
-	if (!(lba < bdev->lg_bcnt))
+	if (!(lba < bdev->lg_bcnt)) {
+		os_log("qwqwqwq");
+		os_var_log("lba", lba);
+		os_var_log("bdev->lg_bcnt", bdev->lg_bcnt);
 		return ENXIO;
+	}
 
 	b->lb_id = lba;
 
@@ -450,7 +452,6 @@ int ext4_block_cache_flush(struct ext4_blockdev *bdev)
 		r = ext4_block_flush_buf(bdev, buf);
 		if (r != EOK)
 			return r;
-
 	}
 	return EOK;
 }
