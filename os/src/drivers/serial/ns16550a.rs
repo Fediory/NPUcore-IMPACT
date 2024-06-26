@@ -37,6 +37,10 @@ impl Write<u8> for Ns16550a {
     fn write(&mut self, word: u8) -> nb::Result<(), Self::Error> {
         // 写，但是不刷新
         unsafe { write_volatile((self.base + offsets::THR) as *mut u8, word) };
+        if word == b'\n' {
+            // 如果是换行符，还要再写一个回车符
+            unsafe { write_volatile((self.base + offsets::THR) as *mut u8, b'\r') };
+        }
         Ok(())
     }
 
