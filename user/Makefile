@@ -9,24 +9,18 @@ ifeq ($(ARCH), loongarch64)
 	BOARD ?= laqemu
 endif
 
-build: c-user rust-user
+build: env $(APPS)
+ifeq ($(MODE),release)
+	@cargo build --target=$(TARGET) --release
+else
+	@cargo build --target=$(TARGET)
+endif
 
 env:
 	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add loongarch64-unknown-linux-gnu
 	-cargo install --list |grep cargo-binutils |grep "v0.2.0">/dev/null || cargo install cargo-binutils --vers ~0.2
 	-rustup component add rust-src
 	-rustup component add llvm-tools-preview
-
-c-user:
-	cd ${TESTDIR} && make clean
-	cd ${TESTDIR} && make ARCH=${ARCH}
-
-rust-user: env $(APPS)
-ifeq ($(MODE),release)
-	@cargo build --target=$(TARGET) --release
-else
-	@cargo build --target=$(TARGET)
-endif
 
 clean:
 	@cargo clean

@@ -76,32 +76,15 @@ const SYSCALL_CLEAR: usize = 502;
 const SYSCALL_OPEN: usize = 506; //where?
 const SYSCALL_GET_TIME: usize = 1690; //you mean get time of day by 169?
 
-#[cfg(target_arch = "loongarch64")]
+
 global_asm!(include_str!("syscall.S"));
-#[cfg(target_arch = "loongarch64")]
 extern "C" {
     pub fn __syscall(id: usize, args0: usize, args1: usize, args2: usize) -> isize;
 }
 
 fn syscall(id: usize, args: [usize; 3]) -> isize {
-    #[cfg(target_arch = "loongarch64")]
     unsafe {
         __syscall(id, args[0], args[1], args[2])
-    }
-
-    #[cfg(target_arch = "riscv64")]
-    {
-        let mut ret: isize;
-        unsafe {
-            asm!(
-                "ecall",
-                inlateout("x10") args[0] => ret,
-                in("x11") args[1],
-                in("x12") args[2],
-                in("x17") id
-            );
-        }
-        ret
     }
 }
 

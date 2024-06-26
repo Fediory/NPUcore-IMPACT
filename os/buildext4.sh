@@ -24,7 +24,7 @@ echo
 echo Current arch: ${ARCH}
 echo
 "$SUDO" touch ${U_EXT4}
-"$SUDO" dd if=/dev/zero of=${U_EXT4} bs=1M count=50
+"$SUDO" dd if=/dev/zero of=${U_EXT4} bs=1M count=200
 echo Making ext4 image with BLK_SZ=${BLK_SZ}
 "$SUDO" ../util/lwext4-mkfs -i ${U_EXT4} -b ${BLK_SZ} -e 4 -v
 # "$SUDO" mkfs.ext4 ${U_EXT4} -S ${BLK_SZ}
@@ -74,13 +74,10 @@ done
 
 if [ ! -f ${U_EXT4_DIR}/fs/syscall ]
 then    
-    "$SUDO" mkdir -p ${U_EXT4_DIR}/fs/syscall
+    "$SUDO" mkdir -p ${U_EXT4_DIR}/fs/user_syscall
 fi
 
-# try_copy ../user/user_C_program/user/build/${ARCH}  ${U_EXT4_DIR}/fs/syscall
-try_copy ../user/busybox_lua_testsuites/${ARCH} ${U_EXT4_DIR}/fs/
-try_copy ../user/${ARCH} ${U_EXT4_DIR}/fs/
-try_copy ../user/disk/${ARCH} ${U_EXT4_DIR}/fs/
+try_copy ../user/testcases ${U_EXT4_DIR}/fs/
 
 "$SUDO" umount ${U_EXT4_DIR}/fs
 echo "DONE"
