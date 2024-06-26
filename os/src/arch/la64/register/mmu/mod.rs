@@ -16,7 +16,6 @@ pub mod tlbrelo;
 pub mod tlbrentry;
 pub mod tlbrera;
 pub mod tlbrprmd;
-pub mod tlbrsave;
 
 #[derive(Debug, Eq, PartialEq, num_enum::TryFromPrimitive, num_enum::IntoPrimitive)]
 #[repr(usize)]

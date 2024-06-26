@@ -5,7 +5,8 @@ use embedded_hal::serial::nb::{Read, Write};
 use crate::drivers::Ns16550a;
 use core::{arch::asm, mem::MaybeUninit};
 
-use super::board::UART_BASE;
+use super::{board::UART_BASE, register::base::acpi::Pm1Cnt};
+
 
 pub static mut UART: Ns16550a = Ns16550a { base: UART_BASE };
 
@@ -31,9 +32,8 @@ pub fn console_getchar() -> usize {
 }
 
 pub fn shutdown() -> ! {
-    // 电源管理模块设置为s5状态，软关机
-    unsafe {
-        ((0x1FE27000 + 0x14) as *mut u32).write_volatile(0b1111 << 10);
-    }
+    let mut pm1_cnt: Pm1Cnt = Pm1Cnt::empty();
+    pm1_cnt.set_s5().write();
     loop {}
 }
+

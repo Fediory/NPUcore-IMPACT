@@ -1,18 +1,18 @@
 #[macro_use]
 mod macros;
-mod base;
+pub mod base;
 mod mmu;
 mod ras;
 mod timer;
 
 pub use base::{
-    badi::*, badv::*, cpuid::*, crmd::*, ecfg::*, eentry::*, era::*, estat::*, euen::*, llbctl::*,
-    misc::*, prcfg::*, prmd::*, rvacfg::*,
+    badi::*, badv::*, crmd::*, ecfg::*, eentry::*, era::*, estat::*, euen::*,
+    misc::*, prcfg::*, prmd::*, rvacfg::*
 };
 pub use mmu::{
     asid::*, dmw::*, pgd::*, pwch::*, pwcl::*, stlbps::*, tlbehi::*, tlbelo::*, tlbidx::*,
-    tlbrbadv::*, tlbrehi::*, tlbrelo::*, tlbrentry::*, tlbrera::*, tlbrprmd::*, tlbrsave::*,
+    tlbrbadv::*, tlbrehi::*, tlbrelo::*, tlbrentry::*, tlbrera::*, tlbrprmd::*,
     MemoryAccessType,
 };
-pub use ras::{merrctl::*, merrentry::*, merrera::*, merrinfo::*, merrsave::*};
-pub use timer::{cntc::*, tcfg::*, ticlr::*, tid::*, tval::*};
+pub use ras::{merrctl::*, merrentry::*, merrera::*};
+pub use timer::{tcfg::*, ticlr::*};

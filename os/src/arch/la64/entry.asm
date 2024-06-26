@@ -11,6 +11,7 @@ _start:
     # 3. Switch CSR_reg(DMWIN1) and (t0 + 0x11), PLV0 for 0x0 ~ 0xFFFF_FFFF_FFFF_FFFF
     addi.d      $t0,    $t0,    0x11
     csrwr       $t0,    0x181   # Make sure the window remains the same after the switch.
+    # 前5行是把当前PC所在段给保留下来,存到DMW1
     sub.d       $t0,    $t0,    $t0
     
     # 4. Switch CSR_reg(DMWIN0) and (t0 + 0x11), ditto
