@@ -1,0 +1,7 @@
+language: rust
+
+rust:
+  - nightly-2019-03-05
+
+script:
+  - cargo build
