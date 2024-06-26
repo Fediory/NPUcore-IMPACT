@@ -1,18 +1,10 @@
 SUDO=$(if [ $(whoami) = "root" ];then echo -n "";else echo -n "sudo";fi)
 U_EXT4_DIR="../easy-fs-fuse"
 U_EXT4=$1
-BLK_SZ="512"
-TARGET=riscv64gc-unknown-none-elf
+TARGET=loongarch64-unknown-linux-gnu
+BLK_SZ="2048"
 MODE="release"
-if [ $# -ge 2 ]; then
-    if [ "$2"="2k1000" -o "$2"="laqemu" ]
-    then
-        TARGET=loongarch64-unknown-linux-gnu
-        BLK_SZ="2048"
-    else
-        TARGET=$2
-    fi
-fi
+
 
 if [ $# -ge 3 ]; then
     MODE="$3"
@@ -26,8 +18,8 @@ echo
 "$SUDO" touch ${U_EXT4}
 "$SUDO" dd if=/dev/zero of=${U_EXT4} bs=1M count=200
 echo Making ext4 image with BLK_SZ=${BLK_SZ}
-"$SUDO" ../util/lwext4-mkfs -i ${U_EXT4} -b ${BLK_SZ} -e 4 -v
-# "$SUDO" mkfs.ext4 ${U_EXT4} -S ${BLK_SZ}
+# "$SUDO" ../util/lwext4-mkfs -i ${U_EXT4} -b ${BLK_SZ} -e 4 -v
+"$SUDO" mkfs.ext4 ${U_EXT4} -b ${BLK_SZ}
 "$SUDO" fdisk -l ${U_EXT4}
 
 if test -e ${U_EXT4_DIR}/fs
@@ -36,27 +28,18 @@ then
 fi
 
 "$SUDO" mkdir ${U_EXT4_DIR}/fs
-
-"$SUDO" mount -o remount,rw -f ${U_EXT4} ${U_EXT4_DIR}/fs
-if [ $? ]
-then
-    "$SUDO" umount ${U_EXT4}
-fi
-"$SUDO" mount -o remount,rw ${U_EXT4} ${U_EXT4_DIR}/fs
+"$SUDO" chmod -R 777 ${U_EXT4_DIR}
+"$SUDO" mount ${U_EXT4} ${U_EXT4_DIR}/fs
 
 # build root
-"$SUDO" mkdir -p ${U_EXT4_DIR}/fs/lib
-"$SUDO" cp ../user/lib/${ARCH}/libc.so ${U_EXT4_DIR}/fs/lib
-"$SUDO" mkdir -p ${U_EXT4_DIR}/fs/etc
 "$SUDO" mkdir -p ${U_EXT4_DIR}/fs/bin
-"$SUDO" mkdir -p ${U_EXT4_DIR}/fs/root
-"$SUDO" sh -c "echo -e "root:x:0:0:root:/root:/bash\n" > ${U_EXT4_DIR}/fs/etc/passwd"
-"$SUDO" touch ${U_EXT4_DIR}/fs/root/.bash_history
+"$SUDO" mkdir -p ${U_EXT4_DIR}/fs/final
+"$SUDO" mkdir -p ${U_EXT4_DIR}/fs/pre
 
 try_copy(){
     if [ -d $1 ]
     then
-        echo copying $1 ';'
+        echo copying $1
         for programname in $(ls -A $1)
         do
             "$SUDO" cp -fr "$1"/"$programname" $2
@@ -66,17 +49,19 @@ try_copy(){
     fi
 }
 
-for programname in $(ls ../user/src/bin)
-do
-    echo ${programname%.rs} copied.
-    "$SUDO" cp -r ../user/target/${TARGET}/${MODE}/${programname%.rs} ${U_EXT4_DIR}/fs/${programname%.rs}
-done
 
+# build customized syscalls
 if [ ! -f ${U_EXT4_DIR}/fs/syscall ]
 then    
     "$SUDO" mkdir -p ${U_EXT4_DIR}/fs/user_syscall
 fi
 
+for programname in $(ls ../user/src/bin)
+do
+    "$SUDO" cp -r ../user/target/${TARGET}/${MODE}/${programname%.rs} ${U_EXT4_DIR}/fs/user_syscall/${programname%.rs}
+done
+
+echo user_syscall copied.
 try_copy ../user/testcases ${U_EXT4_DIR}/fs/
 
 "$SUDO" umount ${U_EXT4_DIR}/fs

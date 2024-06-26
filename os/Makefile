@@ -68,30 +68,22 @@ LA_LOAD_ADDR = 0x9000000090000000
 RUST_LA_TOOLCHAIN = $(shell rustup show |grep "\(la\|loongarch\)\(64\)\?" |cut -d' ' -f1|head -n 1)
 
 
-# build: env $(KERNEL_BIN) $(FS_IMG) fat32
 all: 
 ifeq ($(IMG_FS), EXT4)
-	make user remake-qemu-flash-ext4-img
+	@ make user remake-qemu-flash-ext4-img
 else ($(IMG_FS), FAT32)
-	make user remake-qemu-flash-fat-img
+	@ make user remake-qemu-flash-fat-img
 endif
 
 build: env $(KERNEL_BIN)
 env: # switch-toolchain
 	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add $(TARGET)
 	if [ "$(dpkg --list|grep "ii[[:space:]]*expect")"="" ];then true;else sudo apt install expect;fi
-ifneq ($(ARCH), loongarch64)
-#	-cargo install cargo-binutils --vers ~0.2
-endif
-#	-rustup component add rust-src
-#	-rustup component add llvm-tools-preview
+
 
 # build all user programs
-user: c-user rust-user
-c-user:
-	@cd ../user && make c-user BOARD=$(BOARD) MODE=$(MODE)
-rust-user: env
-	@cd ../user && make rust-user BOARD=$(BOARD) MODE=$(MODE)
+user: env
+	@cd ../user && make build BOARD=$(BOARD) MODE=$(MODE)
 
 sdcard:
     ifeq ($(findstring WSL, $(shell uname -a)), )
@@ -124,7 +116,7 @@ else
 	@./buildfs.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
 endif
 
-remake-qemu-flash-fat-img: fat32 env build qemu-flash-fat-img
+remake-qemu-flash-fat-img: fat32 build qemu-flash-fat-img
 
 qemu-flash-fat-img:
 ifeq ($(BOARD), 2k1000)
@@ -146,7 +138,7 @@ else
 	@./buildext4.sh "$(U_FAT32_DIR)/$(FAT32_IMG_NAME)" 2k1000 $(MODE)
 endif
 
-remake-qemu-flash-ext4-img: ext4 env build qemu-flash-ext4-img
+remake-qemu-flash-ext4-img: ext4 build qemu-flash-ext4-img
 
 qemu-flash-ext4-img:
 ifeq ($(BOARD), 2k1000)
@@ -159,12 +151,8 @@ else ifeq ($(BOARD), laqemu)
 endif
 
 src/linker.ld: .FORCE
-	-@rm src/linker.ld
 	cpp -P $(LA_2K1000_DISABLE_EH_FRAME) -D $(LDBOARD) src/linker.in.ld $@
 
-fsimg-format:
-	sudo mkfs.vfat -F 32 ${U_FAT32}
-update-usr:user fat32
 
 kernel: src/linker.ld
 	@echo Platform: $(BOARD)
@@ -176,14 +164,10 @@ kernel: src/linker.ld
 
 clean:
 	@cargo clean
-	-@rm src/linker.ld
 	-@rm ../easy-fs-fuse/uImage
 	-@rm ../easy-fs-fuse/rootfs-ubifs-ze.img
 	-@cd ../user && make clean
 
-# run: env run-inner 
-
-# run-inner: build do-run
 
 
 do-run:
@@ -206,11 +190,6 @@ else ifeq ($(BOARD), 2k1000)
 	@./la_gdbserver minicom -D $(LA_DEBUGGER_PORT_FREQ)
 endif
 
-
-
-ch-default:
-	@DEFAULT_STR=$$(grep -o "default[[:space:]]*=[[:space:]]\[[[:space:]]*\"board_.\+\"[[:space:]]*\]" Cargo.toml);
-	@if [ $$(echo "$$DEFAULT_STR"|grep "qemu") ]; then echo "found"; else echo "not found"; fi;
 
 
 
