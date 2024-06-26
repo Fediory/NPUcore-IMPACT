@@ -1,0 +1,25 @@
+# Copyright (c) 2015 The Robigalia Project Developers
+# Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
+# http://www.apache.org/licenses/LICENSE-2.0> or the MIT license <LICENSE-MIT
+# or http://opensource.org/licenses/MIT>, at your option. All files in the
+# project carrying such notice may not be copied, modified, or distributed
+# except according to those terms.
+[package]
+name = "pci"
+version = "0.0.1"
+authors = ["Corey Richardson <corey@octayn.net>"]
+description = "Generic PCI scanning, configuration-space access, and header parsing"
+documentation = "https://doc.robigalia.org/pci"
+repository = "https://gitlab.com/robigalia/pci"
+readme = "README.md"
+license = "MIT/Apache-2.0"
+#build = "build.rs"
+
+
+[dependencies]
+bitflags = "1.3.2"
+bit_field = "0.10.1"
+
+
+[features]
+unstable = []
