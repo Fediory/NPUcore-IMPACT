@@ -447,7 +447,7 @@ impl<P: Provider> AHCI<P> {
         }
     }
 
-    pub fn read_block(&mut self, block_id: usize, buf: &mut [u8]) -> usize {
+    pub fn read_block(&mut self, block_id: u64, buf: &mut [u8]) -> usize {
         // cfl=4
         self.cmd_list[0].flags = 4;
 
@@ -460,7 +460,7 @@ impl<P: Provider> AHCI<P> {
         fis.sector_count = 1;
         fis.dev_head = 0x40; // LBA
         fis.control = 0x80; // LBA48
-        fis.set_lba(block_id as u64);
+        fis.set_lba(block_id);
 
         self.port.issue_command(0);
         self.port.spin_on_slot(0);
@@ -470,7 +470,7 @@ impl<P: Provider> AHCI<P> {
         len
     }
 
-    pub fn write_block(&mut self, block_id: usize, buf: &[u8]) -> usize {
+    pub fn write_block(&mut self, block_id: u64, buf: &[u8]) -> usize {
         // cfl=4
         self.cmd_list[0].flags = 4 | CommandHeaderFlags::WRITE.bits(); // device write
 
@@ -487,7 +487,7 @@ impl<P: Provider> AHCI<P> {
         fis.sector_count = 1;
         fis.dev_head = 0x40; // LBA
         fis.control = 0x80; // LBA48
-        fis.set_lba(block_id as u64);
+        fis.set_lba(block_id);
 
         self.port.issue_command(0);
         self.port.spin_on_slot(0);
