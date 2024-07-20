@@ -2,7 +2,7 @@ mod block_dev;
 pub mod sata_blk;
 
 pub use block_dev::BlockDevice;
-use lwext4_rs::BlockDeviceInterface;
+// use lwext4_rs::BlockDeviceInterface;
 
 use crate::arch::{BlockDeviceImpl, BLOCK_SZ};
 use alloc::sync::Arc;

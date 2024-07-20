@@ -16,13 +16,11 @@ use alloc::{collections::VecDeque, sync::Arc};
 pub use context::TaskContext;
 pub use elf::{load_elf_interp, AuxvEntry, AuxvType, ELFInfo};
 use lazy_static::*;
-use log::debug;
 use manager::fetch_task;
 pub use manager::{
     add_task, do_oom, do_wake_expired, find_task_by_pid, find_task_by_tgid, procs_count,
     sleep_interruptible, wait_with_timeout, wake_interruptible,
 };
-pub use pid::RecycleAllocator;
 pub use pid::{
     pid_alloc, trap_cx_bottom_from_tid, ustack_bottom_from_tid, KernelStackImpl, PidHandle,
 };
@@ -32,18 +30,6 @@ pub use processor::{
 pub use signal::*;
 pub use task::{RobustList, Rusage, TaskControlBlock, TaskStatus};
 
-use self::processor::PROCESSOR;
-pub fn try_yield() {
-    let lock = PROCESSOR.lock();
-    let mut do_suspend = false;
-    if !lock.is_vacant() {
-        do_suspend = true;
-    }
-    drop(lock);
-    if do_suspend {
-        suspend_current_and_run_next()
-    }
-}
 pub fn suspend_current_and_run_next() {
     // There must be an application running.
     let task = take_current_task().unwrap();

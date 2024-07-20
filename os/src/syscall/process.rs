@@ -4,7 +4,7 @@ use crate::fs::OpenFlags;
 use crate::mm::{
     copy_from_user, copy_to_user, copy_to_user_string, get_from_user, translated_byte_buffer,
     translated_ref, translated_refmut, translated_str, try_get_from_user, MapFlags, MapPermission,
-    UserBuffer, KERNEL_SPACE,
+    UserBuffer,
 };
 use crate::show_frame_consumption;
 use crate::syscall::errno::*;
@@ -93,10 +93,7 @@ pub fn sys_kill(pid: usize, sig: usize) -> isize {
         Ok(signal) => signal,
         Err(_) => return EINVAL,
     };
-    #[cfg(feature = "comp")]
-    if pid == 10 {
-        return SUCCESS;
-    }
+
     if pid > 0 {
         // [Warning] in current implementation,
         // signal will be sent to an arbitrary task with target `pid` (`tgid` more precisely).

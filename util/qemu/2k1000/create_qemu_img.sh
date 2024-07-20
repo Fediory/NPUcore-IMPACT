@@ -31,10 +31,10 @@ if [ $? -ne 0 ] ; then
   exit -3
 fi
 
-sudo mkfs.ext4 /dev/nbd1p1
+sudo mkfs.vfat -F 32 /dev/nbd1p1
 
 if [ $? -ne 0 ] ; then
-  echo "mkfs.ext4 failed"
+  echo "mkfs.vfat -F 32 failed"
   exit -4
 fi
 

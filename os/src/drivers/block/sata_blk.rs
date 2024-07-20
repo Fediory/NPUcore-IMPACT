@@ -1,14 +1,14 @@
-use crate::config::PAGE_SIZE;
-use crate::mm::{frame_alloc, frame_dealloc, PhysAddr};
-use crate::drivers::block::BlockDevice;
 use crate::arch::BLOCK_SZ;
+use crate::config::PAGE_SIZE;
+use crate::drivers::block::BlockDevice;
+use crate::mm::{frame_alloc, frame_dealloc, PhysAddr};
 use isomorphic_drivers::{
-    provider,
     block::ahci::{AHCI, BLOCK_SIZE},
+    provider,
 };
 use log::info;
-use spin::Mutex;
 use pci::*;
+use spin::Mutex;
 pub struct SataBlock(Mutex<AHCI<Provider>>);
 
 impl SataBlock {
@@ -22,9 +22,7 @@ impl BlockDevice for SataBlock {
         // kernel BLOCK_SZ=2048, SATA BLOCK_SIZE=512，four times
         block_id = block_id * (BLOCK_SZ / BLOCK_SIZE);
         for buf in buf.chunks_mut(BLOCK_SIZE) {
-            self.0
-                .lock()
-                .read_block(block_id as u64, buf);
+            self.0.lock().read_block(block_id as u64, buf);
             block_id += 1;
         }
     }
@@ -32,59 +30,57 @@ impl BlockDevice for SataBlock {
     fn write_block(&self, mut block_id: usize, buf: &[u8]) {
         block_id = block_id * (BLOCK_SZ / BLOCK_SIZE);
         for buf in buf.chunks(BLOCK_SIZE) {
-            self.0
-                .lock()
-                .write_block(block_id as u64, buf);
+            self.0.lock().write_block(block_id as u64, buf);
             block_id += 1;
         }
     }
 }
 
-impl lwext4_rs::BlockDeviceInterface for SataBlock{
-    fn read_block(&mut self, buf: &mut [u8], mut block_id: u64, block_count: u32) -> lwext4_rs::Result<usize> {
-        // kernel BLOCK_SZ=2048, SATA BLOCK_SIZE=512，four times
-        block_id = block_id * (BLOCK_SZ as u64 / BLOCK_SIZE as u64);
-        for buf in buf.chunks_mut(BLOCK_SIZE) {
-            self.0
-                .lock()
-                .read_block(block_id, buf);
-            block_id += 1;
-        }
-        Ok(0)
-    }
+// impl lwext4_rs::BlockDeviceInterface for SataBlock {
+//     fn read_block(&mut self, buf: &mut [u8], mut block_id: u64, block_count: u32) -> lwext4_rs::Result<usize> {
+//         // kernel BLOCK_SZ=2048, SATA BLOCK_SIZE=512，four times
+//         block_id = block_id * (BLOCK_SZ as u64 / BLOCK_SIZE as u64);
+//         for buf in buf.chunks_mut(BLOCK_SIZE) {
+//             self.0
+//                 .lock()
+//                 .read_block(block_id, buf);
+//             block_id += 1;
+//         }
+//         Ok(0)
+//     }
 
-    fn write_block(&mut self, buf: &[u8], mut block_id: u64, block_count: u32) -> lwext4_rs::Result<usize> {
-        block_id = block_id * (BLOCK_SZ as u64 / BLOCK_SIZE as u64);
-        for buf in buf.chunks(BLOCK_SIZE) {
-            self.0
-                .lock()
-                .write_block(block_id, buf);
-            block_id += 1;
-        }
-        Ok(0)
-    }
-    
-    fn close(&mut self) -> lwext4_rs::Result<()> {
-        Ok(())
-    }
+//     fn write_block(&mut self, buf: &[u8], mut block_id: u64, block_count: u32) -> lwext4_rs::Result<usize> {
+//         block_id = block_id * (BLOCK_SZ as u64 / BLOCK_SIZE as u64);
+//         for buf in buf.chunks(BLOCK_SIZE) {
+//             self.0
+//                 .lock()
+//                 .write_block(block_id, buf);
+//             block_id += 1;
+//         }
+//         Ok(0)
+//     }
 
-    fn open(&mut self) -> lwext4_rs::Result<lwext4_rs::BlockDeviceConfig> {
-        Ok(lwext4_rs::BlockDeviceConfig{
-            block_size: BLOCK_SIZE as u32,
-            block_count: 999,
-            part_size: BLOCK_SIZE as u64 * 2,
-            part_offset: 0
-        })
-    }
+//     fn close(&mut self) -> lwext4_rs::Result<()> {
+//         Ok(())
+//     }
 
-    fn lock(&mut self) -> lwext4_rs::Result<()> {
-        Ok(())
-    }
+//     fn open(&mut self) -> lwext4_rs::Result<lwext4_rs::BlockDeviceConfig> {
+//         Ok(lwext4_rs::BlockDeviceConfig{
+//             block_size: BLOCK_SIZE as u32,
+//             block_count: 999,
+//             part_size: BLOCK_SIZE as u64 * 2,
+//             part_offset: 0
+//         })
+//     }
 
-    fn unlock(&mut self) -> lwext4_rs::Result<()> {
-        Ok(())
-    }
-}
+//     fn lock(&mut self) -> lwext4_rs::Result<()> {
+//         Ok(())
+//     }
+
+//     fn unlock(&mut self) -> lwext4_rs::Result<()> {
+//         Ok(())
+//     }
+// }
 
 pub struct Provider;
 
@@ -119,15 +115,20 @@ impl provider::Provider for Provider {
     }
 }
 
-
 const PCI_CONFIG_ADDRESS: usize = 0xFE_0000_0000;
 const PCI_COMMAND: u16 = 0x04;
 
 struct UnusedPort;
 impl PortOps for UnusedPort {
-    unsafe fn read8(&self, _port: u16) -> u8 {0}
-    unsafe fn read16(&self, _port: u16) -> u16 {0}
-    unsafe fn read32(&self, _port: u16) -> u32 {0}
+    unsafe fn read8(&self, _port: u16) -> u8 {
+        0
+    }
+    unsafe fn read16(&self, _port: u16) -> u16 {
+        0
+    }
+    unsafe fn read32(&self, _port: u16) -> u32 {
+        0
+    }
     unsafe fn write8(&self, _port: u16, _val: u8) {}
     unsafe fn write16(&self, _port: u16, _val: u16) {}
     unsafe fn write32(&self, _port: u16, _val: u32) {}

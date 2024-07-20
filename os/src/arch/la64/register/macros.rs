@@ -176,7 +176,7 @@ macro_rules! impl_get_set {
             self
         }
     };
-    
+
     ($mem_reg_get_ident:ident,$mem_reg_set_ident:ident,$range:expr,$doc:expr) => {
         #[doc = $doc]
         #[inline(always)]
@@ -199,5 +199,3 @@ macro_rules! impl_get_set {
         }
     };
 }
-
-

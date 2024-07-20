@@ -65,7 +65,7 @@ pub trait File: DowncastSync {
     fn ioctl(&self, _cmd: u32, _argp: usize) -> isize {
         ENOTTY
     }
-    /// fcntl
-    fn fcntl(&self, cmd: u32, arg: u32) -> isize;
+    // /// fcntl
+    // fn fcntl(&self, cmd: u32, arg: u32) -> isize;
 }
 impl_downcast!(sync File);

@@ -9,7 +9,7 @@ pub mod poll;
 #[cfg(feature = "swap")]
 pub mod swap;
 
-pub use self::dev::{hwclock::*, null::*, pipe::*, socket::*, tty::*, zero::*};
+pub use self::dev::{hwclock::*, pipe::*, socket::*};
 use core::slice::{Iter, IterMut};
 
 pub use self::layout::*;

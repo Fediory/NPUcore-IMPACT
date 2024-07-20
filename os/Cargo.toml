@@ -25,7 +25,7 @@ volatile = "0.4.6"
 embedded-io = "0.6.1"
 pci = { path = "../dependency/pci" }
 isomorphic_drivers = { path = "../dependency/isomorphic" }
-lwext4-rs = { path = "../dependency/ext4/lwext4-rs" }
+# lwext4-rs = { path = "../dependency/ext4/lwext4-rs" }
 
 [features]
 zero_init = []

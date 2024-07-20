@@ -200,7 +200,7 @@ pub fn ppoll(
 pub struct FdSet {
     bits: [u64; 16],
 }
-use crate::lang_items::Bytes;
+
 #[allow(unused)]
 impl FdSet {
     /// Return an empty bitmap for further manipulation
@@ -251,17 +251,7 @@ impl FdSet {
         (Self::fd_mask(d) & self.bits[Self::fd_elt(d)]) != 0
     }
 }
-impl Bytes<FdSet> for FdSet {
-    fn as_bytes(&self) -> &[u8] {
-        let size = core::mem::size_of::<FdSet>();
-        unsafe { core::slice::from_raw_parts(self as *const _ as *const u8, size) }
-    }
 
-    fn as_bytes_mut(&mut self) -> &mut [u8] {
-        let size = core::mem::size_of::<FdSet>();
-        unsafe { core::slice::from_raw_parts_mut(self as *mut _ as *mut u8, size) }
-    }
-}
 /// Poll each of the file discriptors
 /// until certain events.
 ///

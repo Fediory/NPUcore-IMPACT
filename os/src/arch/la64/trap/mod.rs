@@ -3,7 +3,7 @@ mod mem_access;
 use self::context::GeneralRegs;
 
 use super::register::{self, Exception, Interrupt, Trap, ERA};
-use super::{pre_start_init, MErrEntry, DMW, DMW1};
+use super::{pre_start_init, MErrEntry};
 use crate::arch::la64::laflex::LAFlexPageTable;
 use crate::arch::la64::register::{CrMd, ECfg, LineBasedInterrupt, PrMd, TCfg, TIClr};
 use crate::arch::la64::trap::mem_access::Instruction;
@@ -18,7 +18,6 @@ use core::arch::{asm, global_asm};
 use core::ptr::{addr_of, addr_of_mut};
 
 pub use context::{MachineContext, TrapContext, UserContext};
-use log::debug;
 use register::{
     BadV, EStat, TLBRBadV, TLBREHi, TLBRELo0, TLBRELo1, TLBRPrMd, PGD, PGDH, PGDL, PWCH, PWCL,
     TLBRERA,
@@ -36,7 +35,7 @@ extern "C" {
     pub fn __kern_trap();
 }
 
-#[allow(unused)]
+#[allow(unused, undefined_naked_function_abi)]
 #[link_section = ".text.__rfill"]
 #[naked]
 #[no_mangle]

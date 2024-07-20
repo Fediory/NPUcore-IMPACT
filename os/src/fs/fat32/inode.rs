@@ -445,7 +445,7 @@ impl File for OSInode {
         todo!()
     }
 
-    fn fcntl(&self, cmd: u32, arg: u32) -> isize {
-        todo!()
-    }
+    // fn fcntl(&self, cmd: u32, arg: u32) -> isize {
+    //     todo!()
+    // }
 }

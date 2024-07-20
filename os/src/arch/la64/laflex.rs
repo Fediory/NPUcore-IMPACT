@@ -1,8 +1,8 @@
 use super::{tlb::tlb_invalidate, tlb_global_invalidate};
 use crate::{
     config::{
-        DIRTY_WIDTH, MEMORY_HIGH_BASE, MEMORY_HIGH_BASE_VPN, MEMORY_SIZE, PAGE_SIZE,
-        PAGE_SIZE_BITS, PALEN, VA_MASK, VPN_SEG_MASK,
+        DIRTY_WIDTH, MEMORY_HIGH_BASE, MEMORY_HIGH_BASE_VPN, PAGE_SIZE_BITS, PALEN, VA_MASK,
+        VPN_SEG_MASK,
     },
     mm::{address::*, frame_alloc, FrameTracker, MapPermission, PageTable},
 };
@@ -397,38 +397,38 @@ impl PageTable for LAFlexPageTable {
     fn token(&self) -> usize {
         self.root_ppn.0
     }
-    fn revoke_read(&mut self, vpn: VirtPageNum) -> Result<(), ()> {
-        if let Some(pte) = self.find_pte_refmut(vpn) {
-            pte.revoke_read();
-            Ok(())
-        } else {
-            Err(())
-        }
-    }
-    fn revoke_write(&mut self, vpn: VirtPageNum) -> Result<(), ()> {
-        if let Some(pte) = self.find_pte_refmut(vpn) {
-            pte.revoke_write();
-            Ok(())
-        } else {
-            Err(())
-        }
-    }
-    fn revoke_execute(&mut self, vpn: VirtPageNum) -> Result<(), ()> {
-        if let Some(pte) = self.find_pte_refmut(vpn) {
-            pte.revoke_execute();
-            Ok(())
-        } else {
-            Err(())
-        }
-    }
-    fn set_ppn(&mut self, vpn: VirtPageNum, ppn: PhysPageNum) -> Result<(), ()> {
-        if let Some(pte) = self.find_pte_refmut(vpn) {
-            pte.set_ppn(ppn);
-            Ok(())
-        } else {
-            Err(())
-        }
-    }
+    // fn revoke_read(&mut self, vpn: VirtPageNum) -> Result<(), ()> {
+    //     if let Some(pte) = self.find_pte_refmut(vpn) {
+    //         pte.revoke_read();
+    //         Ok(())
+    //     } else {
+    //         Err(())
+    //     }
+    // }
+    // fn revoke_write(&mut self, vpn: VirtPageNum) -> Result<(), ()> {
+    //     if let Some(pte) = self.find_pte_refmut(vpn) {
+    //         pte.revoke_write();
+    //         Ok(())
+    //     } else {
+    //         Err(())
+    //     }
+    // }
+    // fn revoke_execute(&mut self, vpn: VirtPageNum) -> Result<(), ()> {
+    //     if let Some(pte) = self.find_pte_refmut(vpn) {
+    //         pte.revoke_execute();
+    //         Ok(())
+    //     } else {
+    //         Err(())
+    //     }
+    // }
+    // fn set_ppn(&mut self, vpn: VirtPageNum, ppn: PhysPageNum) -> Result<(), ()> {
+    //     if let Some(pte) = self.find_pte_refmut(vpn) {
+    //         pte.set_ppn(ppn);
+    //         Ok(())
+    //     } else {
+    //         Err(())
+    //     }
+    // }
     fn set_pte_flags(&mut self, vpn: VirtPageNum, flags: MapPermission) -> Result<(), ()> {
         //tlb_invalidate();
         if let Some(pte) = self.find_pte_refmut(vpn) {
@@ -470,9 +470,9 @@ impl PageTable for LAFlexPageTable {
             super::register::PGDL::from(self.get_root_ppn().0 << PAGE_SIZE_BITS).write();
         }
     }
-    fn is_valid(&self, vpn: VirtPageNum) -> Option<bool> {
-        self.find_pte(vpn).map(|pte| pte.is_valid())
-    }
+    // fn is_valid(&self, vpn: VirtPageNum) -> Option<bool> {
+    //     self.find_pte(vpn).map(|pte| pte.is_valid())
+    // }
     fn is_dirty(&self, vpn: VirtPageNum) -> Option<bool> {
         if self.is_ident_map(vpn) {
             Some(unsafe { DIRTY[vpn.0 & VA_MASK] })
@@ -480,9 +480,9 @@ impl PageTable for LAFlexPageTable {
             self.find_pte(vpn).map(|pte| pte.is_dirty())
         }
     }
-    fn readable(&self, vpn: VirtPageNum) -> Option<bool> {
-        self.find_pte(vpn).map(|pte| pte.readable())
-    }
+    // fn readable(&self, vpn: VirtPageNum) -> Option<bool> {
+    //     self.find_pte(vpn).map(|pte| pte.readable())
+    // }
     fn writable(&self, vpn: VirtPageNum) -> Option<bool> {
         self.find_pte(vpn).map(|pte| pte.writable())
     }
@@ -490,7 +490,7 @@ impl PageTable for LAFlexPageTable {
         self.find_pte(vpn).map(|pte| pte.executable())
     }
 
-    fn unmap_identical(&mut self, vpn: VirtPageNum) {
-        self.unmap(vpn)
-    }
+    // fn unmap_identical(&mut self, vpn: VirtPageNum) {
+    //     self.unmap(vpn)
+    // }
 }

@@ -23,10 +23,10 @@ pub trait PageTable {
     /// # Exceptions
     /// Panics if the `vpn` is NOT mapped (invalid).
     fn unmap(&mut self, vpn: VirtPageNum);
-    #[inline(always)]
-    fn unmap_identical(&mut self, vpn: VirtPageNum) {
-        self.unmap(vpn)
-    }
+    // #[inline(always)]
+    // fn unmap_identical(&mut self, vpn: VirtPageNum) {
+    //     self.unmap(vpn)
+    // }
     /// Translate the `vpn` into its corresponding `Some(PageTableEntry)` if exists
     /// `None` is returned if nothing is found.
     fn translate(&self, vpn: VirtPageNum) -> Option<PhysPageNum>;
@@ -36,10 +36,10 @@ pub trait PageTable {
     fn block_and_ret_mut(&self, vpn: VirtPageNum) -> Option<PhysPageNum>;
     /// Return the physical token to current page.
     fn token(&self) -> usize;
-    fn revoke_read(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
-    fn revoke_write(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
-    fn revoke_execute(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
-    fn set_ppn(&mut self, vpn: VirtPageNum, ppn: PhysPageNum) -> Result<(), ()>;
+    // fn revoke_read(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
+    // fn revoke_write(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
+    // fn revoke_execute(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
+    // fn set_ppn(&mut self, vpn: VirtPageNum, ppn: PhysPageNum) -> Result<(), ()>;
     fn set_pte_flags(&mut self, vpn: VirtPageNum, flags: MapPermission) -> Result<(), ()>;
     fn clear_access_bit(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
     fn clear_dirty_bit(&mut self, vpn: VirtPageNum) -> Result<(), ()>;
@@ -58,9 +58,9 @@ pub trait PageTable {
     /// Predicate for the valid bit.
     fn is_mapped(&mut self, vpn: VirtPageNum) -> bool;
     fn activate(&self);
-    fn is_valid(&self, vpn: VirtPageNum) -> Option<bool>;
+    // fn is_valid(&self, vpn: VirtPageNum) -> Option<bool>;
     fn is_dirty(&self, vpn: VirtPageNum) -> Option<bool>;
-    fn readable(&self, vpn: VirtPageNum) -> Option<bool>;
+    // fn readable(&self, vpn: VirtPageNum) -> Option<bool>;
     fn writable(&self, vpn: VirtPageNum) -> Option<bool>;
     fn executable(&self, vpn: VirtPageNum) -> Option<bool>;
 }

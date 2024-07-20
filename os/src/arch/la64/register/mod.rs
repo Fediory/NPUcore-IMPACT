@@ -6,13 +6,12 @@ mod ras;
 mod timer;
 
 pub use base::{
-    badi::*, badv::*, crmd::*, ecfg::*, eentry::*, era::*, estat::*, euen::*,
-    misc::*, prcfg::*, prmd::*, rvacfg::*
+    badi::*, badv::*, crmd::*, ecfg::*, eentry::*, era::*, estat::*, euen::*, misc::*, prcfg::*,
+    prmd::*, rvacfg::*,
 };
 pub use mmu::{
-    asid::*, dmw::*, pgd::*, pwch::*, pwcl::*, stlbps::*, tlbehi::*, tlbelo::*, tlbidx::*,
-    tlbrbadv::*, tlbrehi::*, tlbrelo::*, tlbrentry::*, tlbrera::*, tlbrprmd::*,
-    MemoryAccessType,
+    dmw::*, pgd::*, pwch::*, pwcl::*, stlbps::*, tlbelo::*, tlbrbadv::*, tlbrehi::*, tlbrelo::*,
+    tlbrentry::*, tlbrera::*, tlbrprmd::*, MemoryAccessType,
 };
 pub use ras::{merrctl::*, merrentry::*, merrera::*};
 pub use timer::{tcfg::*, ticlr::*};

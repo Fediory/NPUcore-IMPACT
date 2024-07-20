@@ -246,4 +246,3 @@ macro_rules! copy_to_name1 {
         }
     }};
 }
-

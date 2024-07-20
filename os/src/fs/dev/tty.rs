@@ -1,7 +1,7 @@
 use crate::arch::console_getchar;
 use crate::fs::directory_tree::DirectoryTreeNode;
 use crate::fs::file_trait::File;
-use crate::fs::layout::{Stat,Statx};
+use crate::fs::layout::{Stat, Statx};
 use crate::fs::DiskInodeType;
 use crate::fs::StatMode;
 use crate::mm::{copy_from_user, copy_to_user};
@@ -99,20 +99,6 @@ impl File for Teletype {
         }
     }
 
-    #[cfg(feature = "board_k210")]
-    fn r_ready(&self) -> bool {
-        let mut inner = self.inner.lock();
-        // in this case, user program call pselect() before, should return true
-        if inner.last_char == 0 {
-            true
-        // in this case, user program call read() before, should return false
-        } else {
-            inner.last_char = 0;
-            false
-        }
-    }
-
-    #[cfg(not(any(feature = "board_k210")))]
     fn r_ready(&self) -> bool {
         let mut inner = self.inner.lock();
         // buffer has valid data
@@ -129,33 +115,6 @@ impl File for Teletype {
         true
     }
 
-    #[cfg(feature = "board_k210")]
-    fn read_user(&self, offset: Option<usize>, mut buf: UserBuffer) -> usize {
-        if offset.is_some() {
-            return ESPIPE as usize;
-        }
-        let mut inner = self.inner.lock();
-        // block read here, infallible
-        unsafe {
-            buf.buffers[0]
-                .as_mut_ptr()
-                .write_volatile(console_getchar() as u8);
-        }
-        if inner.termios.lflag & LocalModes::ECHO.bits() != 0 {
-            if inner.last_char == '\r' as u8 {
-                print!("\n");
-            } else {
-                print!("{}", inner.last_char as char);
-            }
-        }
-        // fake failed reading to make pseudo non-block reading,
-        // in order to return properly in r_ready(),
-        // so that we could let bash echo what we input on k210.
-        inner.last_char = 255;
-        1
-    }
-
-    #[cfg(not(any(feature = "board_k210")))]
     fn read_user(&self, offset: Option<usize>, buf: UserBuffer) -> usize {
         if offset.is_some() {
             return ESPIPE as usize;
@@ -227,8 +186,8 @@ impl File for Teletype {
     }
 
     fn get_statx(&self) -> Statx {
-        let dev_high_32:u64 = (crate::makedev!(0,5) >> 32);
-        let rdev_high_32:u64 = (crate::makedev!(0x88,0) >> 32);
+        let dev_high_32: u64 = (crate::makedev!(0, 5) >> 32);
+        let rdev_high_32: u64 = (crate::makedev!(0x88, 0) >> 32);
         Statx::new(
             dev_high_32 as u32,
             0,
@@ -362,9 +321,9 @@ impl File for Teletype {
         }
     }
 
-    fn fcntl(&self, cmd: u32, arg: u32) -> isize {
-        todo!()
-    }
+    // fn fcntl(&self, cmd: u32, arg: u32) -> isize {
+    //     todo!()
+    // }
 }
 
 #[allow(non_camel_case_types)]

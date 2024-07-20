@@ -7,8 +7,8 @@ use crate::arch::syscall_id::*;
 use core::convert::TryFrom;
 use fs::*;
 use log::{error, info};
+pub use process::CloneFlags;
 use process::*;
-pub use process::{CloneFlags, FutexOption};
 use socket::*;
 
 pub fn syscall_name(id: usize) -> &'static str {

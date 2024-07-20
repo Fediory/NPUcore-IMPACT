@@ -34,11 +34,6 @@ lazy_static! {
         Arc::new(Mutex::new(MemorySet::new_kernel()));
 }
 
-/// Return the root PPN of kernel space
-pub fn kernel_token() -> usize {
-    KERNEL_SPACE.lock().token()
-}
-
 #[allow(unused)]
 #[derive(Debug)]
 pub enum MemoryError {

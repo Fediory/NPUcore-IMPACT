@@ -11,7 +11,6 @@ use crate::{fs::file_trait::File, mm::UserBuffer};
 use alloc::boxed::Box;
 use alloc::sync::{Arc, Weak};
 use core::ptr::copy_nonoverlapping;
-use log::warn;
 use spin::Mutex;
 
 pub struct Pipe {
@@ -37,9 +36,6 @@ impl Pipe {
     }
 }
 
-#[cfg(feature = "board_fu740")]
-const RING_DEFAULT_BUFFER_SIZE: usize = 4096 * 16;
-#[cfg(not(feature = "board_fu740"))]
 const RING_DEFAULT_BUFFER_SIZE: usize = 256;
 
 #[derive(Copy, Clone, PartialEq, Debug)]
@@ -471,45 +467,44 @@ impl File for Pipe {
         }
     }
 
-    fn fcntl(&self, cmd: u32, arg: u32) -> isize {
-        // use crate::config::PAGE_SIZE;
-        // use crate::syscall::fs::Fcntl_Command;
-        // match Fcntl_Command::from_primitive(cmd) {
-        //     Fcntl_Command::GETPIPE_SZ => self.buffer.lock().arr.len() as isize,
-        //     Fcntl_Command::SETPIPE_SZ => {
-        //         let new_size = (arg as usize).max(PAGE_SIZE);
-        //         let mut ring = self.buffer.lock();
-        //         let mut old_used_size = ring.get_used_size();
-        //         if new_size < old_used_size {
-        //             return EBUSY;
-        //         }
-        //         let mut new_buffer = Vec::<u8>::with_capacity(new_size);
-        //         while old_used_size > 0 {
-        //             let index = ring.head;
-        //             new_buffer.push(ring.arr[index]);
-        //             ring.head += 1;
-        //             if ring.head == ring.arr.len() {
-        //                 ring.head = 0;
-        //             }
-        //             old_used_size -= 1;
-        //         }
-        //         ring.head = 0;
-        //         ring.tail = new_buffer.len();
-        //         if ring.tail == 0 {
-        //             ring.status = RingBufferStatus::EMPTY;
-        //         } else if ring.tail != new_size {
-        //             ring.status = RingBufferStatus::NORMAL;
-        //         } else {
-        //             ring.status = RingBufferStatus::FULL;
-        //         }
-        //         unsafe {
-        //             new_buffer.set_len(new_size);
-        //         }
-        //         ring.arr = new_buffer;
-        //         SUCCESS
-        //     }
-        //     _ => EINVAL,
-        // }
-        todo!()
-    }
+    // fn fcntl(&self, cmd: u32, arg: u32) -> isize {
+    //     use crate::config::PAGE_SIZE;
+    //     use crate::syscall::fs::Fcntl_Command;
+    //     match Fcntl_Command::from_primitive(cmd) {
+    //         Fcntl_Command::GETPIPE_SZ => self.buffer.lock().arr.len() as isize,
+    //         Fcntl_Command::SETPIPE_SZ => {
+    //             let new_size = (arg as usize).max(PAGE_SIZE);
+    //             let mut ring = self.buffer.lock();
+    //             let mut old_used_size = ring.get_used_size();
+    //             if new_size < old_used_size {
+    //                 return EBUSY;
+    //             }
+    //             let mut new_buffer = Vec::<u8>::with_capacity(new_size);
+    //             while old_used_size > 0 {
+    //                 let index = ring.head;
+    //                 new_buffer.push(ring.arr[index]);
+    //                 ring.head += 1;
+    //                 if ring.head == ring.arr.len() {
+    //                     ring.head = 0;
+    //                 }
+    //                 old_used_size -= 1;
+    //             }
+    //             ring.head = 0;
+    //             ring.tail = new_buffer.len();
+    //             if ring.tail == 0 {
+    //                 ring.status = RingBufferStatus::EMPTY;
+    //             } else if ring.tail != new_size {
+    //                 ring.status = RingBufferStatus::NORMAL;
+    //             } else {
+    //                 ring.status = RingBufferStatus::FULL;
+    //             }
+    //             unsafe {
+    //                 new_buffer.set_len(new_size);
+    //             }
+    //             ring.arr = new_buffer;
+    //             SUCCESS
+    //         }
+    //         _ => EINVAL,
+    //     }
+    // }
 }

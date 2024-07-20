@@ -2,7 +2,12 @@ use crate::fs::DiskInodeType;
 use alloc::sync::Arc;
 
 use crate::{
-    fs::{directory_tree::DirectoryTreeNode, file_trait::File, layout::{Stat,Statx}, StatMode},
+    fs::{
+        directory_tree::DirectoryTreeNode,
+        file_trait::File,
+        layout::{Stat, Statx},
+        StatMode,
+    },
     mm::UserBuffer,
     syscall::errno::{ENOTDIR, ESPIPE},
 };
@@ -61,8 +66,8 @@ impl File for Zero {
     }
 
     fn get_statx(&self) -> Statx {
-        let dev_high_32:u64 = (crate::makedev!(0, 5) >> 32);
-        let rdev_high_32:u64 = (crate::makedev!(1, 5) >> 32);
+        let dev_high_32: u64 = (crate::makedev!(0, 5) >> 32);
+        let rdev_high_32: u64 = (crate::makedev!(1, 5) >> 32);
         Statx::new(
             dev_high_32 as u32,
             0,
@@ -167,7 +172,7 @@ impl File for Zero {
         todo!()
     }
 
-    fn fcntl(&self, cmd: u32, arg: u32) -> isize {
-        todo!()
-    }
+    // fn fcntl(&self, cmd: u32, arg: u32) -> isize {
+    //     todo!()
+    // }
 }
