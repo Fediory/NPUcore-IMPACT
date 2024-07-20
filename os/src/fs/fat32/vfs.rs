@@ -1,9 +1,8 @@
-// #![allow(unused)]
-// use super::dir_iter::*;
-// use super::layout::{FATDirEnt, FATDiskInodeType, FATLongDirEnt, FATShortDirEnt};
-use super::cache::{Cache, PageCache, PageCacheManager};
-// use super::{DiskInodeType, EasyFileSystem};
-type DiskInodeType = lwext4_rs::FileType;
+#![allow(unused)]
+use super::dir_iter::*;
+use super::layout::{FATDirEnt, FATDiskInodeType, FATLongDirEnt, FATShortDirEnt};
+use super::{BlockCacheManager, Cache, PageCache, PageCacheManager};
+use super::{DiskInodeType, EasyFileSystem};
 use alloc::string::String;
 use alloc::sync::Arc;
 use alloc::vec::Vec;
@@ -186,7 +185,7 @@ impl Inode {
         });
 
         // Init hint
-        if file_type.is_dir() {
+        if file_type == DiskInodeType::Directory {
             inode.set_hint();
         }
         inode
@@ -229,16 +228,14 @@ impl Inode {
     /// Bool result
     #[inline(always)]
     pub fn is_dir(&self) -> bool {
-        self.get_file_type().is_dir()
-        // self.get_file_type() == DiskInodeType::Directory
+        self.get_file_type() == DiskInodeType::Directory
     }
     /// Check if file type is file
     /// # Return Value
     /// Bool result
     #[inline(always)]
     pub fn is_file(&self) -> bool {
-        self.get_file_type().is_file()
-        // self.get_file_type() == DiskInodeType::File
+        self.get_file_type() == DiskInodeType::File
     }
     /// Get first cluster of inode.
     /// # Arguments

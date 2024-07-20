@@ -7,7 +7,6 @@ use spin::Mutex;
 pub enum FS {
     Null,
     Fat32,
-    EXT4,
 }
 
 pub struct FileSystem {

@@ -5,16 +5,15 @@ use crate::mm::UserBuffer;
 use crate::syscall::errno::*;
 use core::panic;
 
-// use super::layout::FATDiskInodeType;
+use super::layout::FATDiskInodeType;
 pub use super::DiskInodeType;
-// use super::Inode;
+use super::Inode;
 use alloc::string::ToString;
 use alloc::sync::{Arc, Weak};
 use alloc::vec::Vec;
 use spin::Mutex;
 
-// pub type Inode = super::vfs::Inode;
-pub type InodeImpl = lwext4_rs::File;
+pub type InodeImpl = Inode;
 
 pub struct OSInode {
     readable: bool,
@@ -89,13 +88,12 @@ impl File for OSInode {
         match offset {
             Some(offset) => {
                 let len = self.inner.read_at_block_cache(*offset, buffer);
-                use embedded_io::Read;
                 *offset += len;
                 len
             }
             None => {
                 let mut offset = self.offset.lock();
-                // let len = self.inner.read_at_block_cache(*offset, buffer);
+                let len = self.inner.read_at_block_cache(*offset, buffer);
                 *offset += len;
                 len
             }
