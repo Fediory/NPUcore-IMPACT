@@ -75,6 +75,10 @@ else ($(IMG_FS), FAT32)
 	@ make user remake-qemu-flash-fat-img
 endif
 
+start-fat32: user remake-qemu-flash-fat-img
+start-ext4: user remake-qemu-flash-ext4-img
+
+
 build: env $(KERNEL_BIN)
 env: # switch-toolchain
 	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add $(TARGET)

@@ -54,7 +54,7 @@ impl File for Null {
         Stat::new(
             crate::makedev!(0, 5),
             1,
-            StatMode::S_IFCHR.bits() | 0x1B6,
+            StatMode::S_IFCHR.bits() | 0o666,
             1,
             crate::makedev!(1, 3),
             0,
@@ -142,7 +142,7 @@ impl File for Null {
     }
 
     fn truncate_size(&self, new_size: usize) -> Result<(), isize> {
-        todo!()
+        Ok(())
     }
 
     fn set_timestamp(&self, ctime: Option<usize>, atime: Option<usize>, mtime: Option<usize>) {

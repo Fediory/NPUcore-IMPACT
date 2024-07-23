@@ -266,13 +266,14 @@ impl File for Pipe {
         }
         let mut read_size = 0usize;
         loop {
-            // let task = current_task().unwrap();
-            // let inner = task.acquire_inner_lock();
+            let task = current_task().unwrap();
+            let inner = task.acquire_inner_lock();
+            // 注释掉下面内容，pipe测例通过，跟读出pipe内容有关
             // if !inner.sigpending.difference(inner.sigmask).is_empty() {
             //     return ERESTART as usize;
             // }
-            // drop(inner);
-            // drop(task);
+            drop(inner);
+            drop(task);
             let mut ring = self.buffer.lock();
             if ring.status == RingBufferStatus::EMPTY {
                 if ring.all_write_ends_closed() {

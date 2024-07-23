@@ -253,6 +253,7 @@ impl DirectoryTreeNode {
         special_use: bool,
     ) -> Result<Arc<dyn File>, isize> {
         log::debug!("[open]: cwd: {}, path: {}", self.get_cwd(), path);
+
         const BUSYBOX_PATH: &str = "/busybox";
         const REDIRECT_TO_BUSYBOX: [&str; 4] = ["/touch", "/rm", "/ls", "/grep"];
         let path = if REDIRECT_TO_BUSYBOX.contains(&path) {
@@ -615,6 +616,12 @@ fn init_device_directory() {
         Arc::new(Zero {}),
         Arc::downgrade(&dev_inode.get_arc()),
     );
+    // let urandom_dev = DirectoryTreeNode::new(
+    //     "urandom".to_string(),
+    //     Arc::new(FileSystem::new(FS::Null)),
+    //     Arc::new(Urandom {}),
+    //     Arc::downgrade(&dev_inode.get_arc()),
+    // );
     let tty_dev = DirectoryTreeNode::new(
         "tty".to_string(),
         Arc::new(FileSystem::new(FS::Null)),
@@ -624,6 +631,7 @@ fn init_device_directory() {
     let mut lock = dev_inode.children.write();
     lock.as_mut().unwrap().insert("null".to_string(), null_dev);
     lock.as_mut().unwrap().insert("zero".to_string(), zero_dev);
+    // lock.as_mut().unwrap().insert("urandom".to_string(), urandom_dev);
     lock.as_mut().unwrap().insert("tty".to_string(), tty_dev);
     drop(lock);
 

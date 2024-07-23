@@ -191,7 +191,7 @@ pub fn exit_group_and_run_next(exit_code: u32) -> ! {
 
 lazy_static! {
     pub static ref INITPROC: Arc<TaskControlBlock> = Arc::new({
-        let elf = ROOT_FD.open("initproc", OpenFlags::O_RDONLY, true).unwrap();
+        let elf = ROOT_FD.open("user_syscall/initproc", OpenFlags::O_RDONLY, true).unwrap();
         TaskControlBlock::new(elf)
     });
 }

@@ -13,11 +13,9 @@ mod ext4_defs;
 mod ext4_impls;
 
 mod fuse_interface;
-mod simple_interface;
 
 use ext4_defs::*;
 use fuse_interface::*;
-use simple_interface::*;
 
 use log::{Level, LevelFilter, Metadata, Record};
 

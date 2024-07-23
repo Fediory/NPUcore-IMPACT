@@ -24,7 +24,7 @@ echo
 echo Current arch: ${ARCH}
 echo
 "$SUDO" touch ${U_FAT32}
-"$SUDO" dd if=/dev/zero of=${U_FAT32} bs=1M count=50
+"$SUDO" dd if=/dev/zero of=${U_FAT32} bs=1M count=200
 echo Making fat32 image with BLK_SZ=${BLK_SZ}
 "$SUDO" mkfs.vfat -F 32 ${U_FAT32} -S ${BLK_SZ}
 "$SUDO" fdisk -l ${U_FAT32}
@@ -35,7 +35,7 @@ then
 fi
 
 "$SUDO" mkdir ${U_FAT32_DIR}/fs
-
+"$SUDO" chmod -R 777 ${U_FAT32_DIR}
 "$SUDO" mount -f ${U_FAT32} ${U_FAT32_DIR}/fs
 if [ $? ]
 then
@@ -44,13 +44,9 @@ fi
 "$SUDO" mount ${U_FAT32} ${U_FAT32_DIR}/fs
 
 # build root
-"$SUDO" mkdir -p ${U_FAT32_DIR}/fs/lib
-"$SUDO" cp ../user/lib/${ARCH}/libc.so ${U_FAT32_DIR}/fs/lib
-"$SUDO" mkdir -p ${U_FAT32_DIR}/fs/etc
 "$SUDO" mkdir -p ${U_FAT32_DIR}/fs/bin
-"$SUDO" mkdir -p ${U_FAT32_DIR}/fs/root
-"$SUDO" sh -c "echo -e "root:x:0:0:root:/root:/bash\n" > ${U_FAT32_DIR}/fs/etc/passwd"
-"$SUDO" touch ${U_FAT32_DIR}/fs/root/.bash_history
+"$SUDO" mkdir -p ${U_FAT32_DIR}/fs/final
+"$SUDO" mkdir -p ${U_FAT32_DIR}/fs/pre
 
 try_copy(){
     if [ -d $1 ]
@@ -65,21 +61,19 @@ try_copy(){
     fi
 }
 
-for programname in $(ls ../user/src/bin)
-do
-    echo ${programname%.rs} copied.
-    "$SUDO" cp -r ../user/target/${TARGET}/${MODE}/${programname%.rs} ${U_FAT32_DIR}/fs/${programname%.rs}
-done
-
+# build customized syscalls
 if [ ! -f ${U_FAT32_DIR}/fs/syscall ]
 then    
-    "$SUDO" mkdir -p ${U_FAT32_DIR}/fs/syscall
+    "$SUDO" mkdir -p ${U_FAT32_DIR}/fs/user_syscall
 fi
 
-# try_copy ../user/user_C_program/user/build/${ARCH}  ${U_FAT32_DIR}/fs/syscall
-try_copy ../user/busybox_lua_testsuites/${ARCH} ${U_FAT32_DIR}/fs/
-try_copy ../user/${ARCH} ${U_FAT32_DIR}/fs/
-try_copy ../user/disk/${ARCH} ${U_FAT32_DIR}/fs/
+for programname in $(ls ../user/src/bin)
+do
+    "$SUDO" cp -r ../user/target/${TARGET}/${MODE}/${programname%.rs} ${U_FAT32_DIR}/fs/user_syscall/${programname%.rs}
+done
+
+echo user_syscall copied.
+try_copy ../user/testcases ${U_FAT32_DIR}/fs/
 
 "$SUDO" umount ${U_FAT32_DIR}/fs
 echo "DONE"

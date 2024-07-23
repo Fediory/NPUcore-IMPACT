@@ -56,7 +56,7 @@ fn main() -> i32 {
     }
     //     let schedule_text: &str = "
     // \0
-    // run-all.sh\0
+    // ./fantastic_text\0
     // ";
     //         let mut exit_code: i32 = 0;
     //         for line in schedule_text.lines() {

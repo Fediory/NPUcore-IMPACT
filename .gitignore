@@ -48,7 +48,8 @@ gdb-12.1/
 
 # qemu
 util/qemu/2k1000/mnt
-util/qemu-2k1000/2k1000/mnt
+util/qemu/2k1000/cpio.log
 util/qemu/qemu.log
+util/qemu/nand.dat
 util/qemu/2k1000/2kfs.img
 util/qemu/2k1000/cpio.log

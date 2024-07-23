@@ -1,6 +1,24 @@
-// use super::{TLBEHi, TLBIdx, TLBEL, TLBELO0, TLBELO1};
-// use crate::mm::{PhysPageNum, VirtPageNum};
 use core::arch::asm;
+
+#[inline(always)]
+/// Invalidate non-global TLB entries
+pub fn tlb_invalidate() {
+    unsafe {
+        asm!("invtlb 0x3,$zero, $zero");
+    }
+}
+#[inline(always)]
+pub fn tlb_global_invalidate() {
+    unsafe {
+        asm!("invtlb 0x0,$zero, $zero");
+    }
+}
+
+
+
+// use super::{ASId, TLBEHi, TLBIdx, TLBEL, TLBELO0, TLBELO1};
+// use crate::mm::{PhysPageNum, VirtPageNum};
+
 // pub const USR_ASID: usize = 0;
 // pub const KERN_ASID: usize = (1 << 10) - 1;
 // #[inline(always)]
@@ -24,19 +42,7 @@ use core::arch::asm;
 //         Ok(())
 //     }
 // }
-#[inline(always)]
-/// Invalidate non-global TLB entries
-pub fn tlb_invalidate() {
-    unsafe {
-        asm!("invtlb 0x3,$zero, $zero");
-    }
-}
-#[inline(always)]
-pub fn tlb_global_invalidate() {
-    unsafe {
-        asm!("invtlb 0x0,$zero, $zero");
-    }
-}
+
 // pub fn tlb_read(idx: usize) -> Result<(PhysPageNum, PhysPageNum), ()> {
 //     TLBIdx::read().set_index(idx).write();
 //     let ret = TLBIdx::read();

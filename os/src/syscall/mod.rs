@@ -1,7 +1,7 @@
 pub mod errno;
 pub mod fs;
 mod process;
-mod socket;
+// mod socket;
 
 use crate::arch::syscall_id::*;
 use core::convert::TryFrom;
@@ -9,7 +9,8 @@ use fs::*;
 use log::{error, info};
 pub use process::CloneFlags;
 use process::*;
-use socket::*;
+// pub use process::{CloneFlags, FutexOption};
+// use socket::*;
 
 pub fn syscall_name(id: usize) -> &'static str {
     match id {
@@ -319,36 +320,36 @@ pub fn syscall(syscall_id: usize, args: [usize; 6]) -> isize {
         ),
         SYSCALL_MSYNC => sys_msync(args[0], args[1], args[2] as u32),
         SYSCALL_STATFS => sys_statfs(args[0] as *const u8, args[1] as *mut Statfs),
-        SYSCALL_SOCKET => sys_socket(args[0] as u32, args[1] as u32, args[2] as u32),
-        SYSCALL_BIND => sys_bind(args[0], args[1] as *const u8, args[2] as u32),
-        SYSCALL_LISTEN => sys_listen(args[0], args[1] as u32),
-        SYSCALL_ACCEPT => sys_accept(args[0], args[1] as *const u8, args[2] as u32),
-        SYSCALL_CONNECT => sys_connect(args[0], args[1] as *const u8, args[2] as u32),
-        SYSCALL_GETSOCKNAME => sys_getsockname(args[0], args[1] as *const u8, args[2] as u32),
-        SYSCALL_GETPEERNAME => sys_getpeername(args[0], args[1] as *const u8, args[2] as u32),
-        SYSCALL_SENDTO => sys_sendto(
-            args[0],
-            args[1] as *const u8,
-            args[2],
-            args[3] as u32,
-            args[4] as *const u8,
-            args[5] as u32,
-        ),
-        SYSCALL_RECVFROM => sys_recvfrom(
-            args[0],
-            args[1] as *mut u8,
-            args[2],
-            args[3] as u32,
-            args[4] as *const u8,
-            args[5] as u32,
-        ),
-        SYSCALL_SETSOCKOPT => sys_setsockopt(
-            args[0],
-            args[1] as u32,
-            args[2] as u32,
-            args[3] as *const u8,
-            args[4] as u32,
-        ),
+        // SYSCALL_SOCKET => sys_socket(args[0] as u32, args[1] as u32, args[2] as u32),
+        // SYSCALL_BIND => sys_bind(args[0], args[1] as *const u8, args[2] as u32),
+        // SYSCALL_LISTEN => sys_listen(args[0], args[1] as u32),
+        // SYSCALL_ACCEPT => sys_accept(args[0], args[1] as *const u8, args[2] as u32),
+        // SYSCALL_CONNECT => sys_connect(args[0], args[1] as *const u8, args[2] as u32),
+        // SYSCALL_GETSOCKNAME => sys_getsockname(args[0], args[1] as *const u8, args[2] as u32),
+        // SYSCALL_GETPEERNAME => sys_getpeername(args[0], args[1] as *const u8, args[2] as u32),
+        // SYSCALL_SENDTO => sys_sendto(
+        //     args[0],
+        //     args[1] as *const u8,
+        //     args[2],
+        //     args[3] as u32,
+        //     args[4] as *const u8,
+        //     args[5] as u32,
+        // ),
+        // SYSCALL_RECVFROM => sys_recvfrom(
+        //     args[0],
+        //     args[1] as *mut u8,
+        //     args[2],
+        //     args[3] as u32,
+        //     args[4] as *const u8,
+        //     args[5] as u32,
+        // ),
+        // SYSCALL_SETSOCKOPT => sys_setsockopt(
+        //     args[0],
+        //     args[1] as u32,
+        //     args[2] as u32,
+        //     args[3] as *const u8,
+        //     args[4] as u32,
+        // ),
         SYSCALL_SHUTDOWN => sys_shutdown(),
         _ => {
             error!(

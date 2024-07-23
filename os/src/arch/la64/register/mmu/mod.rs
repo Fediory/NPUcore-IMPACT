@@ -1,15 +1,12 @@
 #![allow(unused)]
 
 use core::fmt::write;
-pub mod asid;
 pub mod dmw;
 pub mod pgd;
 pub mod pwch;
 pub mod pwcl;
 pub mod stlbps;
-pub mod tlbehi;
 pub mod tlbelo;
-pub mod tlbidx;
 pub mod tlbrbadv;
 pub mod tlbrehi;
 pub mod tlbrelo;
