@@ -7,13 +7,13 @@ fn panic(info: &PanicInfo) -> ! {
         Some(location) => {
             println!(
                 "[kernel] panicked at '{}', {}:{}:{}",
-                info.message(),
+                info.message().unwrap(),
                 location.file(),
                 location.line(),
                 location.column()
             );
         }
-        None => println!("[kernel] panicked at '{}'", info.message()),
+        None => println!("[kernel] panicked at '{}'", info.message().unwrap()),
     }
     shutdown()
 }

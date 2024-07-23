@@ -77,8 +77,8 @@ pub fn tlb_global_invalidate() {
 //         asm!("tlbrd");
 //     }
 // }
-// fn tlbsrch() {
-//     unsafe {
-//         asm!("tlbsrch");
-//     }
-// }
+fn tlbsrch() {
+    unsafe {
+        asm!("tlbsrch");
+    }
+}

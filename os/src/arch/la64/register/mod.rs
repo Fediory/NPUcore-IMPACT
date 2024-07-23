@@ -10,8 +10,9 @@ pub use base::{
     prmd::*, rvacfg::*,
 };
 pub use mmu::{
-    dmw::*, pgd::*, pwch::*, pwcl::*, stlbps::*, tlbelo::*, tlbrbadv::*, tlbrehi::*, tlbrelo::*,
-    tlbrentry::*, tlbrera::*, tlbrprmd::*, MemoryAccessType,
+    dmw::*, pgd::*, pwch::*, pwcl::*, stlbps::*, tlbelo::*,
+    tlbrbadv::*, tlbrehi::*, tlbrelo::*, tlbrentry::*, tlbrera::*, tlbrprmd::*,
+    MemoryAccessType,
 };
 pub use ras::{merrctl::*, merrentry::*, merrera::*};
 pub use timer::{tcfg::*, ticlr::*};

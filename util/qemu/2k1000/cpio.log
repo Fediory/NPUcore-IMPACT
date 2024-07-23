@@ -1,23 +1,39 @@
 .
+cpio: bin：无法创建链接到 `usr/bin/": 不允许的操作
 bin
+cpio: lib：无法创建链接到 `usr/lib": 不允许的操作
 lib
+cpio: lib64：无法创建链接到 `lib": 不允许的操作
 lib64
+cpio: linuxrc：无法创建链接到 `bin/busybox": 不允许的操作
 linuxrc
+cpio: sbin：无法创建链接到 `usr/sbin": 不允许的操作
 sbin
 dev
+cpio: dev/fd：无法创建链接到 `../proc/self/fd": 不允许的操作
 dev/fd
+cpio: dev/log：无法创建链接到 `../tmp/log": 不允许的操作
 dev/log
+cpio: dev/stderr：无法创建链接到 `../proc/self/fd/2": 不允许的操作
 dev/stderr
+cpio: dev/stdin：无法创建链接到 `../proc/self/fd/0": 不允许的操作
 dev/stdin
+cpio: dev/stdout：无法创建链接到 `../proc/self/fd/1": 不允许的操作
 dev/stdout
 dev/pts
 dev/shm
+cpio: dev/console：函数 mknod 失败: 不允许的操作
 dev/console
 etc
+cpio: etc/dropbear：无法创建链接到 `/var/run/dropbear": 不允许的操作
 etc/dropbear
+cpio: etc/localtime：无法创建链接到 `../usr/share/zoneinfo/Etc/UTC": 不允许的操作
 etc/localtime
+cpio: etc/mtab：无法创建链接到 `../proc/self/mounts": 不允许的操作
 etc/mtab
+cpio: etc/os-release：无法创建链接到 `../usr/lib/os-release": 不允许的操作
 etc/os-release
+cpio: etc/resolv.conf：无法创建链接到 `../tmp/resolv.conf": 不允许的操作
 etc/resolv.conf
 etc/audisp
 etc/audisp/plugins.d
@@ -136,286 +152,563 @@ run/nfs/etab
 run/nfs/rmtab
 run/nfs/state
 sys
+cpio: tmp：无法更改模式为 rwxrwxrwt: 不允许的操作
 tmp
 tmp/sa
 tplc
 usr
+cpio: usr/lib64：无法创建链接到 `lib": 不允许的操作
 usr/lib64
 usr/bin
+cpio: usr/bin/[：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/[
+cpio: usr/bin/[[：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/[[
+cpio: usr/bin/ar：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ar
+cpio: usr/bin/arch：无法创建链接到 `busybox": 不允许的操作
 usr/bin/arch
+cpio: usr/bin/ash：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ash
+cpio: usr/bin/awk：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/awk
+cpio: usr/bin/base64：无法创建链接到 `busybox": 不允许的操作
 usr/bin/base64
+cpio: usr/bin/basename：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/basename
+cpio: usr/bin/bbconfig：无法创建链接到 `busybox": 不允许的操作
 usr/bin/bbconfig
+cpio: usr/bin/bc：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/bc
+cpio: usr/bin/beep：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/beep
+cpio: usr/bin/blkdiscard：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/blkdiscard
+cpio: usr/bin/bzcmp：无法创建链接到 `bzdiff": 不允许的操作
 usr/bin/bzcmp
+cpio: usr/bin/bzegrep：无法创建链接到 `bzgrep": 不允许的操作
 usr/bin/bzegrep
+cpio: usr/bin/bzfgrep：无法创建链接到 `bzgrep": 不允许的操作
 usr/bin/bzfgrep
+cpio: usr/bin/bzless：无法创建链接到 `bzmore": 不允许的操作
 usr/bin/bzless
+cpio: usr/bin/cal：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/cal
+cpio: usr/bin/captoinfo：无法创建链接到 `tic": 不允许的操作
 usr/bin/captoinfo
+cpio: usr/bin/cat：无法创建链接到 `busybox": 不允许的操作
 usr/bin/cat
+cpio: usr/bin/chgrp：无法创建链接到 `busybox": 不允许的操作
 usr/bin/chgrp
+cpio: usr/bin/chmod：无法创建链接到 `busybox": 不允许的操作
 usr/bin/chmod
+cpio: usr/bin/chown：无法创建链接到 `busybox": 不允许的操作
 usr/bin/chown
+cpio: usr/bin/chpst：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/chpst
+cpio: usr/bin/chrt：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/chrt
+cpio: usr/bin/chvt：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/chvt
+cpio: usr/bin/cksum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/cksum
+cpio: usr/bin/cmp：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/cmp
+cpio: usr/bin/comm：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/comm
+cpio: usr/bin/conspy：无法创建链接到 `busybox": 不允许的操作
 usr/bin/conspy
+cpio: usr/bin/cp：无法创建链接到 `busybox": 不允许的操作
 usr/bin/cp
+cpio: usr/bin/cpio：无法创建链接到 `busybox": 不允许的操作
 usr/bin/cpio
+cpio: usr/bin/crontab：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/crontab
+cpio: usr/bin/cryptpw：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/cryptpw
+cpio: usr/bin/cttyhack：无法创建链接到 `busybox": 不允许的操作
 usr/bin/cttyhack
+cpio: usr/bin/cut：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/cut
+cpio: usr/bin/date：无法创建链接到 `busybox": 不允许的操作
 usr/bin/date
+cpio: usr/bin/dbclient：无法创建链接到 `../sbin/dropbear": 不允许的操作
 usr/bin/dbclient
+cpio: usr/bin/dc：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/dc
+cpio: usr/bin/dd：无法创建链接到 `busybox": 不允许的操作
 usr/bin/dd
+cpio: usr/bin/deallocvt：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/deallocvt
+cpio: usr/bin/df：无法创建链接到 `busybox": 不允许的操作
 usr/bin/df
+cpio: usr/bin/diff：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/diff
+cpio: usr/bin/dirname：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/dirname
+cpio: usr/bin/dmesg：无法创建链接到 `busybox": 不允许的操作
 usr/bin/dmesg
+cpio: usr/bin/dnsdomainname：无法创建链接到 `busybox": 不允许的操作
 usr/bin/dnsdomainname
+cpio: usr/bin/dos2unix：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/dos2unix
+cpio: usr/bin/dpkg：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/dpkg
+cpio: usr/bin/dpkg-deb：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/dpkg-deb
+cpio: usr/bin/dropbearconvert：无法创建链接到 `../sbin/dropbear": 不允许的操作
 usr/bin/dropbearconvert
+cpio: usr/bin/dropbearkey：无法创建链接到 `../sbin/dropbear": 不允许的操作
 usr/bin/dropbearkey
+cpio: usr/bin/du：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/du
+cpio: usr/bin/dumpkmap：无法创建链接到 `busybox": 不允许的操作
 usr/bin/dumpkmap
+cpio: usr/bin/dumpleases：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/dumpleases
+cpio: usr/bin/echo：无法创建链接到 `busybox": 不允许的操作
 usr/bin/echo
+cpio: usr/bin/ed：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ed
+cpio: usr/bin/egrep：无法创建链接到 `busybox": 不允许的操作
 usr/bin/egrep
+cpio: usr/bin/eject：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/eject
+cpio: usr/bin/env：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/env
+cpio: usr/bin/envdir：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/envdir
+cpio: usr/bin/envuidgid：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/envuidgid
+cpio: usr/bin/expand：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/expand
+cpio: usr/bin/expr：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/expr
+cpio: usr/bin/factor：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/factor
+cpio: usr/bin/fallocate：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/fallocate
+cpio: usr/bin/false：无法创建链接到 `busybox": 不允许的操作
 usr/bin/false
+cpio: usr/bin/fatattr：无法创建链接到 `busybox": 不允许的操作
 usr/bin/fatattr
+cpio: usr/bin/fdflush：无法创建链接到 `busybox": 不允许的操作
 usr/bin/fdflush
+cpio: usr/bin/fgconsole：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/fgconsole
+cpio: usr/bin/fgrep：无法创建链接到 `busybox": 不允许的操作
 usr/bin/fgrep
+cpio: usr/bin/find：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/find
+cpio: usr/bin/flock：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/flock
+cpio: usr/bin/fold：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/fold
+cpio: usr/bin/free：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/free
+cpio: usr/bin/fsync：无法创建链接到 `busybox": 不允许的操作
 usr/bin/fsync
+cpio: usr/bin/ftpget：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ftpget
+cpio: usr/bin/ftpput：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ftpput
+cpio: usr/bin/fuser：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/fuser
+cpio: usr/bin/getopt：无法创建链接到 `busybox": 不允许的操作
 usr/bin/getopt
+cpio: usr/bin/grep：无法创建链接到 `busybox": 不允许的操作
 usr/bin/grep
+cpio: usr/bin/groups：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/groups
+cpio: usr/bin/gunzip：无法创建链接到 `busybox": 不允许的操作
 usr/bin/gunzip
+cpio: usr/bin/gzip：无法创建链接到 `busybox": 不允许的操作
 usr/bin/gzip
+cpio: usr/bin/hd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/hd
+cpio: usr/bin/head：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/head
+cpio: usr/bin/hexdump：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/hexdump
+cpio: usr/bin/hexedit：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/hexedit
+cpio: usr/bin/hostid：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/hostid
+cpio: usr/bin/hostname：无法创建链接到 `busybox": 不允许的操作
 usr/bin/hostname
+cpio: usr/bin/hush：无法创建链接到 `busybox": 不允许的操作
 usr/bin/hush
+cpio: usr/bin/id：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/id
+cpio: usr/bin/infotocap：无法创建链接到 `tic": 不允许的操作
 usr/bin/infotocap
+cpio: usr/bin/install：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/install
+cpio: usr/bin/ionice：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ionice
+cpio: usr/bin/ipcalc：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ipcalc
+cpio: usr/bin/ipcrm：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ipcrm
+cpio: usr/bin/ipcs：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ipcs
+cpio: usr/bin/kbd_mode：无法创建链接到 `busybox": 不允许的操作
 usr/bin/kbd_mode
+cpio: usr/bin/kill：无法创建链接到 `busybox": 不允许的操作
 usr/bin/kill
+cpio: usr/bin/killall：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/killall
+cpio: usr/bin/last：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/last
+cpio: usr/bin/less：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/less
+cpio: usr/bin/link：无法创建链接到 `busybox": 不允许的操作
 usr/bin/link
+cpio: usr/bin/linux32：无法创建链接到 `busybox": 不允许的操作
 usr/bin/linux32
+cpio: usr/bin/linux64：无法创建链接到 `busybox": 不允许的操作
 usr/bin/linux64
+cpio: usr/bin/ln：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ln
+cpio: usr/bin/logger：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/logger
+cpio: usr/bin/login：无法创建链接到 `busybox": 不允许的操作
 usr/bin/login
+cpio: usr/bin/logname：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/logname
+cpio: usr/bin/lpq：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/lpq
+cpio: usr/bin/lpr：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/lpr
+cpio: usr/bin/ls：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ls
+cpio: usr/bin/lsof：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/lsof
+cpio: usr/bin/lsscsi：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/lsscsi
+cpio: usr/bin/lsusb：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/lsusb
+cpio: usr/bin/lzcat：无法创建链接到 `xz": 不允许的操作
 usr/bin/lzcat
+cpio: usr/bin/lzcmp：无法创建链接到 `xzdiff": 不允许的操作
 usr/bin/lzcmp
+cpio: usr/bin/lzdiff：无法创建链接到 `xzdiff": 不允许的操作
 usr/bin/lzdiff
+cpio: usr/bin/lzegrep：无法创建链接到 `xzgrep": 不允许的操作
 usr/bin/lzegrep
+cpio: usr/bin/lzfgrep：无法创建链接到 `xzgrep": 不允许的操作
 usr/bin/lzfgrep
+cpio: usr/bin/lzgrep：无法创建链接到 `xzgrep": 不允许的操作
 usr/bin/lzgrep
+cpio: usr/bin/lzless：无法创建链接到 `xzless": 不允许的操作
 usr/bin/lzless
+cpio: usr/bin/lzma：无法创建链接到 `xz": 不允许的操作
 usr/bin/lzma
+cpio: usr/bin/lzmore：无法创建链接到 `xzmore": 不允许的操作
 usr/bin/lzmore
+cpio: usr/bin/lzop：无法创建链接到 `busybox": 不允许的操作
 usr/bin/lzop
+cpio: usr/bin/makemime：无法创建链接到 `busybox": 不允许的操作
 usr/bin/makemime
+cpio: usr/bin/man：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/man
+cpio: usr/bin/md5sum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/md5sum
+cpio: usr/bin/mesg：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/mesg
+cpio: usr/bin/microcom：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/microcom
+cpio: usr/bin/mkdir：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mkdir
+cpio: usr/bin/mkfifo：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/mkfifo
+cpio: usr/bin/mknod：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mknod
+cpio: usr/bin/mkpasswd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/mkpasswd
+cpio: usr/bin/mktemp：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mktemp
+cpio: usr/bin/more：无法创建链接到 `busybox": 不允许的操作
 usr/bin/more
+cpio: usr/bin/mount：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mount
+cpio: usr/bin/mountpoint：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mountpoint
+cpio: usr/bin/mt：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mt
+cpio: usr/bin/mv：无法创建链接到 `busybox": 不允许的操作
 usr/bin/mv
+cpio: usr/bin/nc：无法创建链接到 `netcat": 不允许的操作
 usr/bin/nc
+cpio: usr/bin/netstat：无法创建链接到 `busybox": 不允许的操作
 usr/bin/netstat
+cpio: usr/bin/nice：无法创建链接到 `busybox": 不允许的操作
 usr/bin/nice
+cpio: usr/bin/nl：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/nl
+cpio: usr/bin/nmeter：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/nmeter
+cpio: usr/bin/nohup：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/nohup
+cpio: usr/bin/nproc：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/nproc
+cpio: usr/bin/nslookup：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/nslookup
+cpio: usr/bin/nuke：无法创建链接到 `busybox": 不允许的操作
 usr/bin/nuke
+cpio: usr/bin/od：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/od
+cpio: usr/bin/openvt：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/openvt
+cpio: usr/bin/passwd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/passwd
+cpio: usr/bin/paste：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/paste
+cpio: usr/bin/patch：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/patch
+cpio: usr/bin/pgrep：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/pgrep
+cpio: usr/bin/pidof：无法创建链接到 `busybox": 不允许的操作
 usr/bin/pidof
+cpio: usr/bin/ping：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ping
+cpio: usr/bin/ping6：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ping6
+cpio: usr/bin/pipe_progress：无法创建链接到 `busybox": 不允许的操作
 usr/bin/pipe_progress
+cpio: usr/bin/pkill：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/pkill
+cpio: usr/bin/pmap：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/pmap
+cpio: usr/bin/printenv：无法创建链接到 `busybox": 不允许的操作
 usr/bin/printenv
+cpio: usr/bin/printf：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/printf
+cpio: usr/bin/ps：无法创建链接到 `busybox": 不允许的操作
 usr/bin/ps
+cpio: usr/bin/pscan：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/pscan
+cpio: usr/bin/pstree：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/pstree
+cpio: usr/bin/pwd：无法创建链接到 `busybox": 不允许的操作
 usr/bin/pwd
+cpio: usr/bin/pwdx：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/pwdx
+cpio: usr/bin/readlink：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/readlink
+cpio: usr/bin/realpath：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/realpath
+cpio: usr/bin/reformime：无法创建链接到 `busybox": 不允许的操作
 usr/bin/reformime
+cpio: usr/bin/renice：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/renice
+cpio: usr/bin/reset：无法创建链接到 `tset": 不允许的操作
 usr/bin/reset
+cpio: usr/bin/resize：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/resize
+cpio: usr/bin/resume：无法创建链接到 `busybox": 不允许的操作
 usr/bin/resume
+cpio: usr/bin/rev：无法创建链接到 `busybox": 不允许的操作
 usr/bin/rev
+cpio: usr/bin/rm：无法创建链接到 `busybox": 不允许的操作
 usr/bin/rm
+cpio: usr/bin/rmdir：无法创建链接到 `busybox": 不允许的操作
 usr/bin/rmdir
+cpio: usr/bin/rpm：无法创建链接到 `busybox": 不允许的操作
 usr/bin/rpm
+cpio: usr/bin/rpm2cpio：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/rpm2cpio
+cpio: usr/bin/run-parts：无法创建链接到 `busybox": 不允许的操作
 usr/bin/run-parts
+cpio: usr/bin/runsv：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/runsv
+cpio: usr/bin/runsvdir：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/runsvdir
+cpio: usr/bin/rx：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/rx
+cpio: usr/bin/script：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/script
+cpio: usr/bin/scriptreplay：无法创建链接到 `busybox": 不允许的操作
 usr/bin/scriptreplay
+cpio: usr/bin/sed：无法创建链接到 `busybox": 不允许的操作
 usr/bin/sed
+cpio: usr/bin/seq：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/seq
+cpio: usr/bin/setarch：无法创建链接到 `busybox": 不允许的操作
 usr/bin/setarch
+cpio: usr/bin/setkeycodes：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/setkeycodes
+cpio: usr/bin/setpriv：无法创建链接到 `busybox": 不允许的操作
 usr/bin/setpriv
+cpio: usr/bin/setserial：无法创建链接到 `busybox": 不允许的操作
 usr/bin/setserial
+cpio: usr/bin/setsid：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/setsid
+cpio: usr/bin/setuidgid：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/setuidgid
+cpio: usr/bin/sh：无法创建链接到 `busybox": 不允许的操作
 usr/bin/sh
+cpio: usr/bin/sha1sum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sha1sum
+cpio: usr/bin/sha256sum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sha256sum
+cpio: usr/bin/sha3sum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sha3sum
+cpio: usr/bin/sha512sum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sha512sum
+cpio: usr/bin/showkey：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/showkey
+cpio: usr/bin/shred：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/shred
+cpio: usr/bin/shuf：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/shuf
+cpio: usr/bin/sleep：无法创建链接到 `busybox": 不允许的操作
 usr/bin/sleep
+cpio: usr/bin/smemcap：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/smemcap
+cpio: usr/bin/softlimit：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/softlimit
+cpio: usr/bin/sort：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sort
+cpio: usr/bin/split：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/split
+cpio: usr/bin/ssl_client：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ssl_client
+cpio: usr/bin/stat：无法创建链接到 `busybox": 不允许的操作
 usr/bin/stat
+cpio: usr/bin/strings：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/strings
+cpio: usr/bin/stty：无法创建链接到 `busybox": 不允许的操作
 usr/bin/stty
+cpio: usr/bin/su：无法创建链接到 `busybox": 不允许的操作
 usr/bin/su
+cpio: usr/bin/sum：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sum
+cpio: usr/bin/sv：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/sv
+cpio: usr/bin/svc：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/svc
+cpio: usr/bin/svok：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/svok
+cpio: usr/bin/sync：无法创建链接到 `busybox": 不允许的操作
 usr/bin/sync
+cpio: usr/bin/tac：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tac
+cpio: usr/bin/tail：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tail
+cpio: usr/bin/tar：无法创建链接到 `busybox": 不允许的操作
 usr/bin/tar
+cpio: usr/bin/taskset：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/taskset
+cpio: usr/bin/tcpsvd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tcpsvd
+cpio: usr/bin/tee：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tee
+cpio: usr/bin/telnet：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/telnet
+cpio: usr/bin/test：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/test
+cpio: usr/bin/tftp：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tftp
+cpio: usr/bin/time：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/time
+cpio: usr/bin/timeout：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/timeout
+cpio: usr/bin/top：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/top
+cpio: usr/bin/touch：无法创建链接到 `busybox": 不允许的操作
 usr/bin/touch
+cpio: usr/bin/tr：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tr
+cpio: usr/bin/traceroute：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/traceroute
+cpio: usr/bin/traceroute6：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/traceroute6
+cpio: usr/bin/true：无法创建链接到 `busybox": 不允许的操作
 usr/bin/true
+cpio: usr/bin/truncate：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/truncate
+cpio: usr/bin/ts：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ts
+cpio: usr/bin/tty：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/tty
+cpio: usr/bin/ttysize：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/ttysize
+cpio: usr/bin/udhcpc6：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/udhcpc6
+cpio: usr/bin/udpsvd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/udpsvd
+cpio: usr/bin/umount：无法创建链接到 `busybox": 不允许的操作
 usr/bin/umount
+cpio: usr/bin/uname：无法创建链接到 `busybox": 不允许的操作
 usr/bin/uname
+cpio: usr/bin/uncompress：无法创建链接到 `busybox": 不允许的操作
 usr/bin/uncompress
+cpio: usr/bin/unexpand：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/unexpand
+cpio: usr/bin/uniq：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/uniq
+cpio: usr/bin/unix2dos：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/unix2dos
+cpio: usr/bin/unlink：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/unlink
+cpio: usr/bin/unlzma：无法创建链接到 `xz": 不允许的操作
 usr/bin/unlzma
+cpio: usr/bin/unshare：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/unshare
+cpio: usr/bin/unxz：无法创建链接到 `xz": 不允许的操作
 usr/bin/unxz
+cpio: usr/bin/unzip：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/unzip
+cpio: usr/bin/uptime：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/uptime
+cpio: usr/bin/users：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/users
+cpio: usr/bin/usleep：无法创建链接到 `busybox": 不允许的操作
 usr/bin/usleep
+cpio: usr/bin/uudecode：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/uudecode
+cpio: usr/bin/uuencode：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/uuencode
+cpio: usr/bin/vi：无法创建链接到 `busybox": 不允许的操作
 usr/bin/vi
+cpio: usr/bin/vlock：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/vlock
+cpio: usr/bin/volname：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/volname
+cpio: usr/bin/w：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/w
+cpio: usr/bin/wall：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/wall
+cpio: usr/bin/watch：无法创建链接到 `busybox": 不允许的操作
 usr/bin/watch
+cpio: usr/bin/wc：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/wc
+cpio: usr/bin/wget：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/wget
+cpio: usr/bin/which：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/which
+cpio: usr/bin/who：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/who
+cpio: usr/bin/whoami：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/whoami
+cpio: usr/bin/whois：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/whois
+cpio: usr/bin/xargs：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/xargs
+cpio: usr/bin/xxd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/xxd
+cpio: usr/bin/xzcat：无法创建链接到 `xz": 不允许的操作
 usr/bin/xzcat
+cpio: usr/bin/xzcmp：无法创建链接到 `xzdiff": 不允许的操作
 usr/bin/xzcmp
+cpio: usr/bin/xzegrep：无法创建链接到 `xzgrep": 不允许的操作
 usr/bin/xzegrep
+cpio: usr/bin/xzfgrep：无法创建链接到 `xzgrep": 不允许的操作
 usr/bin/xzfgrep
+cpio: usr/bin/yes：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/bin/yes
+cpio: usr/bin/zcat：无法创建链接到 `busybox": 不允许的操作
 usr/bin/zcat
 usr/bin/asc2log
 usr/bin/attr
@@ -426,6 +719,7 @@ usr/bin/auvirt
 usr/bin/bash
 usr/bin/bcmserver
 usr/bin/bunzip2
+cpio: usr/bin/busybox：无法更改模式为 rwsr-xr-x: 不允许的操作
 usr/bin/busybox
 usr/bin/bzcat
 usr/bin/bzdiff
@@ -525,7 +819,9 @@ usr/bin/xzgrep
 usr/bin/xzless
 usr/bin/xzmore
 usr/include
+cpio: usr/include/com_err.h：无法创建链接到 `et/com_err.h": 不允许的操作
 usr/include/com_err.h
+cpio: usr/include/ncurses.h：无法创建链接到 `curses.h": 不允许的操作
 usr/include/ncurses.h
 usr/include/acl
 usr/include/acl/libacl.h
@@ -912,118 +1208,231 @@ usr/include/unctrl.h
 usr/include/zconf.h
 usr/include/zlib.h
 usr/lib
+cpio: usr/lib/ld.so.1：无法创建链接到 `ld-2.28.so": 不允许的操作
 usr/lib/ld.so.1
+cpio: usr/lib/libacl.so：无法创建链接到 `libacl.so.1.1.2253": 不允许的操作
 usr/lib/libacl.so
+cpio: usr/lib/libacl.so.1：无法创建链接到 `libacl.so.1.1.2253": 不允许的操作
 usr/lib/libacl.so.1
+cpio: usr/lib/libanl.so.1：无法创建链接到 `libanl-2.28.so": 不允许的操作
 usr/lib/libanl.so.1
+cpio: usr/lib/libasm.so：无法创建链接到 `libasm.so.1": 不允许的操作
 usr/lib/libasm.so
+cpio: usr/lib/libasm.so.1：无法创建链接到 `libasm-0.177.so": 不允许的操作
 usr/lib/libasm.so.1
+cpio: usr/lib/libatomic.so.1：无法创建链接到 `libatomic.so.1.2.0": 不允许的操作
 usr/lib/libatomic.so.1
+cpio: usr/lib/libattr.so：无法创建链接到 `libattr.so.1.1.2448": 不允许的操作
 usr/lib/libattr.so
+cpio: usr/lib/libattr.so.1：无法创建链接到 `libattr.so.1.1.2448": 不允许的操作
 usr/lib/libattr.so.1
+cpio: usr/lib/libaudit.so：无法创建链接到 `libaudit.so.1.0.0": 不允许的操作
 usr/lib/libaudit.so
+cpio: usr/lib/libaudit.so.1：无法创建链接到 `libaudit.so.1.0.0": 不允许的操作
 usr/lib/libaudit.so.1
+cpio: usr/lib/libauparse.so：无法创建链接到 `libauparse.so.0.0.0": 不允许的操作
 usr/lib/libauparse.so
+cpio: usr/lib/libauparse.so.0：无法创建链接到 `libauparse.so.0.0.0": 不允许的操作
 usr/lib/libauparse.so.0
+cpio: usr/lib/libblkid.so：无法创建链接到 `libblkid.so.1.1.0": 不允许的操作
 usr/lib/libblkid.so
+cpio: usr/lib/libblkid.so.1：无法创建链接到 `libblkid.so.1.1.0": 不允许的操作
 usr/lib/libblkid.so.1
+cpio: usr/lib/libbz2.so：无法创建链接到 `libbz2.so.1.0.8": 不允许的操作
 usr/lib/libbz2.so
+cpio: usr/lib/libbz2.so.1.0：无法创建链接到 `libbz2.so.1.0.8": 不允许的操作
 usr/lib/libbz2.so.1.0
+cpio: usr/lib/libc.so.6：无法创建链接到 `libc-2.28.so": 不允许的操作
 usr/lib/libc.so.6
+cpio: usr/lib/libcap.so：无法创建链接到 `libcap.so.2": 不允许的操作
 usr/lib/libcap.so
+cpio: usr/lib/libcap.so.2：无法创建链接到 `libcap.so.2.27": 不允许的操作
 usr/lib/libcap.so.2
+cpio: usr/lib/libcom_err.so：无法创建链接到 `libcom_err.so.2": 不允许的操作
 usr/lib/libcom_err.so
+cpio: usr/lib/libcom_err.so.2：无法创建链接到 `libcom_err.so.2.1": 不允许的操作
 usr/lib/libcom_err.so.2
+cpio: usr/lib/libcrypt.so.1：无法创建链接到 `libcrypt-2.28.so": 不允许的操作
 usr/lib/libcrypt.so.1
+cpio: usr/lib/libcrypto.so：无法创建链接到 `libcrypto.so.1.1": 不允许的操作
 usr/lib/libcrypto.so
+cpio: usr/lib/libdl.so.2：无法创建链接到 `libdl-2.28.so": 不允许的操作
 usr/lib/libdl.so.2
+cpio: usr/lib/libdw.so：无法创建链接到 `libdw.so.1": 不允许的操作
 usr/lib/libdw.so
+cpio: usr/lib/libdw.so.1：无法创建链接到 `libdw-0.177.so": 不允许的操作
 usr/lib/libdw.so.1
+cpio: usr/lib/libe2p.so：无法创建链接到 `libe2p.so.2": 不允许的操作
 usr/lib/libe2p.so
+cpio: usr/lib/libe2p.so.2：无法创建链接到 `libe2p.so.2.3": 不允许的操作
 usr/lib/libe2p.so.2
+cpio: usr/lib/libelf.so：无法创建链接到 `libelf.so.1": 不允许的操作
 usr/lib/libelf.so
+cpio: usr/lib/libelf.so.1：无法创建链接到 `libelf-0.177.so": 不允许的操作
 usr/lib/libelf.so.1
+cpio: usr/lib/libevent-2.1.so.7：无法创建链接到 `libevent-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent-2.1.so.7
+cpio: usr/lib/libevent.so：无法创建链接到 `libevent-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent.so
+cpio: usr/lib/libevent_core-2.1.so.7：无法创建链接到 `libevent_core-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_core-2.1.so.7
+cpio: usr/lib/libevent_core.so：无法创建链接到 `libevent_core-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_core.so
+cpio: usr/lib/libevent_extra-2.1.so.7：无法创建链接到 `libevent_extra-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_extra-2.1.so.7
+cpio: usr/lib/libevent_extra.so：无法创建链接到 `libevent_extra-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_extra.so
+cpio: usr/lib/libevent_openssl-2.1.so.7：无法创建链接到 `libevent_openssl-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_openssl-2.1.so.7
+cpio: usr/lib/libevent_openssl.so：无法创建链接到 `libevent_openssl-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_openssl.so
+cpio: usr/lib/libevent_pthreads-2.1.so.7：无法创建链接到 `libevent_pthreads-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_pthreads-2.1.so.7
+cpio: usr/lib/libevent_pthreads.so：无法创建链接到 `libevent_pthreads-2.1.so.7.0.0": 不允许的操作
 usr/lib/libevent_pthreads.so
+cpio: usr/lib/libexpat.so：无法创建链接到 `libexpat.so.1.6.11": 不允许的操作
 usr/lib/libexpat.so
+cpio: usr/lib/libexpat.so.1：无法创建链接到 `libexpat.so.1.6.11": 不允许的操作
 usr/lib/libexpat.so.1
+cpio: usr/lib/libext2fs.so：无法创建链接到 `libext2fs.so.2": 不允许的操作
 usr/lib/libext2fs.so
+cpio: usr/lib/libext2fs.so.2：无法创建链接到 `libext2fs.so.2.4": 不允许的操作
 usr/lib/libext2fs.so.2
+cpio: usr/lib/libformw.so：无法创建链接到 `libformw.so.6": 不允许的操作
 usr/lib/libformw.so
+cpio: usr/lib/libformw.so.6：无法创建链接到 `libformw.so.6.1": 不允许的操作
 usr/lib/libformw.so.6
+cpio: usr/lib/libgfortran.so.5：无法创建链接到 `libgfortran.so.5.0.0": 不允许的操作
 usr/lib/libgfortran.so.5
+cpio: usr/lib/libgomp.so.1：无法创建链接到 `libgomp.so.1.0.0": 不允许的操作
 usr/lib/libgomp.so.1
+cpio: usr/lib/libhandle.a：无法创建链接到 `/usr/lib/libhandle.a": 不允许的操作
 usr/lib/libhandle.a
+cpio: usr/lib/libhandle.la：无法创建链接到 `/usr/lib/libhandle.la": 不允许的操作
 usr/lib/libhandle.la
+cpio: usr/lib/libhandle.so：无法创建链接到 `/lib/libhandle.so": 不允许的操作
 usr/lib/libhandle.so
+cpio: usr/lib/libhandle.so.1：无法创建链接到 `libhandle.so.1.0.3": 不允许的操作
 usr/lib/libhandle.so.1
+cpio: usr/lib/libhistory.so：无法创建链接到 `libhistory.so.8": 不允许的操作
 usr/lib/libhistory.so
+cpio: usr/lib/libhistory.so.8：无法创建链接到 `libhistory.so.8.0": 不允许的操作
 usr/lib/libhistory.so.8
+cpio: usr/lib/libjpeg.so：无法创建链接到 `libjpeg.so.9.4.0": 不允许的操作
 usr/lib/libjpeg.so
+cpio: usr/lib/libjpeg.so.9：无法创建链接到 `libjpeg.so.9.4.0": 不允许的操作
 usr/lib/libjpeg.so.9
+cpio: usr/lib/liblftp-jobs.so：无法创建链接到 `liblftp-jobs.so.0.0.0": 不允许的操作
 usr/lib/liblftp-jobs.so
+cpio: usr/lib/liblftp-jobs.so.0：无法创建链接到 `liblftp-jobs.so.0.0.0": 不允许的操作
 usr/lib/liblftp-jobs.so.0
+cpio: usr/lib/liblftp-tasks.so：无法创建链接到 `liblftp-tasks.so.0.0.0": 不允许的操作
 usr/lib/liblftp-tasks.so
+cpio: usr/lib/liblftp-tasks.so.0：无法创建链接到 `liblftp-tasks.so.0.0.0": 不允许的操作
 usr/lib/liblftp-tasks.so.0
+cpio: usr/lib/liblzma.so：无法创建链接到 `liblzma.so.5.2.4": 不允许的操作
 usr/lib/liblzma.so
+cpio: usr/lib/liblzma.so.5：无法创建链接到 `liblzma.so.5.2.4": 不允许的操作
 usr/lib/liblzma.so.5
+cpio: usr/lib/libm.so.6：无法创建链接到 `libm-2.28.so": 不允许的操作
 usr/lib/libm.so.6
+cpio: usr/lib/libmenuw.so：无法创建链接到 `libmenuw.so.6": 不允许的操作
 usr/lib/libmenuw.so
+cpio: usr/lib/libmenuw.so.6：无法创建链接到 `libmenuw.so.6.1": 不允许的操作
 usr/lib/libmenuw.so.6
+cpio: usr/lib/libncursesw.so：无法创建链接到 `libncursesw.so.6": 不允许的操作
 usr/lib/libncursesw.so
+cpio: usr/lib/libncursesw.so.6：无法创建链接到 `libncursesw.so.6.1": 不允许的操作
 usr/lib/libncursesw.so.6
+cpio: usr/lib/libnsl.so.1：无法创建链接到 `libnsl-2.28.so": 不允许的操作
 usr/lib/libnsl.so.1
+cpio: usr/lib/libnss_dns.so.2：无法创建链接到 `libnss_dns-2.28.so": 不允许的操作
 usr/lib/libnss_dns.so.2
+cpio: usr/lib/libnss_files.so.2：无法创建链接到 `libnss_files-2.28.so": 不允许的操作
 usr/lib/libnss_files.so.2
+cpio: usr/lib/libpanelw.so：无法创建链接到 `libpanelw.so.6": 不允许的操作
 usr/lib/libpanelw.so
+cpio: usr/lib/libpanelw.so.6：无法创建链接到 `libpanelw.so.6.1": 不允许的操作
 usr/lib/libpanelw.so.6
+cpio: usr/lib/libpcap.so：无法创建链接到 `libpcap.so.1": 不允许的操作
 usr/lib/libpcap.so
+cpio: usr/lib/libpcap.so.1：无法创建链接到 `libpcap.so.1.9.1": 不允许的操作
 usr/lib/libpcap.so.1
+cpio: usr/lib/libpci.so：无法创建链接到 `libpci.so.3": 不允许的操作
 usr/lib/libpci.so
+cpio: usr/lib/libpci.so.3：无法创建链接到 `libpci.so.3.5.5": 不允许的操作
 usr/lib/libpci.so.3
+cpio: usr/lib/libpopt.so：无法创建链接到 `libpopt.so.0.0.0": 不允许的操作
 usr/lib/libpopt.so
+cpio: usr/lib/libpopt.so.0：无法创建链接到 `libpopt.so.0.0.0": 不允许的操作
 usr/lib/libpopt.so.0
+cpio: usr/lib/libpthread.so.0：无法创建链接到 `libpthread-2.28.so": 不允许的操作
 usr/lib/libpthread.so.0
+cpio: usr/lib/libreadline.so：无法创建链接到 `libreadline.so.8": 不允许的操作
 usr/lib/libreadline.so
+cpio: usr/lib/libreadline.so.8：无法创建链接到 `libreadline.so.8.0": 不允许的操作
 usr/lib/libreadline.so.8
+cpio: usr/lib/libresolv.so.2：无法创建链接到 `libresolv-2.28.so": 不允许的操作
 usr/lib/libresolv.so.2
+cpio: usr/lib/librt.so.1：无法创建链接到 `librt-2.28.so": 不允许的操作
 usr/lib/librt.so.1
+cpio: usr/lib/libslang.so：无法创建链接到 `libslang.so.2": 不允许的操作
 usr/lib/libslang.so
+cpio: usr/lib/libslang.so.2：无法创建链接到 `libslang.so.2.3.2": 不允许的操作
 usr/lib/libslang.so.2
+cpio: usr/lib/libsocketcan.so：无法创建链接到 `libsocketcan.so.2.3.0": 不允许的操作
 usr/lib/libsocketcan.so
+cpio: usr/lib/libsocketcan.so.2：无法创建链接到 `libsocketcan.so.2.3.0": 不允许的操作
 usr/lib/libsocketcan.so.2
+cpio: usr/lib/libss.so：无法创建链接到 `libss.so.2": 不允许的操作
 usr/lib/libss.so
+cpio: usr/lib/libss.so.2：无法创建链接到 `libss.so.2.0": 不允许的操作
 usr/lib/libss.so.2
+cpio: usr/lib/libssl.so：无法创建链接到 `libssl.so.1.1": 不允许的操作
 usr/lib/libssl.so
+cpio: usr/lib/libstdc++.so.6：无法创建链接到 `libstdc++.so.6.0.25": 不允许的操作
 usr/lib/libstdc++.so.6
+cpio: usr/lib/libthread_db.so.1：无法创建链接到 `libthread_db-1.0.so": 不允许的操作
 usr/lib/libthread_db.so.1
+cpio: usr/lib/libtirpc.so：无法创建链接到 `libtirpc.so.3.0.0": 不允许的操作
 usr/lib/libtirpc.so
+cpio: usr/lib/libtirpc.so.3：无法创建链接到 `libtirpc.so.3.0.0": 不允许的操作
 usr/lib/libtirpc.so.3
+cpio: usr/lib/libusb-1.0.so：无法创建链接到 `libusb-1.0.so.0.2.0": 不允许的操作
 usr/lib/libusb-1.0.so
+cpio: usr/lib/libusb-1.0.so.0：无法创建链接到 `libusb-1.0.so.0.2.0": 不允许的操作
 usr/lib/libusb-1.0.so.0
+cpio: usr/lib/libutil.so.1：无法创建链接到 `libutil-2.28.so": 不允许的操作
 usr/lib/libutil.so.1
+cpio: usr/lib/libuuid.so：无法创建链接到 `libuuid.so.1.3.0": 不允许的操作
 usr/lib/libuuid.so
+cpio: usr/lib/libuuid.so.1：无法创建链接到 `libuuid.so.1.3.0": 不允许的操作
 usr/lib/libuuid.so.1
+cpio: usr/lib/libv4l1.so：无法创建链接到 `libv4l1.so.0.0.0": 不允许的操作
 usr/lib/libv4l1.so
+cpio: usr/lib/libv4l1.so.0：无法创建链接到 `libv4l1.so.0.0.0": 不允许的操作
 usr/lib/libv4l1.so.0
+cpio: usr/lib/libv4l2.so：无法创建链接到 `libv4l2.so.0.0.0": 不允许的操作
 usr/lib/libv4l2.so
+cpio: usr/lib/libv4l2.so.0：无法创建链接到 `libv4l2.so.0.0.0": 不允许的操作
 usr/lib/libv4l2.so.0
+cpio: usr/lib/libv4l2rds.so：无法创建链接到 `libv4l2rds.so.0.0.0": 不允许的操作
 usr/lib/libv4l2rds.so
+cpio: usr/lib/libv4l2rds.so.0：无法创建链接到 `libv4l2rds.so.0.0.0": 不允许的操作
 usr/lib/libv4l2rds.so.0
+cpio: usr/lib/libv4lconvert.so：无法创建链接到 `libv4lconvert.so.0.0.0": 不允许的操作
 usr/lib/libv4lconvert.so
+cpio: usr/lib/libv4lconvert.so.0：无法创建链接到 `libv4lconvert.so.0.0.0": 不允许的操作
 usr/lib/libv4lconvert.so.0
+cpio: usr/lib/libz.so：无法创建链接到 `libz.so.1.2.11": 不允许的操作
 usr/lib/libz.so
+cpio: usr/lib/libz.so.1：无法创建链接到 `libz.so.1.2.11": 不允许的操作
 usr/lib/libz.so.1
+cpio: usr/lib/terminfo：无法创建链接到 `../share/terminfo": 不允许的操作
 usr/lib/terminfo
+cpio: usr/lib/v4l1compat.so：无法创建链接到 `libv4l/v4l1compat.so": 不允许的操作
 usr/lib/v4l1compat.so
+cpio: usr/lib/v4l2convert.so：无法创建链接到 `libv4l/v4l2convert.so": 不允许的操作
 usr/lib/v4l2convert.so
 usr/lib/bash
 usr/lib/bash/Makefile.inc
@@ -1058,21 +1467,37 @@ usr/lib/bash/whoami
 usr/lib/e2fsprogs
 usr/lib/e2fsprogs/e2scrub_all_cron
 usr/lib/elfutils
+cpio: usr/lib/elfutils/libebl_aarch64.so：无法创建链接到 `libebl_aarch64-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_aarch64.so
+cpio: usr/lib/elfutils/libebl_alpha.so：无法创建链接到 `libebl_alpha-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_alpha.so
+cpio: usr/lib/elfutils/libebl_arm.so：无法创建链接到 `libebl_arm-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_arm.so
+cpio: usr/lib/elfutils/libebl_bpf.so：无法创建链接到 `libebl_bpf-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_bpf.so
+cpio: usr/lib/elfutils/libebl_csky.so：无法创建链接到 `libebl_csky-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_csky.so
+cpio: usr/lib/elfutils/libebl_i386.so：无法创建链接到 `libebl_i386-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_i386.so
+cpio: usr/lib/elfutils/libebl_ia64.so：无法创建链接到 `libebl_ia64-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_ia64.so
+cpio: usr/lib/elfutils/libebl_m68k.so：无法创建链接到 `libebl_m68k-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_m68k.so
+cpio: usr/lib/elfutils/libebl_ppc.so：无法创建链接到 `libebl_ppc-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_ppc.so
+cpio: usr/lib/elfutils/libebl_ppc64.so：无法创建链接到 `libebl_ppc64-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_ppc64.so
+cpio: usr/lib/elfutils/libebl_riscv.so：无法创建链接到 `libebl_riscv-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_riscv.so
+cpio: usr/lib/elfutils/libebl_s390.so：无法创建链接到 `libebl_s390-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_s390.so
+cpio: usr/lib/elfutils/libebl_sh.so：无法创建链接到 `libebl_sh-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_sh.so
+cpio: usr/lib/elfutils/libebl_sparc.so：无法创建链接到 `libebl_sparc-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_sparc.so
+cpio: usr/lib/elfutils/libebl_tilegx.so：无法创建链接到 `libebl_tilegx-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_tilegx.so
+cpio: usr/lib/elfutils/libebl_x86_64.so：无法创建链接到 `libebl_x86_64-0.177.so": 不允许的操作
 usr/lib/elfutils/libebl_x86_64.so
 usr/lib/elfutils/libebl_aarch64-0.177.so
 usr/lib/elfutils/libebl_alpha-0.177.so
@@ -1166,9 +1591,13 @@ usr/lib/sa/sa1
 usr/lib/sa/sa2
 usr/lib/sa/sadc
 usr/lib/sf
+cpio: usr/lib/sf/libatomic.so.1：无法创建链接到 `libatomic.so.1.2.0": 不允许的操作
 usr/lib/sf/libatomic.so.1
+cpio: usr/lib/sf/libgfortran.so.5：无法创建链接到 `libgfortran.so.5.0.0": 不允许的操作
 usr/lib/sf/libgfortran.so.5
+cpio: usr/lib/sf/libgomp.so.1：无法创建链接到 `libgomp.so.1.0.0": 不允许的操作
 usr/lib/sf/libgomp.so.1
+cpio: usr/lib/sf/libstdc++.so.6：无法创建链接到 `libstdc++.so.6.0.25": 不允许的操作
 usr/lib/sf/libstdc++.so.6
 usr/lib/sf/libatomic.so.1.2.0
 usr/lib/sf/libgcc_s.so.1
@@ -1347,141 +1776,275 @@ usr/lib/libz.so.1.2.11
 usr/lib/os-release
 usr/libexec
 usr/libexec/sftp-server
+cpio: usr/libexec/ssh-keysign：无法更改模式为 rws--x--x: 不允许的操作
 usr/libexec/ssh-keysign
 usr/libexec/ssh-pkcs11-helper
 usr/sbin
+cpio: usr/sbin/acpid：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/acpid
+cpio: usr/sbin/add-shell：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/add-shell
+cpio: usr/sbin/addgroup：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/addgroup
+cpio: usr/sbin/adduser：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/adduser
+cpio: usr/sbin/adjtimex：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/adjtimex
+cpio: usr/sbin/arp：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/arp
+cpio: usr/sbin/arping：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/arping
+cpio: usr/sbin/blkid：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/blkid
+cpio: usr/sbin/blockdev：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/blockdev
+cpio: usr/sbin/bootchartd：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/bootchartd
+cpio: usr/sbin/brctl：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/brctl
+cpio: usr/sbin/chat：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/chat
+cpio: usr/sbin/chpasswd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/chpasswd
+cpio: usr/sbin/chroot：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/chroot
+cpio: usr/sbin/crond：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/crond
+cpio: usr/sbin/ctstat：无法创建链接到 `lnstat": 不允许的操作
 usr/sbin/ctstat
+cpio: usr/sbin/delgroup：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/delgroup
+cpio: usr/sbin/deluser：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/deluser
+cpio: usr/sbin/depmod：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/depmod
+cpio: usr/sbin/devfsd：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/devfsd
+cpio: usr/sbin/devmem：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/devmem
+cpio: usr/sbin/dhcprelay：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/dhcprelay
+cpio: usr/sbin/dnsd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/dnsd
+cpio: usr/sbin/e2label：无法创建链接到 `tune2fs": 不允许的操作
 usr/sbin/e2label
+cpio: usr/sbin/e2mmpstatus：无法创建链接到 `dumpe2fs": 不允许的操作
 usr/sbin/e2mmpstatus
+cpio: usr/sbin/ether-wake：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/ether-wake
+cpio: usr/sbin/fakeidentd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/fakeidentd
+cpio: usr/sbin/fbset：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/fbset
+cpio: usr/sbin/fbsplash：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/fbsplash
+cpio: usr/sbin/fdformat：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/fdformat
+cpio: usr/sbin/fdisk：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/fdisk
+cpio: usr/sbin/findfs：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/findfs
+cpio: usr/sbin/flash_eraseall：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/flash_eraseall
+cpio: usr/sbin/freeramdisk：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/freeramdisk
+cpio: usr/sbin/fsck.ext2：无法创建链接到 `e2fsck": 不允许的操作
 usr/sbin/fsck.ext2
+cpio: usr/sbin/fsck.ext3：无法创建链接到 `e2fsck": 不允许的操作
 usr/sbin/fsck.ext3
+cpio: usr/sbin/fsck.ext4：无法创建链接到 `e2fsck": 不允许的操作
 usr/sbin/fsck.ext4
+cpio: usr/sbin/fsck.minix：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/fsck.minix
+cpio: usr/sbin/fsfreeze：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/fsfreeze
+cpio: usr/sbin/fstrim：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/fstrim
+cpio: usr/sbin/ftpd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/ftpd
+cpio: usr/sbin/getty：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/getty
+cpio: usr/sbin/halt：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/halt
+cpio: usr/sbin/hdparm：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/hdparm
+cpio: usr/sbin/httpd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/httpd
+cpio: usr/sbin/hwclock：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/hwclock
+cpio: usr/sbin/i2cdetect：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/i2cdetect
+cpio: usr/sbin/i2cdump：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/i2cdump
+cpio: usr/sbin/i2cget：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/i2cget
+cpio: usr/sbin/i2cset：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/i2cset
+cpio: usr/sbin/i2ctransfer：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/i2ctransfer
+cpio: usr/sbin/ifconfig：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/ifconfig
+cpio: usr/sbin/ifdown：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/ifdown
+cpio: usr/sbin/ifenslave：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/ifenslave
+cpio: usr/sbin/ifplugd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/ifplugd
+cpio: usr/sbin/ifup：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/ifup
+cpio: usr/sbin/inetd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/inetd
+cpio: usr/sbin/init：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/init
+cpio: usr/sbin/insmod：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/insmod
+cpio: usr/sbin/ipaddr：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/ipaddr
+cpio: usr/sbin/iplink：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/iplink
+cpio: usr/sbin/ipneigh：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/ipneigh
+cpio: usr/sbin/iproute：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/iproute
+cpio: usr/sbin/iprule：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/iprule
+cpio: usr/sbin/iptunnel：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/iptunnel
+cpio: usr/sbin/killall5：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/killall5
+cpio: usr/sbin/klogd：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/klogd
+cpio: usr/sbin/loadfont：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/loadfont
+cpio: usr/sbin/loadkmap：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/loadkmap
+cpio: usr/sbin/logread：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/logread
+cpio: usr/sbin/losetup：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/losetup
+cpio: usr/sbin/lpd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/lpd
+cpio: usr/sbin/lsmod：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/lsmod
+cpio: usr/sbin/makedevs：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/makedevs
+cpio: usr/sbin/mdev：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/mdev
+cpio: usr/sbin/mkdosfs：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/mkdosfs
+cpio: usr/sbin/mkfs.ext2：无法创建链接到 `mke2fs": 不允许的操作
 usr/sbin/mkfs.ext2
+cpio: usr/sbin/mkfs.ext3：无法创建链接到 `mke2fs": 不允许的操作
 usr/sbin/mkfs.ext3
+cpio: usr/sbin/mkfs.ext4：无法创建链接到 `mke2fs": 不允许的操作
 usr/sbin/mkfs.ext4
+cpio: usr/sbin/mkfs.minix：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/mkfs.minix
+cpio: usr/sbin/mkfs.reiser：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/mkfs.reiser
+cpio: usr/sbin/mkfs.vfat：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/mkfs.vfat
+cpio: usr/sbin/mkswap：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/mkswap
+cpio: usr/sbin/modinfo：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/modinfo
+cpio: usr/sbin/modprobe：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/modprobe
+cpio: usr/sbin/mount.nfs4：无法创建链接到 `mount.nfs": 不允许的操作
 usr/sbin/mount.nfs4
+cpio: usr/sbin/nameif：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/nameif
+cpio: usr/sbin/nbd-client：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/nbd-client
+cpio: usr/sbin/nologin：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/nologin
+cpio: usr/sbin/ntpd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/ntpd
+cpio: usr/sbin/partprobe：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/partprobe
+cpio: usr/sbin/pivot_root：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/pivot_root
+cpio: usr/sbin/popmaildir：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/popmaildir
+cpio: usr/sbin/poweroff：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/poweroff
+cpio: usr/sbin/powertop：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/powertop
+cpio: usr/sbin/raidautorun：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/raidautorun
+cpio: usr/sbin/rdate：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/rdate
+cpio: usr/sbin/rdev：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/rdev
+cpio: usr/sbin/readahead：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/readahead
+cpio: usr/sbin/readprofile：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/readprofile
+cpio: usr/sbin/reboot：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/reboot
+cpio: usr/sbin/remove-shell：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/remove-shell
+cpio: usr/sbin/rfkill：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/rfkill
+cpio: usr/sbin/rmmod：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/rmmod
+cpio: usr/sbin/route：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/route
+cpio: usr/sbin/rtcwake：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/rtcwake
+cpio: usr/sbin/rtstat：无法创建链接到 `lnstat": 不允许的操作
 usr/sbin/rtstat
+cpio: usr/sbin/run-init：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/run-init
+cpio: usr/sbin/runlevel：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/runlevel
+cpio: usr/sbin/sendmail：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/sendmail
+cpio: usr/sbin/setconsole：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/setconsole
+cpio: usr/sbin/setfont：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/setfont
+cpio: usr/sbin/setlogcons：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/setlogcons
+cpio: usr/sbin/slattach：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/slattach
+cpio: usr/sbin/start-stop-daemon：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/start-stop-daemon
+cpio: usr/sbin/sulogin：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/sulogin
+cpio: usr/sbin/svlogd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/svlogd
+cpio: usr/sbin/swapoff：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/swapoff
+cpio: usr/sbin/swapon：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/swapon
+cpio: usr/sbin/switch_root：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/switch_root
+cpio: usr/sbin/sysctl：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/sysctl
+cpio: usr/sbin/syslogd：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/syslogd
+cpio: usr/sbin/telnetd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/telnetd
+cpio: usr/sbin/tftpd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/tftpd
+cpio: usr/sbin/tunctl：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/tunctl
+cpio: usr/sbin/udhcpc：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/udhcpc
+cpio: usr/sbin/udhcpd：无法创建链接到 `../../bin/busybox": 不允许的操作
 usr/sbin/udhcpd
+cpio: usr/sbin/uevent：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/uevent
+cpio: usr/sbin/umount.nfs：无法创建链接到 `mount.nfs": 不允许的操作
 usr/sbin/umount.nfs
+cpio: usr/sbin/umount.nfs4：无法创建链接到 `mount.nfs": 不允许的操作
 usr/sbin/umount.nfs4
+cpio: usr/sbin/vconfig：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/vconfig
+cpio: usr/sbin/watchdog：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/watchdog
+cpio: usr/sbin/zcip：无法创建链接到 `../bin/busybox": 不允许的操作
 usr/sbin/zcip
 usr/sbin/audisp-remote
 usr/sbin/audispd
@@ -1743,66 +2306,127 @@ usr/share/udhcpc
 usr/share/udhcpc/default.script.d
 usr/share/udhcpc/default.script
 usr/share/zoneinfo
+cpio: usr/share/zoneinfo/Africa：无法创建链接到 `posix/Africa": 不允许的操作
 usr/share/zoneinfo/Africa
+cpio: usr/share/zoneinfo/America：无法创建链接到 `posix/America": 不允许的操作
 usr/share/zoneinfo/America
+cpio: usr/share/zoneinfo/Antarctica：无法创建链接到 `posix/Antarctica": 不允许的操作
 usr/share/zoneinfo/Antarctica
+cpio: usr/share/zoneinfo/Arctic：无法创建链接到 `posix/Arctic": 不允许的操作
 usr/share/zoneinfo/Arctic
+cpio: usr/share/zoneinfo/Asia：无法创建链接到 `posix/Asia": 不允许的操作
 usr/share/zoneinfo/Asia
+cpio: usr/share/zoneinfo/Atlantic：无法创建链接到 `posix/Atlantic": 不允许的操作
 usr/share/zoneinfo/Atlantic
+cpio: usr/share/zoneinfo/Australia：无法创建链接到 `posix/Australia": 不允许的操作
 usr/share/zoneinfo/Australia
+cpio: usr/share/zoneinfo/Brazil：无法创建链接到 `posix/Brazil": 不允许的操作
 usr/share/zoneinfo/Brazil
+cpio: usr/share/zoneinfo/CET：无法创建链接到 `posix/CET": 不允许的操作
 usr/share/zoneinfo/CET
+cpio: usr/share/zoneinfo/CST6CDT：无法创建链接到 `posix/CST6CDT": 不允许的操作
 usr/share/zoneinfo/CST6CDT
+cpio: usr/share/zoneinfo/Canada：无法创建链接到 `posix/Canada": 不允许的操作
 usr/share/zoneinfo/Canada
+cpio: usr/share/zoneinfo/Chile：无法创建链接到 `posix/Chile": 不允许的操作
 usr/share/zoneinfo/Chile
+cpio: usr/share/zoneinfo/Cuba：无法创建链接到 `posix/Cuba": 不允许的操作
 usr/share/zoneinfo/Cuba
+cpio: usr/share/zoneinfo/EET：无法创建链接到 `posix/EET": 不允许的操作
 usr/share/zoneinfo/EET
+cpio: usr/share/zoneinfo/EST：无法创建链接到 `posix/EST": 不允许的操作
 usr/share/zoneinfo/EST
+cpio: usr/share/zoneinfo/EST5EDT：无法创建链接到 `posix/EST5EDT": 不允许的操作
 usr/share/zoneinfo/EST5EDT
+cpio: usr/share/zoneinfo/Egypt：无法创建链接到 `posix/Egypt": 不允许的操作
 usr/share/zoneinfo/Egypt
+cpio: usr/share/zoneinfo/Eire：无法创建链接到 `posix/Eire": 不允许的操作
 usr/share/zoneinfo/Eire
+cpio: usr/share/zoneinfo/Etc：无法创建链接到 `posix/Etc": 不允许的操作
 usr/share/zoneinfo/Etc
+cpio: usr/share/zoneinfo/Europe：无法创建链接到 `posix/Europe": 不允许的操作
 usr/share/zoneinfo/Europe
+cpio: usr/share/zoneinfo/Factory：无法创建链接到 `posix/Factory": 不允许的操作
 usr/share/zoneinfo/Factory
+cpio: usr/share/zoneinfo/GB：无法创建链接到 `posix/GB": 不允许的操作
 usr/share/zoneinfo/GB
+cpio: usr/share/zoneinfo/GB-Eire：无法创建链接到 `posix/GB-Eire": 不允许的操作
 usr/share/zoneinfo/GB-Eire
+cpio: usr/share/zoneinfo/GMT：无法创建链接到 `posix/GMT": 不允许的操作
 usr/share/zoneinfo/GMT
+cpio: usr/share/zoneinfo/GMT+0：无法创建链接到 `posix/GMT+0": 不允许的操作
 usr/share/zoneinfo/GMT+0
+cpio: usr/share/zoneinfo/GMT-0：无法创建链接到 `posix/GMT-0": 不允许的操作
 usr/share/zoneinfo/GMT-0
+cpio: usr/share/zoneinfo/GMT0：无法创建链接到 `posix/GMT0": 不允许的操作
 usr/share/zoneinfo/GMT0
+cpio: usr/share/zoneinfo/Greenwich：无法创建链接到 `posix/Greenwich": 不允许的操作
 usr/share/zoneinfo/Greenwich
+cpio: usr/share/zoneinfo/HST：无法创建链接到 `posix/HST": 不允许的操作
 usr/share/zoneinfo/HST
+cpio: usr/share/zoneinfo/Hongkong：无法创建链接到 `posix/Hongkong": 不允许的操作
 usr/share/zoneinfo/Hongkong
+cpio: usr/share/zoneinfo/Iceland：无法创建链接到 `posix/Iceland": 不允许的操作
 usr/share/zoneinfo/Iceland
+cpio: usr/share/zoneinfo/Indian：无法创建链接到 `posix/Indian": 不允许的操作
 usr/share/zoneinfo/Indian
+cpio: usr/share/zoneinfo/Iran：无法创建链接到 `posix/Iran": 不允许的操作
 usr/share/zoneinfo/Iran
+cpio: usr/share/zoneinfo/Israel：无法创建链接到 `posix/Israel": 不允许的操作
 usr/share/zoneinfo/Israel
+cpio: usr/share/zoneinfo/Jamaica：无法创建链接到 `posix/Jamaica": 不允许的操作
 usr/share/zoneinfo/Jamaica
+cpio: usr/share/zoneinfo/Japan：无法创建链接到 `posix/Japan": 不允许的操作
 usr/share/zoneinfo/Japan
+cpio: usr/share/zoneinfo/Kwajalein：无法创建链接到 `posix/Kwajalein": 不允许的操作
 usr/share/zoneinfo/Kwajalein
+cpio: usr/share/zoneinfo/Libya：无法创建链接到 `posix/Libya": 不允许的操作
 usr/share/zoneinfo/Libya
+cpio: usr/share/zoneinfo/MET：无法创建链接到 `posix/MET": 不允许的操作
 usr/share/zoneinfo/MET
+cpio: usr/share/zoneinfo/MST：无法创建链接到 `posix/MST": 不允许的操作
 usr/share/zoneinfo/MST
+cpio: usr/share/zoneinfo/MST7MDT：无法创建链接到 `posix/MST7MDT": 不允许的操作
 usr/share/zoneinfo/MST7MDT
+cpio: usr/share/zoneinfo/Mexico：无法创建链接到 `posix/Mexico": 不允许的操作
 usr/share/zoneinfo/Mexico
+cpio: usr/share/zoneinfo/NZ：无法创建链接到 `posix/NZ": 不允许的操作
 usr/share/zoneinfo/NZ
+cpio: usr/share/zoneinfo/NZ-CHAT：无法创建链接到 `posix/NZ-CHAT": 不允许的操作
 usr/share/zoneinfo/NZ-CHAT
+cpio: usr/share/zoneinfo/Navajo：无法创建链接到 `posix/Navajo": 不允许的操作
 usr/share/zoneinfo/Navajo
+cpio: usr/share/zoneinfo/PRC：无法创建链接到 `posix/PRC": 不允许的操作
 usr/share/zoneinfo/PRC
+cpio: usr/share/zoneinfo/PST8PDT：无法创建链接到 `posix/PST8PDT": 不允许的操作
 usr/share/zoneinfo/PST8PDT
+cpio: usr/share/zoneinfo/Pacific：无法创建链接到 `posix/Pacific": 不允许的操作
 usr/share/zoneinfo/Pacific
+cpio: usr/share/zoneinfo/Poland：无法创建链接到 `posix/Poland": 不允许的操作
 usr/share/zoneinfo/Poland
+cpio: usr/share/zoneinfo/Portugal：无法创建链接到 `posix/Portugal": 不允许的操作
 usr/share/zoneinfo/Portugal
+cpio: usr/share/zoneinfo/ROC：无法创建链接到 `posix/ROC": 不允许的操作
 usr/share/zoneinfo/ROC
+cpio: usr/share/zoneinfo/ROK：无法创建链接到 `posix/ROK": 不允许的操作
 usr/share/zoneinfo/ROK
+cpio: usr/share/zoneinfo/Singapore：无法创建链接到 `posix/Singapore": 不允许的操作
 usr/share/zoneinfo/Singapore
+cpio: usr/share/zoneinfo/Turkey：无法创建链接到 `posix/Turkey": 不允许的操作
 usr/share/zoneinfo/Turkey
+cpio: usr/share/zoneinfo/UCT：无法创建链接到 `posix/UCT": 不允许的操作
 usr/share/zoneinfo/UCT
+cpio: usr/share/zoneinfo/US：无法创建链接到 `posix/US": 不允许的操作
 usr/share/zoneinfo/US
+cpio: usr/share/zoneinfo/UTC：无法创建链接到 `posix/UTC": 不允许的操作
 usr/share/zoneinfo/UTC
+cpio: usr/share/zoneinfo/Universal：无法创建链接到 `posix/Universal": 不允许的操作
 usr/share/zoneinfo/Universal
+cpio: usr/share/zoneinfo/W-SU：无法创建链接到 `posix/W-SU": 不允许的操作
 usr/share/zoneinfo/W-SU
+cpio: usr/share/zoneinfo/WET：无法创建链接到 `posix/WET": 不允许的操作
 usr/share/zoneinfo/WET
+cpio: usr/share/zoneinfo/Zulu：无法创建链接到 `posix/Zulu": 不允许的操作
 usr/share/zoneinfo/Zulu
 usr/share/zoneinfo/posix
 usr/share/zoneinfo/posix/Africa
@@ -1826,6 +2450,13 @@ usr/share/zoneinfo/posix/Africa/Kigali
 usr/share/zoneinfo/posix/Africa/Lubumbashi
 usr/share/zoneinfo/posix/Africa/Lusaka
 usr/share/zoneinfo/posix/Africa/Maputo
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Maputo 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Lusaka 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Lubumbashi 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Kigali 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Harare 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Gaborone 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Bujumbura 连接到 usr/share/zoneinfo/posix/Africa/Blantyre: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Africa/Blantyre 连接到 usr/share/zoneinfo/posix/Africa/Maputo
 cpio: usr/share/zoneinfo/posix/Africa/Blantyre 连接到 usr/share/zoneinfo/posix/Africa/Lusaka
 cpio: usr/share/zoneinfo/posix/Africa/Blantyre 连接到 usr/share/zoneinfo/posix/Africa/Lubumbashi
@@ -1836,6 +2467,8 @@ cpio: usr/share/zoneinfo/posix/Africa/Blantyre 连接到 usr/share/zoneinfo/posi
 usr/share/zoneinfo/posix/Africa/Blantyre
 usr/share/zoneinfo/posix/Africa/Maseru
 usr/share/zoneinfo/posix/Africa/Mbabane
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Mbabane 连接到 usr/share/zoneinfo/posix/Africa/Johannesburg: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Maseru 连接到 usr/share/zoneinfo/posix/Africa/Johannesburg: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Africa/Johannesburg 连接到 usr/share/zoneinfo/posix/Africa/Mbabane
 cpio: usr/share/zoneinfo/posix/Africa/Johannesburg 连接到 usr/share/zoneinfo/posix/Africa/Maseru
 usr/share/zoneinfo/posix/Africa/Johannesburg
@@ -1848,6 +2481,15 @@ usr/share/zoneinfo/posix/Africa/Luanda
 usr/share/zoneinfo/posix/Africa/Malabo
 usr/share/zoneinfo/posix/Africa/Niamey
 usr/share/zoneinfo/posix/Africa/Porto-Novo
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Porto-Novo 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Niamey 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Malabo 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Luanda 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Libreville 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Lagos 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Kinshasa 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Douala 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Brazzaville 连接到 usr/share/zoneinfo/posix/Africa/Bangui: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Africa/Bangui 连接到 usr/share/zoneinfo/posix/Africa/Porto-Novo
 cpio: usr/share/zoneinfo/posix/Africa/Bangui 连接到 usr/share/zoneinfo/posix/Africa/Niamey
 cpio: usr/share/zoneinfo/posix/Africa/Bangui 连接到 usr/share/zoneinfo/posix/Africa/Malabo
@@ -1892,6 +2534,7 @@ usr/share/zoneinfo/posix/America/Boa_Vista
 usr/share/zoneinfo/posix/America/Bogota
 usr/share/zoneinfo/posix/America/Boise
 usr/share/zoneinfo/posix/America/Argentina/Buenos_Aires
+cpio: 无法将 usr/share/zoneinfo/posix/America/Argentina/Buenos_Aires 连接到 usr/share/zoneinfo/posix/America/Buenos_Aires: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Buenos_Aires 连接到 usr/share/zoneinfo/posix/America/Argentina/Buenos_Aires
 usr/share/zoneinfo/posix/America/Buenos_Aires
 usr/share/zoneinfo/posix/America/Cambridge_Bay
@@ -1900,6 +2543,8 @@ usr/share/zoneinfo/posix/America/Cancun
 usr/share/zoneinfo/posix/America/Caracas
 usr/share/zoneinfo/posix/America/Argentina/ComodRivadavia
 usr/share/zoneinfo/posix/America/Argentina/Catamarca
+cpio: 无法将 usr/share/zoneinfo/posix/America/Argentina/Catamarca 连接到 usr/share/zoneinfo/posix/America/Catamarca: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Argentina/ComodRivadavia 连接到 usr/share/zoneinfo/posix/America/Catamarca: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Catamarca 连接到 usr/share/zoneinfo/posix/America/Argentina/Catamarca
 cpio: usr/share/zoneinfo/posix/America/Catamarca 连接到 usr/share/zoneinfo/posix/America/Argentina/ComodRivadavia
 usr/share/zoneinfo/posix/America/Catamarca
@@ -1917,6 +2562,7 @@ usr/share/zoneinfo/posix/America/Fort_Nelson
 usr/share/zoneinfo/posix/America/Fortaleza
 usr/share/zoneinfo/posix/America/Glace_Bay
 usr/share/zoneinfo/posix/America/Coral_Harbour
+cpio: 无法将 usr/share/zoneinfo/posix/America/Coral_Harbour 连接到 usr/share/zoneinfo/posix/America/Atikokan: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Atikokan 连接到 usr/share/zoneinfo/posix/America/Coral_Harbour
 usr/share/zoneinfo/posix/America/Atikokan
 usr/share/zoneinfo/posix/America/Godthab
@@ -1929,12 +2575,14 @@ usr/share/zoneinfo/posix/America/Hermosillo
 usr/share/zoneinfo/posix/America/Inuvik
 usr/share/zoneinfo/posix/America/Iqaluit
 usr/share/zoneinfo/posix/America/Argentina/Jujuy
+cpio: 无法将 usr/share/zoneinfo/posix/America/Argentina/Jujuy 连接到 usr/share/zoneinfo/posix/America/Jujuy: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Jujuy 连接到 usr/share/zoneinfo/posix/America/Argentina/Jujuy
 usr/share/zoneinfo/posix/America/Jujuy
 usr/share/zoneinfo/posix/America/Juneau
 usr/share/zoneinfo/posix/America/La_Paz
 usr/share/zoneinfo/posix/America/Lima
 usr/share/zoneinfo/posix/America/Kentucky/Louisville
+cpio: 无法将 usr/share/zoneinfo/posix/America/Kentucky/Louisville 连接到 usr/share/zoneinfo/posix/America/Louisville: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Louisville 连接到 usr/share/zoneinfo/posix/America/Kentucky/Louisville
 usr/share/zoneinfo/posix/America/Louisville
 usr/share/zoneinfo/posix/America/Maceio
@@ -1942,6 +2590,7 @@ usr/share/zoneinfo/posix/America/Managua
 usr/share/zoneinfo/posix/America/Martinique
 usr/share/zoneinfo/posix/America/Matamoros
 usr/share/zoneinfo/posix/America/Argentina/Mendoza
+cpio: 无法将 usr/share/zoneinfo/posix/America/Argentina/Mendoza 连接到 usr/share/zoneinfo/posix/America/Mendoza: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Mendoza 连接到 usr/share/zoneinfo/posix/America/Argentina/Mendoza
 usr/share/zoneinfo/posix/America/Mendoza
 usr/share/zoneinfo/posix/America/Menominee
@@ -1958,6 +2607,9 @@ usr/share/zoneinfo/posix/America/Ojinaga
 usr/share/zoneinfo/posix/America/Curacao
 usr/share/zoneinfo/posix/America/Kralendijk
 usr/share/zoneinfo/posix/America/Lower_Princes
+cpio: 无法将 usr/share/zoneinfo/posix/America/Lower_Princes 连接到 usr/share/zoneinfo/posix/America/Aruba: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Kralendijk 连接到 usr/share/zoneinfo/posix/America/Aruba: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Curacao 连接到 usr/share/zoneinfo/posix/America/Aruba: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Aruba 连接到 usr/share/zoneinfo/posix/America/Lower_Princes
 cpio: usr/share/zoneinfo/posix/America/Aruba 连接到 usr/share/zoneinfo/posix/America/Kralendijk
 cpio: usr/share/zoneinfo/posix/America/Aruba 连接到 usr/share/zoneinfo/posix/America/Curacao
@@ -1979,12 +2631,15 @@ usr/share/zoneinfo/posix/America/Sitka
 usr/share/zoneinfo/posix/America/Swift_Current
 usr/share/zoneinfo/posix/America/Tegucigalpa
 usr/share/zoneinfo/posix/America/Panama
+cpio: 无法将 usr/share/zoneinfo/posix/America/Panama 连接到 usr/share/zoneinfo/posix/America/Cayman: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Cayman 连接到 usr/share/zoneinfo/posix/America/Panama
 usr/share/zoneinfo/posix/America/Cayman
 usr/share/zoneinfo/posix/America/Thule
 usr/share/zoneinfo/posix/America/Thunder_Bay
 usr/share/zoneinfo/posix/America/Rosario
 usr/share/zoneinfo/posix/America/Argentina/Cordoba
+cpio: 无法将 usr/share/zoneinfo/posix/America/Argentina/Cordoba 连接到 usr/share/zoneinfo/posix/America/Cordoba: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Rosario 连接到 usr/share/zoneinfo/posix/America/Cordoba: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Cordoba 连接到 usr/share/zoneinfo/posix/America/Argentina/Cordoba
 cpio: usr/share/zoneinfo/posix/America/Cordoba 连接到 usr/share/zoneinfo/posix/America/Rosario
 usr/share/zoneinfo/posix/America/Cordoba
@@ -2004,6 +2659,20 @@ usr/share/zoneinfo/posix/America/St_Thomas
 usr/share/zoneinfo/posix/America/St_Vincent
 usr/share/zoneinfo/posix/America/Tortola
 usr/share/zoneinfo/posix/America/Virgin
+cpio: 无法将 usr/share/zoneinfo/posix/America/Virgin 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Tortola 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/St_Vincent 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/St_Thomas 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/St_Lucia 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/St_Kitts 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/St_Barthelemy 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Port_of_Spain 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Montserrat 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Marigot 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Guadeloupe 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Grenada 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Dominica 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Antigua 连接到 usr/share/zoneinfo/posix/America/Anguilla: 不允许的操作
 cpio: usr/share/zoneinfo/posix/America/Anguilla 连接到 usr/share/zoneinfo/posix/America/Virgin
 cpio: usr/share/zoneinfo/posix/America/Anguilla 连接到 usr/share/zoneinfo/posix/America/Tortola
 cpio: usr/share/zoneinfo/posix/America/Anguilla 连接到 usr/share/zoneinfo/posix/America/St_Vincent
@@ -2038,6 +2707,7 @@ usr/share/zoneinfo/posix/Asia/Anadyr
 usr/share/zoneinfo/posix/Asia/Aqtau
 usr/share/zoneinfo/posix/Asia/Aqtobe
 usr/share/zoneinfo/posix/Asia/Ashkhabad
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Ashkhabad 连接到 usr/share/zoneinfo/posix/Asia/Ashgabat: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Ashgabat 连接到 usr/share/zoneinfo/posix/Asia/Ashkhabad
 usr/share/zoneinfo/posix/Asia/Ashgabat
 usr/share/zoneinfo/posix/Asia/Atyrau
@@ -2069,16 +2739,20 @@ usr/share/zoneinfo/posix/Asia/Kuala_Lumpur
 usr/share/zoneinfo/posix/Asia/Kuching
 usr/share/zoneinfo/posix/Asia/Magadan
 usr/share/zoneinfo/posix/Asia/Dhaka
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Dhaka 连接到 usr/share/zoneinfo/posix/Asia/Dacca: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Dacca 连接到 usr/share/zoneinfo/posix/Asia/Dhaka
 usr/share/zoneinfo/posix/Asia/Dacca
 usr/share/zoneinfo/posix/Asia/Manila
 usr/share/zoneinfo/posix/Asia/Katmandu
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Katmandu 连接到 usr/share/zoneinfo/posix/Asia/Kathmandu: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Kathmandu 连接到 usr/share/zoneinfo/posix/Asia/Katmandu
 usr/share/zoneinfo/posix/Asia/Kathmandu
 usr/share/zoneinfo/posix/Asia/Kolkata
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Kolkata 连接到 usr/share/zoneinfo/posix/Asia/Calcutta: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Calcutta 连接到 usr/share/zoneinfo/posix/Asia/Kolkata
 usr/share/zoneinfo/posix/Asia/Calcutta
 usr/share/zoneinfo/posix/Asia/Macau
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Macau 连接到 usr/share/zoneinfo/posix/Asia/Macao: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Macao 连接到 usr/share/zoneinfo/posix/Asia/Macau
 usr/share/zoneinfo/posix/Asia/Macao
 usr/share/zoneinfo/posix/Asia/Novokuznetsk
@@ -2101,37 +2775,49 @@ usr/share/zoneinfo/posix/Asia/Yakutsk
 usr/share/zoneinfo/posix/Asia/Yekaterinburg
 usr/share/zoneinfo/posix/Asia/Yerevan
 usr/share/zoneinfo/posix/Asia/Muscat
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Muscat 连接到 usr/share/zoneinfo/posix/Asia/Dubai: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Dubai 连接到 usr/share/zoneinfo/posix/Asia/Muscat
 usr/share/zoneinfo/posix/Asia/Dubai
 usr/share/zoneinfo/posix/Asia/Qatar
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Qatar 连接到 usr/share/zoneinfo/posix/Asia/Bahrain: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Bahrain 连接到 usr/share/zoneinfo/posix/Asia/Qatar
 usr/share/zoneinfo/posix/Asia/Bahrain
 usr/share/zoneinfo/posix/Asia/Kuwait
 usr/share/zoneinfo/posix/Asia/Riyadh
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Riyadh 连接到 usr/share/zoneinfo/posix/Asia/Aden: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Kuwait 连接到 usr/share/zoneinfo/posix/Asia/Aden: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Aden 连接到 usr/share/zoneinfo/posix/Asia/Riyadh
 cpio: usr/share/zoneinfo/posix/Asia/Aden 连接到 usr/share/zoneinfo/posix/Asia/Kuwait
 usr/share/zoneinfo/posix/Asia/Aden
 usr/share/zoneinfo/posix/Asia/Saigon
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Saigon 连接到 usr/share/zoneinfo/posix/Asia/Ho_Chi_Minh: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Ho_Chi_Minh 连接到 usr/share/zoneinfo/posix/Asia/Saigon
 usr/share/zoneinfo/posix/Asia/Ho_Chi_Minh
 usr/share/zoneinfo/posix/Asia/Thimphu
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Thimphu 连接到 usr/share/zoneinfo/posix/Asia/Thimbu: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Thimbu 连接到 usr/share/zoneinfo/posix/Asia/Thimphu
 usr/share/zoneinfo/posix/Asia/Thimbu
 usr/share/zoneinfo/posix/Asia/Ujung_Pandang
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Ujung_Pandang 连接到 usr/share/zoneinfo/posix/Asia/Makassar: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Makassar 连接到 usr/share/zoneinfo/posix/Asia/Ujung_Pandang
 usr/share/zoneinfo/posix/Asia/Makassar
 usr/share/zoneinfo/posix/Asia/Ulan_Bator
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Ulan_Bator 连接到 usr/share/zoneinfo/posix/Asia/Ulaanbaatar: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Ulaanbaatar 连接到 usr/share/zoneinfo/posix/Asia/Ulan_Bator
 usr/share/zoneinfo/posix/Asia/Ulaanbaatar
 usr/share/zoneinfo/posix/Asia/Urumqi
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Urumqi 连接到 usr/share/zoneinfo/posix/Asia/Kashgar: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Kashgar 连接到 usr/share/zoneinfo/posix/Asia/Urumqi
 usr/share/zoneinfo/posix/Asia/Kashgar
 usr/share/zoneinfo/posix/Asia/Phnom_Penh
 usr/share/zoneinfo/posix/Asia/Vientiane
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Vientiane 连接到 usr/share/zoneinfo/posix/Asia/Bangkok: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Phnom_Penh 连接到 usr/share/zoneinfo/posix/Asia/Bangkok: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Bangkok 连接到 usr/share/zoneinfo/posix/Asia/Vientiane
 cpio: usr/share/zoneinfo/posix/Asia/Bangkok 连接到 usr/share/zoneinfo/posix/Asia/Phnom_Penh
 usr/share/zoneinfo/posix/Asia/Bangkok
 usr/share/zoneinfo/posix/Asia/Yangon
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Yangon 连接到 usr/share/zoneinfo/posix/Asia/Rangoon: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Asia/Rangoon 连接到 usr/share/zoneinfo/posix/Asia/Yangon
 usr/share/zoneinfo/posix/Asia/Rangoon
 usr/share/zoneinfo/posix/Atlantic
@@ -2145,6 +2831,16 @@ usr/share/zoneinfo/posix/Africa/Lome
 usr/share/zoneinfo/posix/Africa/Nouakchott
 usr/share/zoneinfo/posix/Africa/Ouagadougou
 usr/share/zoneinfo/posix/Africa/Timbuktu
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Timbuktu 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Ouagadougou 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Nouakchott 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Lome 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Freetown 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Dakar 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Conakry 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Banjul 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Bamako 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Abidjan 连接到 usr/share/zoneinfo/posix/Atlantic/St_Helena: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Atlantic/St_Helena 连接到 usr/share/zoneinfo/posix/Africa/Timbuktu
 cpio: usr/share/zoneinfo/posix/Atlantic/St_Helena 连接到 usr/share/zoneinfo/posix/Africa/Ouagadougou
 cpio: usr/share/zoneinfo/posix/Atlantic/St_Helena 连接到 usr/share/zoneinfo/posix/Africa/Nouakchott
@@ -2164,6 +2860,7 @@ usr/share/zoneinfo/posix/Atlantic/Madeira
 usr/share/zoneinfo/posix/Atlantic/South_Georgia
 usr/share/zoneinfo/posix/Atlantic/Stanley
 usr/share/zoneinfo/posix/Atlantic/Faroe
+cpio: 无法将 usr/share/zoneinfo/posix/Atlantic/Faroe 连接到 usr/share/zoneinfo/posix/Atlantic/Faeroe: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Atlantic/Faeroe 连接到 usr/share/zoneinfo/posix/Atlantic/Faroe
 usr/share/zoneinfo/posix/Atlantic/Faeroe
 usr/share/zoneinfo/posix/Australia
@@ -2171,80 +2868,106 @@ usr/share/zoneinfo/posix/Australia/Currie
 usr/share/zoneinfo/posix/Australia/Eucla
 usr/share/zoneinfo/posix/Australia/Lindeman
 usr/share/zoneinfo/posix/Australia/Lord_Howe
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Lord_Howe 连接到 usr/share/zoneinfo/posix/Australia/LHI: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/LHI 连接到 usr/share/zoneinfo/posix/Australia/Lord_Howe
 usr/share/zoneinfo/posix/Australia/LHI
 usr/share/zoneinfo/posix/Australia/North
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/North 连接到 usr/share/zoneinfo/posix/Australia/Darwin: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Darwin 连接到 usr/share/zoneinfo/posix/Australia/North
 usr/share/zoneinfo/posix/Australia/Darwin
 usr/share/zoneinfo/posix/Australia/Queensland
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Queensland 连接到 usr/share/zoneinfo/posix/Australia/Brisbane: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Brisbane 连接到 usr/share/zoneinfo/posix/Australia/Queensland
 usr/share/zoneinfo/posix/Australia/Brisbane
 usr/share/zoneinfo/posix/Australia/South
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/South 连接到 usr/share/zoneinfo/posix/Australia/Adelaide: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Adelaide 连接到 usr/share/zoneinfo/posix/Australia/South
 usr/share/zoneinfo/posix/Australia/Adelaide
 usr/share/zoneinfo/posix/Australia/Canberra
 usr/share/zoneinfo/posix/Australia/NSW
 usr/share/zoneinfo/posix/Australia/Sydney
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Sydney 连接到 usr/share/zoneinfo/posix/Australia/ACT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/NSW 连接到 usr/share/zoneinfo/posix/Australia/ACT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Canberra 连接到 usr/share/zoneinfo/posix/Australia/ACT: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/ACT 连接到 usr/share/zoneinfo/posix/Australia/Sydney
 cpio: usr/share/zoneinfo/posix/Australia/ACT 连接到 usr/share/zoneinfo/posix/Australia/NSW
 cpio: usr/share/zoneinfo/posix/Australia/ACT 连接到 usr/share/zoneinfo/posix/Australia/Canberra
 usr/share/zoneinfo/posix/Australia/ACT
 usr/share/zoneinfo/posix/Australia/Tasmania
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Tasmania 连接到 usr/share/zoneinfo/posix/Australia/Hobart: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Hobart 连接到 usr/share/zoneinfo/posix/Australia/Tasmania
 usr/share/zoneinfo/posix/Australia/Hobart
 usr/share/zoneinfo/posix/Australia/Victoria
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Victoria 连接到 usr/share/zoneinfo/posix/Australia/Melbourne: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Melbourne 连接到 usr/share/zoneinfo/posix/Australia/Victoria
 usr/share/zoneinfo/posix/Australia/Melbourne
 usr/share/zoneinfo/posix/Australia/West
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/West 连接到 usr/share/zoneinfo/posix/Australia/Perth: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Perth 连接到 usr/share/zoneinfo/posix/Australia/West
 usr/share/zoneinfo/posix/Australia/Perth
 usr/share/zoneinfo/posix/Australia/Yancowinna
+cpio: 无法将 usr/share/zoneinfo/posix/Australia/Yancowinna 连接到 usr/share/zoneinfo/posix/Australia/Broken_Hill: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Australia/Broken_Hill 连接到 usr/share/zoneinfo/posix/Australia/Yancowinna
 usr/share/zoneinfo/posix/Australia/Broken_Hill
 usr/share/zoneinfo/posix/Brazil
 usr/share/zoneinfo/posix/America/Manaus
+cpio: 无法将 usr/share/zoneinfo/posix/America/Manaus 连接到 usr/share/zoneinfo/posix/Brazil/West: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Brazil/West 连接到 usr/share/zoneinfo/posix/America/Manaus
 usr/share/zoneinfo/posix/Brazil/West
 usr/share/zoneinfo/posix/America/Noronha
+cpio: 无法将 usr/share/zoneinfo/posix/America/Noronha 连接到 usr/share/zoneinfo/posix/Brazil/DeNoronha: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Brazil/DeNoronha 连接到 usr/share/zoneinfo/posix/America/Noronha
 usr/share/zoneinfo/posix/Brazil/DeNoronha
 usr/share/zoneinfo/posix/America/Porto_Acre
 usr/share/zoneinfo/posix/America/Rio_Branco
+cpio: 无法将 usr/share/zoneinfo/posix/America/Rio_Branco 连接到 usr/share/zoneinfo/posix/Brazil/Acre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Porto_Acre 连接到 usr/share/zoneinfo/posix/Brazil/Acre: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Brazil/Acre 连接到 usr/share/zoneinfo/posix/America/Rio_Branco
 cpio: usr/share/zoneinfo/posix/Brazil/Acre 连接到 usr/share/zoneinfo/posix/America/Porto_Acre
 usr/share/zoneinfo/posix/Brazil/Acre
 usr/share/zoneinfo/posix/America/Sao_Paulo
+cpio: 无法将 usr/share/zoneinfo/posix/America/Sao_Paulo 连接到 usr/share/zoneinfo/posix/Brazil/East: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Brazil/East 连接到 usr/share/zoneinfo/posix/America/Sao_Paulo
 usr/share/zoneinfo/posix/Brazil/East
 usr/share/zoneinfo/posix/Canada
 usr/share/zoneinfo/posix/America/Edmonton
+cpio: 无法将 usr/share/zoneinfo/posix/America/Edmonton 连接到 usr/share/zoneinfo/posix/Canada/Mountain: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Mountain 连接到 usr/share/zoneinfo/posix/America/Edmonton
 usr/share/zoneinfo/posix/Canada/Mountain
 usr/share/zoneinfo/posix/America/Halifax
+cpio: 无法将 usr/share/zoneinfo/posix/America/Halifax 连接到 usr/share/zoneinfo/posix/Canada/Atlantic: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Atlantic 连接到 usr/share/zoneinfo/posix/America/Halifax
 usr/share/zoneinfo/posix/Canada/Atlantic
 usr/share/zoneinfo/posix/America/Regina
+cpio: 无法将 usr/share/zoneinfo/posix/America/Regina 连接到 usr/share/zoneinfo/posix/Canada/Saskatchewan: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Saskatchewan 连接到 usr/share/zoneinfo/posix/America/Regina
 usr/share/zoneinfo/posix/Canada/Saskatchewan
 usr/share/zoneinfo/posix/America/St_Johns
+cpio: 无法将 usr/share/zoneinfo/posix/America/St_Johns 连接到 usr/share/zoneinfo/posix/Canada/Newfoundland: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Newfoundland 连接到 usr/share/zoneinfo/posix/America/St_Johns
 usr/share/zoneinfo/posix/Canada/Newfoundland
 usr/share/zoneinfo/posix/America/Montreal
 usr/share/zoneinfo/posix/America/Toronto
+cpio: 无法将 usr/share/zoneinfo/posix/America/Toronto 连接到 usr/share/zoneinfo/posix/Canada/Eastern: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Montreal 连接到 usr/share/zoneinfo/posix/Canada/Eastern: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Eastern 连接到 usr/share/zoneinfo/posix/America/Toronto
 cpio: usr/share/zoneinfo/posix/Canada/Eastern 连接到 usr/share/zoneinfo/posix/America/Montreal
 usr/share/zoneinfo/posix/Canada/Eastern
 usr/share/zoneinfo/posix/America/Vancouver
+cpio: 无法将 usr/share/zoneinfo/posix/America/Vancouver 连接到 usr/share/zoneinfo/posix/Canada/Pacific: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Pacific 连接到 usr/share/zoneinfo/posix/America/Vancouver
 usr/share/zoneinfo/posix/Canada/Pacific
 usr/share/zoneinfo/posix/America/Whitehorse
+cpio: 无法将 usr/share/zoneinfo/posix/America/Whitehorse 连接到 usr/share/zoneinfo/posix/Canada/Yukon: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Yukon 连接到 usr/share/zoneinfo/posix/America/Whitehorse
 usr/share/zoneinfo/posix/Canada/Yukon
 usr/share/zoneinfo/posix/America/Winnipeg
+cpio: 无法将 usr/share/zoneinfo/posix/America/Winnipeg 连接到 usr/share/zoneinfo/posix/Canada/Central: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Canada/Central 连接到 usr/share/zoneinfo/posix/America/Winnipeg
 usr/share/zoneinfo/posix/Canada/Central
 usr/share/zoneinfo/posix/Chile
 usr/share/zoneinfo/posix/America/Santiago
+cpio: 无法将 usr/share/zoneinfo/posix/America/Santiago 连接到 usr/share/zoneinfo/posix/Chile/Continental: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Chile/Continental 连接到 usr/share/zoneinfo/posix/America/Santiago
 usr/share/zoneinfo/posix/Chile/Continental
 usr/share/zoneinfo/posix/Etc
@@ -2277,10 +3000,13 @@ usr/share/zoneinfo/posix/Etc/GMT-9
 usr/share/zoneinfo/posix/Europe
 usr/share/zoneinfo/posix/Atlantic/Jan_Mayen
 usr/share/zoneinfo/posix/Arctic/Longyearbyen
+cpio: 无法将 usr/share/zoneinfo/posix/Arctic/Longyearbyen 连接到 usr/share/zoneinfo/posix/Europe/Oslo: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Atlantic/Jan_Mayen 连接到 usr/share/zoneinfo/posix/Europe/Oslo: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Oslo 连接到 usr/share/zoneinfo/posix/Arctic/Longyearbyen
 cpio: usr/share/zoneinfo/posix/Europe/Oslo 连接到 usr/share/zoneinfo/posix/Atlantic/Jan_Mayen
 usr/share/zoneinfo/posix/Europe/Oslo
 usr/share/zoneinfo/posix/Asia/Nicosia
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Nicosia 连接到 usr/share/zoneinfo/posix/Europe/Nicosia: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Nicosia 连接到 usr/share/zoneinfo/posix/Asia/Nicosia
 usr/share/zoneinfo/posix/Europe/Nicosia
 usr/share/zoneinfo/posix/Europe/Amsterdam
@@ -2311,9 +3037,11 @@ usr/share/zoneinfo/posix/Europe/Stockholm
 usr/share/zoneinfo/posix/Europe/Tallinn
 usr/share/zoneinfo/posix/Europe/Tirane
 usr/share/zoneinfo/posix/Europe/Mariehamn
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Mariehamn 连接到 usr/share/zoneinfo/posix/Europe/Helsinki: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Helsinki 连接到 usr/share/zoneinfo/posix/Europe/Mariehamn
 usr/share/zoneinfo/posix/Europe/Helsinki
 usr/share/zoneinfo/posix/Europe/Prague
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Prague 连接到 usr/share/zoneinfo/posix/Europe/Bratislava: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Bratislava 连接到 usr/share/zoneinfo/posix/Europe/Prague
 usr/share/zoneinfo/posix/Europe/Bratislava
 usr/share/zoneinfo/posix/Europe/Ulyanovsk
@@ -2323,10 +3051,13 @@ usr/share/zoneinfo/posix/Europe/Vilnius
 usr/share/zoneinfo/posix/Europe/Volgograd
 usr/share/zoneinfo/posix/Europe/Zaporozhye
 usr/share/zoneinfo/posix/Europe/Tiraspol
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Tiraspol 连接到 usr/share/zoneinfo/posix/Europe/Chisinau: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Chisinau 连接到 usr/share/zoneinfo/posix/Europe/Tiraspol
 usr/share/zoneinfo/posix/Europe/Chisinau
 usr/share/zoneinfo/posix/Europe/San_Marino
 usr/share/zoneinfo/posix/Europe/Vatican
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Vatican 连接到 usr/share/zoneinfo/posix/Europe/Rome: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/San_Marino 连接到 usr/share/zoneinfo/posix/Europe/Rome: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Rome 连接到 usr/share/zoneinfo/posix/Europe/Vatican
 cpio: usr/share/zoneinfo/posix/Europe/Rome 连接到 usr/share/zoneinfo/posix/Europe/San_Marino
 usr/share/zoneinfo/posix/Europe/Rome
@@ -2335,6 +3066,11 @@ usr/share/zoneinfo/posix/Europe/Podgorica
 usr/share/zoneinfo/posix/Europe/Sarajevo
 usr/share/zoneinfo/posix/Europe/Skopje
 usr/share/zoneinfo/posix/Europe/Zagreb
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Zagreb 连接到 usr/share/zoneinfo/posix/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Skopje 连接到 usr/share/zoneinfo/posix/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Sarajevo 连接到 usr/share/zoneinfo/posix/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Podgorica 连接到 usr/share/zoneinfo/posix/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Ljubljana 连接到 usr/share/zoneinfo/posix/Europe/Belgrade: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Belgrade 连接到 usr/share/zoneinfo/posix/Europe/Zagreb
 cpio: usr/share/zoneinfo/posix/Europe/Belgrade 连接到 usr/share/zoneinfo/posix/Europe/Skopje
 cpio: usr/share/zoneinfo/posix/Europe/Belgrade 连接到 usr/share/zoneinfo/posix/Europe/Sarajevo
@@ -2343,6 +3079,8 @@ cpio: usr/share/zoneinfo/posix/Europe/Belgrade 连接到 usr/share/zoneinfo/posi
 usr/share/zoneinfo/posix/Europe/Belgrade
 usr/share/zoneinfo/posix/Europe/Vaduz
 usr/share/zoneinfo/posix/Europe/Zurich
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Zurich 连接到 usr/share/zoneinfo/posix/Europe/Busingen: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Vaduz 连接到 usr/share/zoneinfo/posix/Europe/Busingen: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Europe/Busingen 连接到 usr/share/zoneinfo/posix/Europe/Zurich
 cpio: usr/share/zoneinfo/posix/Europe/Busingen 连接到 usr/share/zoneinfo/posix/Europe/Vaduz
 usr/share/zoneinfo/posix/Europe/Busingen
@@ -2357,6 +3095,16 @@ usr/share/zoneinfo/posix/Africa/Djibouti
 usr/share/zoneinfo/posix/Africa/Kampala
 usr/share/zoneinfo/posix/Africa/Mogadishu
 usr/share/zoneinfo/posix/Africa/Nairobi
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Nairobi 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Mogadishu 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Kampala 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Djibouti 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Dar_es_Salaam 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Asmera 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Asmara 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Addis_Ababa 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Indian/Antananarivo 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Indian/Comoro 连接到 usr/share/zoneinfo/posix/Indian/Mayotte: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Indian/Mayotte 连接到 usr/share/zoneinfo/posix/Africa/Nairobi
 cpio: usr/share/zoneinfo/posix/Indian/Mayotte 连接到 usr/share/zoneinfo/posix/Africa/Mogadishu
 cpio: usr/share/zoneinfo/posix/Indian/Mayotte 连接到 usr/share/zoneinfo/posix/Africa/Kampala
@@ -2378,20 +3126,26 @@ usr/share/zoneinfo/posix/Indian/Mauritius
 usr/share/zoneinfo/posix/Indian/Reunion
 usr/share/zoneinfo/posix/Mexico
 usr/share/zoneinfo/posix/America/Mazatlan
+cpio: 无法将 usr/share/zoneinfo/posix/America/Mazatlan 连接到 usr/share/zoneinfo/posix/Mexico/BajaSur: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Mexico/BajaSur 连接到 usr/share/zoneinfo/posix/America/Mazatlan
 usr/share/zoneinfo/posix/Mexico/BajaSur
 usr/share/zoneinfo/posix/America/Mexico_City
+cpio: 无法将 usr/share/zoneinfo/posix/America/Mexico_City 连接到 usr/share/zoneinfo/posix/Mexico/General: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Mexico/General 连接到 usr/share/zoneinfo/posix/America/Mexico_City
 usr/share/zoneinfo/posix/Mexico/General
 usr/share/zoneinfo/posix/America/Ensenada
 usr/share/zoneinfo/posix/America/Santa_Isabel
 usr/share/zoneinfo/posix/America/Tijuana
+cpio: 无法将 usr/share/zoneinfo/posix/America/Tijuana 连接到 usr/share/zoneinfo/posix/Mexico/BajaNorte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Santa_Isabel 连接到 usr/share/zoneinfo/posix/Mexico/BajaNorte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Ensenada 连接到 usr/share/zoneinfo/posix/Mexico/BajaNorte: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Mexico/BajaNorte 连接到 usr/share/zoneinfo/posix/America/Tijuana
 cpio: usr/share/zoneinfo/posix/Mexico/BajaNorte 连接到 usr/share/zoneinfo/posix/America/Santa_Isabel
 cpio: usr/share/zoneinfo/posix/Mexico/BajaNorte 连接到 usr/share/zoneinfo/posix/America/Ensenada
 usr/share/zoneinfo/posix/Mexico/BajaNorte
 usr/share/zoneinfo/posix/Pacific
 usr/share/zoneinfo/posix/Chile/EasterIsland
+cpio: 无法将 usr/share/zoneinfo/posix/Chile/EasterIsland 连接到 usr/share/zoneinfo/posix/Pacific/Easter: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Pacific/Easter 连接到 usr/share/zoneinfo/posix/Chile/EasterIsland
 usr/share/zoneinfo/posix/Pacific/Easter
 usr/share/zoneinfo/posix/Pacific/Apia
@@ -2422,62 +3176,85 @@ usr/share/zoneinfo/posix/Pacific/Tongatapu
 usr/share/zoneinfo/posix/Pacific/Wake
 usr/share/zoneinfo/posix/Pacific/Wallis
 usr/share/zoneinfo/posix/Pacific/Ponape
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Ponape 连接到 usr/share/zoneinfo/posix/Pacific/Pohnpei: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Pacific/Pohnpei 连接到 usr/share/zoneinfo/posix/Pacific/Ponape
 usr/share/zoneinfo/posix/Pacific/Pohnpei
 usr/share/zoneinfo/posix/Pacific/Saipan
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Saipan 连接到 usr/share/zoneinfo/posix/Pacific/Guam: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Pacific/Guam 连接到 usr/share/zoneinfo/posix/Pacific/Saipan
 usr/share/zoneinfo/posix/Pacific/Guam
 usr/share/zoneinfo/posix/Pacific/Truk
 usr/share/zoneinfo/posix/Pacific/Yap
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Yap 连接到 usr/share/zoneinfo/posix/Pacific/Chuuk: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Truk 连接到 usr/share/zoneinfo/posix/Pacific/Chuuk: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Pacific/Chuuk 连接到 usr/share/zoneinfo/posix/Pacific/Yap
 cpio: usr/share/zoneinfo/posix/Pacific/Chuuk 连接到 usr/share/zoneinfo/posix/Pacific/Truk
 usr/share/zoneinfo/posix/Pacific/Chuuk
 usr/share/zoneinfo/posix/US
 usr/share/zoneinfo/posix/America/Anchorage
+cpio: 无法将 usr/share/zoneinfo/posix/America/Anchorage 连接到 usr/share/zoneinfo/posix/US/Alaska: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Alaska 连接到 usr/share/zoneinfo/posix/America/Anchorage
 usr/share/zoneinfo/posix/US/Alaska
 usr/share/zoneinfo/posix/America/Adak
 usr/share/zoneinfo/posix/America/Atka
+cpio: 无法将 usr/share/zoneinfo/posix/America/Atka 连接到 usr/share/zoneinfo/posix/US/Aleutian: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Adak 连接到 usr/share/zoneinfo/posix/US/Aleutian: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Aleutian 连接到 usr/share/zoneinfo/posix/America/Atka
 cpio: usr/share/zoneinfo/posix/US/Aleutian 连接到 usr/share/zoneinfo/posix/America/Adak
 usr/share/zoneinfo/posix/US/Aleutian
 usr/share/zoneinfo/posix/America/Chicago
+cpio: 无法将 usr/share/zoneinfo/posix/America/Chicago 连接到 usr/share/zoneinfo/posix/US/Central: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Central 连接到 usr/share/zoneinfo/posix/America/Chicago
 usr/share/zoneinfo/posix/US/Central
 usr/share/zoneinfo/posix/America/Detroit
+cpio: 无法将 usr/share/zoneinfo/posix/America/Detroit 连接到 usr/share/zoneinfo/posix/US/Michigan: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Michigan 连接到 usr/share/zoneinfo/posix/America/Detroit
 usr/share/zoneinfo/posix/US/Michigan
 usr/share/zoneinfo/posix/America/Fort_Wayne
 usr/share/zoneinfo/posix/America/Indianapolis
 usr/share/zoneinfo/posix/America/Indiana/Indianapolis
+cpio: 无法将 usr/share/zoneinfo/posix/America/Indiana/Indianapolis 连接到 usr/share/zoneinfo/posix/US/East-Indiana: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Indianapolis 连接到 usr/share/zoneinfo/posix/US/East-Indiana: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Fort_Wayne 连接到 usr/share/zoneinfo/posix/US/East-Indiana: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/East-Indiana 连接到 usr/share/zoneinfo/posix/America/Indiana/Indianapolis
 cpio: usr/share/zoneinfo/posix/US/East-Indiana 连接到 usr/share/zoneinfo/posix/America/Indianapolis
 cpio: usr/share/zoneinfo/posix/US/East-Indiana 连接到 usr/share/zoneinfo/posix/America/Fort_Wayne
 usr/share/zoneinfo/posix/US/East-Indiana
 usr/share/zoneinfo/posix/America/Knox_IN
 usr/share/zoneinfo/posix/America/Indiana/Knox
+cpio: 无法将 usr/share/zoneinfo/posix/America/Indiana/Knox 连接到 usr/share/zoneinfo/posix/US/Indiana-Starke: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Knox_IN 连接到 usr/share/zoneinfo/posix/US/Indiana-Starke: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Indiana-Starke 连接到 usr/share/zoneinfo/posix/America/Indiana/Knox
 cpio: usr/share/zoneinfo/posix/US/Indiana-Starke 连接到 usr/share/zoneinfo/posix/America/Knox_IN
 usr/share/zoneinfo/posix/US/Indiana-Starke
 usr/share/zoneinfo/posix/US/Pacific
 usr/share/zoneinfo/posix/America/Los_Angeles
+cpio: 无法将 usr/share/zoneinfo/posix/America/Los_Angeles 连接到 usr/share/zoneinfo/posix/US/Pacific-New: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/US/Pacific 连接到 usr/share/zoneinfo/posix/US/Pacific-New: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Pacific-New 连接到 usr/share/zoneinfo/posix/America/Los_Angeles
 cpio: usr/share/zoneinfo/posix/US/Pacific-New 连接到 usr/share/zoneinfo/posix/US/Pacific
 usr/share/zoneinfo/posix/US/Pacific-New
 usr/share/zoneinfo/posix/America/New_York
+cpio: 无法将 usr/share/zoneinfo/posix/America/New_York 连接到 usr/share/zoneinfo/posix/US/Eastern: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Eastern 连接到 usr/share/zoneinfo/posix/America/New_York
 usr/share/zoneinfo/posix/US/Eastern
 usr/share/zoneinfo/posix/America/Phoenix
+cpio: 无法将 usr/share/zoneinfo/posix/America/Phoenix 连接到 usr/share/zoneinfo/posix/US/Arizona: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Arizona 连接到 usr/share/zoneinfo/posix/America/Phoenix
 usr/share/zoneinfo/posix/US/Arizona
 usr/share/zoneinfo/posix/Pacific/Honolulu
 usr/share/zoneinfo/posix/Pacific/Johnston
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Johnston 连接到 usr/share/zoneinfo/posix/US/Hawaii: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Honolulu 连接到 usr/share/zoneinfo/posix/US/Hawaii: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Hawaii 连接到 usr/share/zoneinfo/posix/Pacific/Johnston
 cpio: usr/share/zoneinfo/posix/US/Hawaii 连接到 usr/share/zoneinfo/posix/Pacific/Honolulu
 usr/share/zoneinfo/posix/US/Hawaii
 usr/share/zoneinfo/posix/Pacific/Midway
 usr/share/zoneinfo/posix/Pacific/Pago_Pago
 usr/share/zoneinfo/posix/Pacific/Samoa
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Samoa 连接到 usr/share/zoneinfo/posix/US/Samoa: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Pago_Pago 连接到 usr/share/zoneinfo/posix/US/Samoa: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Midway 连接到 usr/share/zoneinfo/posix/US/Samoa: 不允许的操作
 cpio: usr/share/zoneinfo/posix/US/Samoa 连接到 usr/share/zoneinfo/posix/Pacific/Samoa
 cpio: usr/share/zoneinfo/posix/US/Samoa 连接到 usr/share/zoneinfo/posix/Pacific/Pago_Pago
 cpio: usr/share/zoneinfo/posix/US/Samoa 连接到 usr/share/zoneinfo/posix/Pacific/Midway
@@ -2485,23 +3262,28 @@ usr/share/zoneinfo/posix/US/Samoa
 usr/share/zoneinfo/posix/CET
 usr/share/zoneinfo/posix/CST6CDT
 usr/share/zoneinfo/posix/America/Havana
+cpio: 无法将 usr/share/zoneinfo/posix/America/Havana 连接到 usr/share/zoneinfo/posix/Cuba: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Cuba 连接到 usr/share/zoneinfo/posix/America/Havana
 usr/share/zoneinfo/posix/Cuba
 usr/share/zoneinfo/posix/EET
 usr/share/zoneinfo/posix/EST
 usr/share/zoneinfo/posix/EST5EDT
 usr/share/zoneinfo/posix/Africa/Cairo
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Cairo 连接到 usr/share/zoneinfo/posix/Egypt: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Egypt 连接到 usr/share/zoneinfo/posix/Africa/Cairo
 usr/share/zoneinfo/posix/Egypt
 usr/share/zoneinfo/posix/Europe/Dublin
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Dublin 连接到 usr/share/zoneinfo/posix/Eire: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Eire 连接到 usr/share/zoneinfo/posix/Europe/Dublin
 usr/share/zoneinfo/posix/Eire
 usr/share/zoneinfo/posix/Factory
 usr/share/zoneinfo/posix/HST
 usr/share/zoneinfo/posix/Asia/Hong_Kong
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Hong_Kong 连接到 usr/share/zoneinfo/posix/Hongkong: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Hongkong 连接到 usr/share/zoneinfo/posix/Asia/Hong_Kong
 usr/share/zoneinfo/posix/Hongkong
 usr/share/zoneinfo/posix/Atlantic/Reykjavik
+cpio: 无法将 usr/share/zoneinfo/posix/Atlantic/Reykjavik 连接到 usr/share/zoneinfo/posix/Iceland: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Iceland 连接到 usr/share/zoneinfo/posix/Atlantic/Reykjavik
 usr/share/zoneinfo/posix/Iceland
 usr/share/zoneinfo/posix/GB-Eire
@@ -2510,6 +3292,12 @@ usr/share/zoneinfo/posix/Europe/Jersey
 usr/share/zoneinfo/posix/Europe/Isle_of_Man
 usr/share/zoneinfo/posix/Europe/Guernsey
 usr/share/zoneinfo/posix/Europe/Belfast
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Belfast 连接到 usr/share/zoneinfo/posix/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Guernsey 连接到 usr/share/zoneinfo/posix/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Isle_of_Man 连接到 usr/share/zoneinfo/posix/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Jersey 连接到 usr/share/zoneinfo/posix/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/London 连接到 usr/share/zoneinfo/posix/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/GB-Eire 连接到 usr/share/zoneinfo/posix/GB: 不允许的操作
 cpio: usr/share/zoneinfo/posix/GB 连接到 usr/share/zoneinfo/posix/Europe/Belfast
 cpio: usr/share/zoneinfo/posix/GB 连接到 usr/share/zoneinfo/posix/Europe/Guernsey
 cpio: usr/share/zoneinfo/posix/GB 连接到 usr/share/zoneinfo/posix/Europe/Isle_of_Man
@@ -2518,10 +3306,13 @@ cpio: usr/share/zoneinfo/posix/GB 连接到 usr/share/zoneinfo/posix/Europe/Lond
 cpio: usr/share/zoneinfo/posix/GB 连接到 usr/share/zoneinfo/posix/GB-Eire
 usr/share/zoneinfo/posix/GB
 usr/share/zoneinfo/posix/Asia/Tehran
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Tehran 连接到 usr/share/zoneinfo/posix/Iran: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Iran 连接到 usr/share/zoneinfo/posix/Asia/Tehran
 usr/share/zoneinfo/posix/Iran
 usr/share/zoneinfo/posix/Asia/Tel_Aviv
 usr/share/zoneinfo/posix/Asia/Jerusalem
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Jerusalem 连接到 usr/share/zoneinfo/posix/Israel: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Tel_Aviv 连接到 usr/share/zoneinfo/posix/Israel: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Israel 连接到 usr/share/zoneinfo/posix/Asia/Jerusalem
 cpio: usr/share/zoneinfo/posix/Israel 连接到 usr/share/zoneinfo/posix/Asia/Tel_Aviv
 usr/share/zoneinfo/posix/Israel
@@ -2534,6 +3325,15 @@ usr/share/zoneinfo/posix/Etc/GMT0
 usr/share/zoneinfo/posix/Etc/GMT-0
 usr/share/zoneinfo/posix/Etc/GMT+0
 usr/share/zoneinfo/posix/Etc/GMT
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/GMT 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/GMT+0 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/GMT-0 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/GMT0 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/Greenwich 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Greenwich 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/GMT0 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/GMT-0 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/GMT+0 连接到 usr/share/zoneinfo/posix/GMT: 不允许的操作
 cpio: usr/share/zoneinfo/posix/GMT 连接到 usr/share/zoneinfo/posix/Etc/GMT
 cpio: usr/share/zoneinfo/posix/GMT 连接到 usr/share/zoneinfo/posix/Etc/GMT+0
 cpio: usr/share/zoneinfo/posix/GMT 连接到 usr/share/zoneinfo/posix/Etc/GMT-0
@@ -2545,15 +3345,19 @@ cpio: usr/share/zoneinfo/posix/GMT 连接到 usr/share/zoneinfo/posix/GMT-0
 cpio: usr/share/zoneinfo/posix/GMT 连接到 usr/share/zoneinfo/posix/GMT+0
 usr/share/zoneinfo/posix/GMT
 usr/share/zoneinfo/posix/America/Jamaica
+cpio: 无法将 usr/share/zoneinfo/posix/America/Jamaica 连接到 usr/share/zoneinfo/posix/Jamaica: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Jamaica 连接到 usr/share/zoneinfo/posix/America/Jamaica
 usr/share/zoneinfo/posix/Jamaica
 usr/share/zoneinfo/posix/Asia/Tokyo
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Tokyo 连接到 usr/share/zoneinfo/posix/Japan: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Japan 连接到 usr/share/zoneinfo/posix/Asia/Tokyo
 usr/share/zoneinfo/posix/Japan
 usr/share/zoneinfo/posix/Pacific/Kwajalein
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Kwajalein 连接到 usr/share/zoneinfo/posix/Kwajalein: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Kwajalein 连接到 usr/share/zoneinfo/posix/Pacific/Kwajalein
 usr/share/zoneinfo/posix/Kwajalein
 usr/share/zoneinfo/posix/Africa/Tripoli
+cpio: 无法将 usr/share/zoneinfo/posix/Africa/Tripoli 连接到 usr/share/zoneinfo/posix/Libya: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Libya 连接到 usr/share/zoneinfo/posix/Africa/Tripoli
 usr/share/zoneinfo/posix/Libya
 usr/share/zoneinfo/posix/MET
@@ -2562,16 +3366,23 @@ usr/share/zoneinfo/posix/MST7MDT
 usr/share/zoneinfo/posix/Pacific/Auckland
 usr/share/zoneinfo/posix/Antarctica/South_Pole
 usr/share/zoneinfo/posix/Antarctica/McMurdo
+cpio: 无法将 usr/share/zoneinfo/posix/Antarctica/McMurdo 连接到 usr/share/zoneinfo/posix/NZ: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Antarctica/South_Pole 连接到 usr/share/zoneinfo/posix/NZ: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Auckland 连接到 usr/share/zoneinfo/posix/NZ: 不允许的操作
 cpio: usr/share/zoneinfo/posix/NZ 连接到 usr/share/zoneinfo/posix/Antarctica/McMurdo
 cpio: usr/share/zoneinfo/posix/NZ 连接到 usr/share/zoneinfo/posix/Antarctica/South_Pole
 cpio: usr/share/zoneinfo/posix/NZ 连接到 usr/share/zoneinfo/posix/Pacific/Auckland
 usr/share/zoneinfo/posix/NZ
 usr/share/zoneinfo/posix/Pacific/Chatham
+cpio: 无法将 usr/share/zoneinfo/posix/Pacific/Chatham 连接到 usr/share/zoneinfo/posix/NZ-CHAT: 不允许的操作
 cpio: usr/share/zoneinfo/posix/NZ-CHAT 连接到 usr/share/zoneinfo/posix/Pacific/Chatham
 usr/share/zoneinfo/posix/NZ-CHAT
 usr/share/zoneinfo/posix/US/Mountain
 usr/share/zoneinfo/posix/America/Shiprock
 usr/share/zoneinfo/posix/America/Denver
+cpio: 无法将 usr/share/zoneinfo/posix/America/Denver 连接到 usr/share/zoneinfo/posix/Navajo: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/America/Shiprock 连接到 usr/share/zoneinfo/posix/Navajo: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/US/Mountain 连接到 usr/share/zoneinfo/posix/Navajo: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Navajo 连接到 usr/share/zoneinfo/posix/America/Denver
 cpio: usr/share/zoneinfo/posix/Navajo 连接到 usr/share/zoneinfo/posix/America/Shiprock
 cpio: usr/share/zoneinfo/posix/Navajo 连接到 usr/share/zoneinfo/posix/US/Mountain
@@ -2580,6 +3391,10 @@ usr/share/zoneinfo/posix/Asia/Shanghai
 usr/share/zoneinfo/posix/Asia/Harbin
 usr/share/zoneinfo/posix/Asia/Chungking
 usr/share/zoneinfo/posix/Asia/Chongqing
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Chongqing 连接到 usr/share/zoneinfo/posix/PRC: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Chungking 连接到 usr/share/zoneinfo/posix/PRC: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Harbin 连接到 usr/share/zoneinfo/posix/PRC: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Shanghai 连接到 usr/share/zoneinfo/posix/PRC: 不允许的操作
 cpio: usr/share/zoneinfo/posix/PRC 连接到 usr/share/zoneinfo/posix/Asia/Chongqing
 cpio: usr/share/zoneinfo/posix/PRC 连接到 usr/share/zoneinfo/posix/Asia/Chungking
 cpio: usr/share/zoneinfo/posix/PRC 连接到 usr/share/zoneinfo/posix/Asia/Harbin
@@ -2587,26 +3402,34 @@ cpio: usr/share/zoneinfo/posix/PRC 连接到 usr/share/zoneinfo/posix/Asia/Shang
 usr/share/zoneinfo/posix/PRC
 usr/share/zoneinfo/posix/PST8PDT
 usr/share/zoneinfo/posix/Europe/Warsaw
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Warsaw 连接到 usr/share/zoneinfo/posix/Poland: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Poland 连接到 usr/share/zoneinfo/posix/Europe/Warsaw
 usr/share/zoneinfo/posix/Poland
 usr/share/zoneinfo/posix/Europe/Lisbon
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Lisbon 连接到 usr/share/zoneinfo/posix/Portugal: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Portugal 连接到 usr/share/zoneinfo/posix/Europe/Lisbon
 usr/share/zoneinfo/posix/Portugal
 usr/share/zoneinfo/posix/Asia/Taipei
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Taipei 连接到 usr/share/zoneinfo/posix/ROC: 不允许的操作
 cpio: usr/share/zoneinfo/posix/ROC 连接到 usr/share/zoneinfo/posix/Asia/Taipei
 usr/share/zoneinfo/posix/ROC
 usr/share/zoneinfo/posix/Asia/Seoul
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Seoul 连接到 usr/share/zoneinfo/posix/ROK: 不允许的操作
 cpio: usr/share/zoneinfo/posix/ROK 连接到 usr/share/zoneinfo/posix/Asia/Seoul
 usr/share/zoneinfo/posix/ROK
 usr/share/zoneinfo/posix/Asia/Singapore
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Singapore 连接到 usr/share/zoneinfo/posix/Singapore: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Singapore 连接到 usr/share/zoneinfo/posix/Asia/Singapore
 usr/share/zoneinfo/posix/Singapore
 usr/share/zoneinfo/posix/Europe/Istanbul
 usr/share/zoneinfo/posix/Asia/Istanbul
+cpio: 无法将 usr/share/zoneinfo/posix/Asia/Istanbul 连接到 usr/share/zoneinfo/posix/Turkey: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Istanbul 连接到 usr/share/zoneinfo/posix/Turkey: 不允许的操作
 cpio: usr/share/zoneinfo/posix/Turkey 连接到 usr/share/zoneinfo/posix/Asia/Istanbul
 cpio: usr/share/zoneinfo/posix/Turkey 连接到 usr/share/zoneinfo/posix/Europe/Istanbul
 usr/share/zoneinfo/posix/Turkey
 usr/share/zoneinfo/posix/Europe/Moscow
+cpio: 无法将 usr/share/zoneinfo/posix/Europe/Moscow 连接到 usr/share/zoneinfo/posix/W-SU: 不允许的操作
 cpio: usr/share/zoneinfo/posix/W-SU 连接到 usr/share/zoneinfo/posix/Europe/Moscow
 usr/share/zoneinfo/posix/W-SU
 usr/share/zoneinfo/posix/WET
@@ -2617,6 +3440,13 @@ usr/share/zoneinfo/posix/Etc/Zulu
 usr/share/zoneinfo/posix/Etc/Universal
 usr/share/zoneinfo/posix/Etc/UTC
 usr/share/zoneinfo/posix/Etc/UCT
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/UCT 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/UTC 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/Universal 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Etc/Zulu 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Zulu 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/Universal 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/posix/UTC 连接到 usr/share/zoneinfo/posix/UCT: 不允许的操作
 cpio: usr/share/zoneinfo/posix/UCT 连接到 usr/share/zoneinfo/posix/Etc/UCT
 cpio: usr/share/zoneinfo/posix/UCT 连接到 usr/share/zoneinfo/posix/Etc/UTC
 cpio: usr/share/zoneinfo/posix/UCT 连接到 usr/share/zoneinfo/posix/Etc/Universal
@@ -2646,6 +3476,13 @@ usr/share/zoneinfo/right/Africa/Kigali
 usr/share/zoneinfo/right/Africa/Lubumbashi
 usr/share/zoneinfo/right/Africa/Lusaka
 usr/share/zoneinfo/right/Africa/Maputo
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Maputo 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Lusaka 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Lubumbashi 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Kigali 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Harare 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Gaborone 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Bujumbura 连接到 usr/share/zoneinfo/right/Africa/Blantyre: 不允许的操作
 cpio: usr/share/zoneinfo/right/Africa/Blantyre 连接到 usr/share/zoneinfo/right/Africa/Maputo
 cpio: usr/share/zoneinfo/right/Africa/Blantyre 连接到 usr/share/zoneinfo/right/Africa/Lusaka
 cpio: usr/share/zoneinfo/right/Africa/Blantyre 连接到 usr/share/zoneinfo/right/Africa/Lubumbashi
@@ -2657,6 +3494,8 @@ usr/share/zoneinfo/right/Africa/Blantyre
 usr/share/zoneinfo/right/Africa/Windhoek
 usr/share/zoneinfo/right/Africa/Maseru
 usr/share/zoneinfo/right/Africa/Mbabane
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Mbabane 连接到 usr/share/zoneinfo/right/Africa/Johannesburg: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Maseru 连接到 usr/share/zoneinfo/right/Africa/Johannesburg: 不允许的操作
 cpio: usr/share/zoneinfo/right/Africa/Johannesburg 连接到 usr/share/zoneinfo/right/Africa/Mbabane
 cpio: usr/share/zoneinfo/right/Africa/Johannesburg 连接到 usr/share/zoneinfo/right/Africa/Maseru
 usr/share/zoneinfo/right/Africa/Johannesburg
@@ -2669,6 +3508,15 @@ usr/share/zoneinfo/right/Africa/Luanda
 usr/share/zoneinfo/right/Africa/Malabo
 usr/share/zoneinfo/right/Africa/Niamey
 usr/share/zoneinfo/right/Africa/Porto-Novo
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Porto-Novo 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Niamey 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Malabo 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Luanda 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Libreville 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Lagos 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Kinshasa 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Douala 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Brazzaville 连接到 usr/share/zoneinfo/right/Africa/Bangui: 不允许的操作
 cpio: usr/share/zoneinfo/right/Africa/Bangui 连接到 usr/share/zoneinfo/right/Africa/Porto-Novo
 cpio: usr/share/zoneinfo/right/Africa/Bangui 连接到 usr/share/zoneinfo/right/Africa/Niamey
 cpio: usr/share/zoneinfo/right/Africa/Bangui 连接到 usr/share/zoneinfo/right/Africa/Malabo
@@ -2713,6 +3561,7 @@ usr/share/zoneinfo/right/America/Boa_Vista
 usr/share/zoneinfo/right/America/Bogota
 usr/share/zoneinfo/right/America/Boise
 usr/share/zoneinfo/right/America/Argentina/Buenos_Aires
+cpio: 无法将 usr/share/zoneinfo/right/America/Argentina/Buenos_Aires 连接到 usr/share/zoneinfo/right/America/Buenos_Aires: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Buenos_Aires 连接到 usr/share/zoneinfo/right/America/Argentina/Buenos_Aires
 usr/share/zoneinfo/right/America/Buenos_Aires
 usr/share/zoneinfo/right/America/Cambridge_Bay
@@ -2721,6 +3570,8 @@ usr/share/zoneinfo/right/America/Cancun
 usr/share/zoneinfo/right/America/Caracas
 usr/share/zoneinfo/right/America/Argentina/ComodRivadavia
 usr/share/zoneinfo/right/America/Argentina/Catamarca
+cpio: 无法将 usr/share/zoneinfo/right/America/Argentina/Catamarca 连接到 usr/share/zoneinfo/right/America/Catamarca: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Argentina/ComodRivadavia 连接到 usr/share/zoneinfo/right/America/Catamarca: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Catamarca 连接到 usr/share/zoneinfo/right/America/Argentina/Catamarca
 cpio: usr/share/zoneinfo/right/America/Catamarca 连接到 usr/share/zoneinfo/right/America/Argentina/ComodRivadavia
 usr/share/zoneinfo/right/America/Catamarca
@@ -2735,6 +3586,7 @@ usr/share/zoneinfo/right/America/Dawson_Creek
 usr/share/zoneinfo/right/America/Eirunepe
 usr/share/zoneinfo/right/America/El_Salvador
 usr/share/zoneinfo/right/America/Coral_Harbour
+cpio: 无法将 usr/share/zoneinfo/right/America/Coral_Harbour 连接到 usr/share/zoneinfo/right/America/Atikokan: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Atikokan 连接到 usr/share/zoneinfo/right/America/Coral_Harbour
 usr/share/zoneinfo/right/America/Atikokan
 usr/share/zoneinfo/right/America/Fort_Nelson
@@ -2750,12 +3602,14 @@ usr/share/zoneinfo/right/America/Hermosillo
 usr/share/zoneinfo/right/America/Inuvik
 usr/share/zoneinfo/right/America/Iqaluit
 usr/share/zoneinfo/right/America/Argentina/Jujuy
+cpio: 无法将 usr/share/zoneinfo/right/America/Argentina/Jujuy 连接到 usr/share/zoneinfo/right/America/Jujuy: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Jujuy 连接到 usr/share/zoneinfo/right/America/Argentina/Jujuy
 usr/share/zoneinfo/right/America/Jujuy
 usr/share/zoneinfo/right/America/Juneau
 usr/share/zoneinfo/right/America/La_Paz
 usr/share/zoneinfo/right/America/Lima
 usr/share/zoneinfo/right/America/Kentucky/Louisville
+cpio: 无法将 usr/share/zoneinfo/right/America/Kentucky/Louisville 连接到 usr/share/zoneinfo/right/America/Louisville: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Louisville 连接到 usr/share/zoneinfo/right/America/Kentucky/Louisville
 usr/share/zoneinfo/right/America/Louisville
 usr/share/zoneinfo/right/America/Maceio
@@ -2763,6 +3617,7 @@ usr/share/zoneinfo/right/America/Managua
 usr/share/zoneinfo/right/America/Martinique
 usr/share/zoneinfo/right/America/Matamoros
 usr/share/zoneinfo/right/America/Argentina/Mendoza
+cpio: 无法将 usr/share/zoneinfo/right/America/Argentina/Mendoza 连接到 usr/share/zoneinfo/right/America/Mendoza: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Mendoza 连接到 usr/share/zoneinfo/right/America/Argentina/Mendoza
 usr/share/zoneinfo/right/America/Mendoza
 usr/share/zoneinfo/right/America/Menominee
@@ -2771,6 +3626,9 @@ usr/share/zoneinfo/right/America/Metlakatla
 usr/share/zoneinfo/right/America/Curacao
 usr/share/zoneinfo/right/America/Kralendijk
 usr/share/zoneinfo/right/America/Lower_Princes
+cpio: 无法将 usr/share/zoneinfo/right/America/Lower_Princes 连接到 usr/share/zoneinfo/right/America/Aruba: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Kralendijk 连接到 usr/share/zoneinfo/right/America/Aruba: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Curacao 连接到 usr/share/zoneinfo/right/America/Aruba: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Aruba 连接到 usr/share/zoneinfo/right/America/Lower_Princes
 cpio: usr/share/zoneinfo/right/America/Aruba 连接到 usr/share/zoneinfo/right/America/Kralendijk
 cpio: usr/share/zoneinfo/right/America/Aruba 连接到 usr/share/zoneinfo/right/America/Curacao
@@ -2785,6 +3643,7 @@ usr/share/zoneinfo/right/America/Nome
 usr/share/zoneinfo/right/America/Ojinaga
 usr/share/zoneinfo/right/America/Pangnirtung
 usr/share/zoneinfo/right/America/Panama
+cpio: 无法将 usr/share/zoneinfo/right/America/Panama 连接到 usr/share/zoneinfo/right/America/Cayman: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Cayman 连接到 usr/share/zoneinfo/right/America/Panama
 usr/share/zoneinfo/right/America/Cayman
 usr/share/zoneinfo/right/America/Paramaribo
@@ -2802,6 +3661,8 @@ usr/share/zoneinfo/right/America/Scoresbysund
 usr/share/zoneinfo/right/America/Sitka
 usr/share/zoneinfo/right/America/Rosario
 usr/share/zoneinfo/right/America/Argentina/Cordoba
+cpio: 无法将 usr/share/zoneinfo/right/America/Argentina/Cordoba 连接到 usr/share/zoneinfo/right/America/Cordoba: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Rosario 连接到 usr/share/zoneinfo/right/America/Cordoba: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Cordoba 连接到 usr/share/zoneinfo/right/America/Argentina/Cordoba
 cpio: usr/share/zoneinfo/right/America/Cordoba 连接到 usr/share/zoneinfo/right/America/Rosario
 usr/share/zoneinfo/right/America/Cordoba
@@ -2825,6 +3686,20 @@ usr/share/zoneinfo/right/America/St_Thomas
 usr/share/zoneinfo/right/America/St_Vincent
 usr/share/zoneinfo/right/America/Tortola
 usr/share/zoneinfo/right/America/Virgin
+cpio: 无法将 usr/share/zoneinfo/right/America/Virgin 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Tortola 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/St_Vincent 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/St_Thomas 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/St_Lucia 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/St_Kitts 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/St_Barthelemy 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Port_of_Spain 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Montserrat 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Marigot 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Guadeloupe 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Grenada 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Dominica 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Antigua 连接到 usr/share/zoneinfo/right/America/Anguilla: 不允许的操作
 cpio: usr/share/zoneinfo/right/America/Anguilla 连接到 usr/share/zoneinfo/right/America/Virgin
 cpio: usr/share/zoneinfo/right/America/Anguilla 连接到 usr/share/zoneinfo/right/America/Tortola
 cpio: usr/share/zoneinfo/right/America/Anguilla 连接到 usr/share/zoneinfo/right/America/St_Vincent
@@ -2874,10 +3749,12 @@ usr/share/zoneinfo/right/Asia/Dushanbe
 usr/share/zoneinfo/right/Asia/Famagusta
 usr/share/zoneinfo/right/Asia/Gaza
 usr/share/zoneinfo/right/Asia/Ashkhabad
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Ashkhabad 连接到 usr/share/zoneinfo/right/Asia/Ashgabat: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Ashgabat 连接到 usr/share/zoneinfo/right/Asia/Ashkhabad
 usr/share/zoneinfo/right/Asia/Ashgabat
 usr/share/zoneinfo/right/Asia/Hebron
 usr/share/zoneinfo/right/Asia/Dhaka
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Dhaka 连接到 usr/share/zoneinfo/right/Asia/Dacca: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Dacca 连接到 usr/share/zoneinfo/right/Asia/Dhaka
 usr/share/zoneinfo/right/Asia/Dacca
 usr/share/zoneinfo/right/Asia/Hovd
@@ -2897,16 +3774,20 @@ usr/share/zoneinfo/right/Asia/Novokuznetsk
 usr/share/zoneinfo/right/Asia/Novosibirsk
 usr/share/zoneinfo/right/Asia/Omsk
 usr/share/zoneinfo/right/Asia/Katmandu
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Katmandu 连接到 usr/share/zoneinfo/right/Asia/Kathmandu: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Kathmandu 连接到 usr/share/zoneinfo/right/Asia/Katmandu
 usr/share/zoneinfo/right/Asia/Kathmandu
 usr/share/zoneinfo/right/Asia/Oral
 usr/share/zoneinfo/right/Asia/Kolkata
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Kolkata 连接到 usr/share/zoneinfo/right/Asia/Calcutta: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Calcutta 连接到 usr/share/zoneinfo/right/Asia/Kolkata
 usr/share/zoneinfo/right/Asia/Calcutta
 usr/share/zoneinfo/right/Asia/Macau
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Macau 连接到 usr/share/zoneinfo/right/Asia/Macao: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Macao 连接到 usr/share/zoneinfo/right/Asia/Macau
 usr/share/zoneinfo/right/Asia/Macao
 usr/share/zoneinfo/right/Asia/Muscat
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Muscat 连接到 usr/share/zoneinfo/right/Asia/Dubai: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Dubai 连接到 usr/share/zoneinfo/right/Asia/Muscat
 usr/share/zoneinfo/right/Asia/Dubai
 usr/share/zoneinfo/right/Asia/Pontianak
@@ -2925,34 +3806,45 @@ usr/share/zoneinfo/right/Asia/Yakutsk
 usr/share/zoneinfo/right/Asia/Yekaterinburg
 usr/share/zoneinfo/right/Asia/Yerevan
 usr/share/zoneinfo/right/Asia/Qatar
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Qatar 连接到 usr/share/zoneinfo/right/Asia/Bahrain: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Bahrain 连接到 usr/share/zoneinfo/right/Asia/Qatar
 usr/share/zoneinfo/right/Asia/Bahrain
 usr/share/zoneinfo/right/Asia/Kuwait
 usr/share/zoneinfo/right/Asia/Riyadh
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Riyadh 连接到 usr/share/zoneinfo/right/Asia/Aden: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Kuwait 连接到 usr/share/zoneinfo/right/Asia/Aden: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Aden 连接到 usr/share/zoneinfo/right/Asia/Riyadh
 cpio: usr/share/zoneinfo/right/Asia/Aden 连接到 usr/share/zoneinfo/right/Asia/Kuwait
 usr/share/zoneinfo/right/Asia/Aden
 usr/share/zoneinfo/right/Asia/Saigon
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Saigon 连接到 usr/share/zoneinfo/right/Asia/Ho_Chi_Minh: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Ho_Chi_Minh 连接到 usr/share/zoneinfo/right/Asia/Saigon
 usr/share/zoneinfo/right/Asia/Ho_Chi_Minh
 usr/share/zoneinfo/right/Asia/Thimphu
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Thimphu 连接到 usr/share/zoneinfo/right/Asia/Thimbu: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Thimbu 连接到 usr/share/zoneinfo/right/Asia/Thimphu
 usr/share/zoneinfo/right/Asia/Thimbu
 usr/share/zoneinfo/right/Asia/Ujung_Pandang
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Ujung_Pandang 连接到 usr/share/zoneinfo/right/Asia/Makassar: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Makassar 连接到 usr/share/zoneinfo/right/Asia/Ujung_Pandang
 usr/share/zoneinfo/right/Asia/Makassar
 usr/share/zoneinfo/right/Asia/Ulan_Bator
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Ulan_Bator 连接到 usr/share/zoneinfo/right/Asia/Ulaanbaatar: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Ulaanbaatar 连接到 usr/share/zoneinfo/right/Asia/Ulan_Bator
 usr/share/zoneinfo/right/Asia/Ulaanbaatar
 usr/share/zoneinfo/right/Asia/Urumqi
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Urumqi 连接到 usr/share/zoneinfo/right/Asia/Kashgar: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Kashgar 连接到 usr/share/zoneinfo/right/Asia/Urumqi
 usr/share/zoneinfo/right/Asia/Kashgar
 usr/share/zoneinfo/right/Asia/Phnom_Penh
 usr/share/zoneinfo/right/Asia/Vientiane
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Vientiane 连接到 usr/share/zoneinfo/right/Asia/Bangkok: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Phnom_Penh 连接到 usr/share/zoneinfo/right/Asia/Bangkok: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Bangkok 连接到 usr/share/zoneinfo/right/Asia/Vientiane
 cpio: usr/share/zoneinfo/right/Asia/Bangkok 连接到 usr/share/zoneinfo/right/Asia/Phnom_Penh
 usr/share/zoneinfo/right/Asia/Bangkok
 usr/share/zoneinfo/right/Asia/Yangon
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Yangon 连接到 usr/share/zoneinfo/right/Asia/Rangoon: 不允许的操作
 cpio: usr/share/zoneinfo/right/Asia/Rangoon 连接到 usr/share/zoneinfo/right/Asia/Yangon
 usr/share/zoneinfo/right/Asia/Rangoon
 usr/share/zoneinfo/right/Atlantic
@@ -2966,6 +3858,16 @@ usr/share/zoneinfo/right/Africa/Lome
 usr/share/zoneinfo/right/Africa/Nouakchott
 usr/share/zoneinfo/right/Africa/Ouagadougou
 usr/share/zoneinfo/right/Africa/Timbuktu
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Timbuktu 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Ouagadougou 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Nouakchott 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Lome 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Freetown 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Dakar 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Conakry 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Banjul 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Bamako 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Abidjan 连接到 usr/share/zoneinfo/right/Atlantic/St_Helena: 不允许的操作
 cpio: usr/share/zoneinfo/right/Atlantic/St_Helena 连接到 usr/share/zoneinfo/right/Africa/Timbuktu
 cpio: usr/share/zoneinfo/right/Atlantic/St_Helena 连接到 usr/share/zoneinfo/right/Africa/Ouagadougou
 cpio: usr/share/zoneinfo/right/Atlantic/St_Helena 连接到 usr/share/zoneinfo/right/Africa/Nouakchott
@@ -2985,6 +3887,7 @@ usr/share/zoneinfo/right/Atlantic/Madeira
 usr/share/zoneinfo/right/Atlantic/South_Georgia
 usr/share/zoneinfo/right/Atlantic/Stanley
 usr/share/zoneinfo/right/Atlantic/Faroe
+cpio: 无法将 usr/share/zoneinfo/right/Atlantic/Faroe 连接到 usr/share/zoneinfo/right/Atlantic/Faeroe: 不允许的操作
 cpio: usr/share/zoneinfo/right/Atlantic/Faeroe 连接到 usr/share/zoneinfo/right/Atlantic/Faroe
 usr/share/zoneinfo/right/Atlantic/Faeroe
 usr/share/zoneinfo/right/Australia
@@ -2992,80 +3895,106 @@ usr/share/zoneinfo/right/Australia/Currie
 usr/share/zoneinfo/right/Australia/Eucla
 usr/share/zoneinfo/right/Australia/Lindeman
 usr/share/zoneinfo/right/Australia/Lord_Howe
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Lord_Howe 连接到 usr/share/zoneinfo/right/Australia/LHI: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/LHI 连接到 usr/share/zoneinfo/right/Australia/Lord_Howe
 usr/share/zoneinfo/right/Australia/LHI
 usr/share/zoneinfo/right/Australia/North
+cpio: 无法将 usr/share/zoneinfo/right/Australia/North 连接到 usr/share/zoneinfo/right/Australia/Darwin: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Darwin 连接到 usr/share/zoneinfo/right/Australia/North
 usr/share/zoneinfo/right/Australia/Darwin
 usr/share/zoneinfo/right/Australia/Queensland
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Queensland 连接到 usr/share/zoneinfo/right/Australia/Brisbane: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Brisbane 连接到 usr/share/zoneinfo/right/Australia/Queensland
 usr/share/zoneinfo/right/Australia/Brisbane
 usr/share/zoneinfo/right/Australia/South
+cpio: 无法将 usr/share/zoneinfo/right/Australia/South 连接到 usr/share/zoneinfo/right/Australia/Adelaide: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Adelaide 连接到 usr/share/zoneinfo/right/Australia/South
 usr/share/zoneinfo/right/Australia/Adelaide
 usr/share/zoneinfo/right/Australia/Canberra
 usr/share/zoneinfo/right/Australia/NSW
 usr/share/zoneinfo/right/Australia/Sydney
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Sydney 连接到 usr/share/zoneinfo/right/Australia/ACT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Australia/NSW 连接到 usr/share/zoneinfo/right/Australia/ACT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Canberra 连接到 usr/share/zoneinfo/right/Australia/ACT: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/ACT 连接到 usr/share/zoneinfo/right/Australia/Sydney
 cpio: usr/share/zoneinfo/right/Australia/ACT 连接到 usr/share/zoneinfo/right/Australia/NSW
 cpio: usr/share/zoneinfo/right/Australia/ACT 连接到 usr/share/zoneinfo/right/Australia/Canberra
 usr/share/zoneinfo/right/Australia/ACT
 usr/share/zoneinfo/right/Australia/Tasmania
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Tasmania 连接到 usr/share/zoneinfo/right/Australia/Hobart: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Hobart 连接到 usr/share/zoneinfo/right/Australia/Tasmania
 usr/share/zoneinfo/right/Australia/Hobart
 usr/share/zoneinfo/right/Australia/Victoria
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Victoria 连接到 usr/share/zoneinfo/right/Australia/Melbourne: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Melbourne 连接到 usr/share/zoneinfo/right/Australia/Victoria
 usr/share/zoneinfo/right/Australia/Melbourne
 usr/share/zoneinfo/right/Australia/West
+cpio: 无法将 usr/share/zoneinfo/right/Australia/West 连接到 usr/share/zoneinfo/right/Australia/Perth: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Perth 连接到 usr/share/zoneinfo/right/Australia/West
 usr/share/zoneinfo/right/Australia/Perth
 usr/share/zoneinfo/right/Australia/Yancowinna
+cpio: 无法将 usr/share/zoneinfo/right/Australia/Yancowinna 连接到 usr/share/zoneinfo/right/Australia/Broken_Hill: 不允许的操作
 cpio: usr/share/zoneinfo/right/Australia/Broken_Hill 连接到 usr/share/zoneinfo/right/Australia/Yancowinna
 usr/share/zoneinfo/right/Australia/Broken_Hill
 usr/share/zoneinfo/right/Brazil
 usr/share/zoneinfo/right/America/Manaus
+cpio: 无法将 usr/share/zoneinfo/right/America/Manaus 连接到 usr/share/zoneinfo/right/Brazil/West: 不允许的操作
 cpio: usr/share/zoneinfo/right/Brazil/West 连接到 usr/share/zoneinfo/right/America/Manaus
 usr/share/zoneinfo/right/Brazil/West
 usr/share/zoneinfo/right/America/Noronha
+cpio: 无法将 usr/share/zoneinfo/right/America/Noronha 连接到 usr/share/zoneinfo/right/Brazil/DeNoronha: 不允许的操作
 cpio: usr/share/zoneinfo/right/Brazil/DeNoronha 连接到 usr/share/zoneinfo/right/America/Noronha
 usr/share/zoneinfo/right/Brazil/DeNoronha
 usr/share/zoneinfo/right/America/Porto_Acre
 usr/share/zoneinfo/right/America/Rio_Branco
+cpio: 无法将 usr/share/zoneinfo/right/America/Rio_Branco 连接到 usr/share/zoneinfo/right/Brazil/Acre: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Porto_Acre 连接到 usr/share/zoneinfo/right/Brazil/Acre: 不允许的操作
 cpio: usr/share/zoneinfo/right/Brazil/Acre 连接到 usr/share/zoneinfo/right/America/Rio_Branco
 cpio: usr/share/zoneinfo/right/Brazil/Acre 连接到 usr/share/zoneinfo/right/America/Porto_Acre
 usr/share/zoneinfo/right/Brazil/Acre
 usr/share/zoneinfo/right/America/Sao_Paulo
+cpio: 无法将 usr/share/zoneinfo/right/America/Sao_Paulo 连接到 usr/share/zoneinfo/right/Brazil/East: 不允许的操作
 cpio: usr/share/zoneinfo/right/Brazil/East 连接到 usr/share/zoneinfo/right/America/Sao_Paulo
 usr/share/zoneinfo/right/Brazil/East
 usr/share/zoneinfo/right/Canada
 usr/share/zoneinfo/right/America/Edmonton
+cpio: 无法将 usr/share/zoneinfo/right/America/Edmonton 连接到 usr/share/zoneinfo/right/Canada/Mountain: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Mountain 连接到 usr/share/zoneinfo/right/America/Edmonton
 usr/share/zoneinfo/right/Canada/Mountain
 usr/share/zoneinfo/right/America/Halifax
+cpio: 无法将 usr/share/zoneinfo/right/America/Halifax 连接到 usr/share/zoneinfo/right/Canada/Atlantic: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Atlantic 连接到 usr/share/zoneinfo/right/America/Halifax
 usr/share/zoneinfo/right/Canada/Atlantic
 usr/share/zoneinfo/right/America/Regina
+cpio: 无法将 usr/share/zoneinfo/right/America/Regina 连接到 usr/share/zoneinfo/right/Canada/Saskatchewan: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Saskatchewan 连接到 usr/share/zoneinfo/right/America/Regina
 usr/share/zoneinfo/right/Canada/Saskatchewan
 usr/share/zoneinfo/right/America/St_Johns
+cpio: 无法将 usr/share/zoneinfo/right/America/St_Johns 连接到 usr/share/zoneinfo/right/Canada/Newfoundland: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Newfoundland 连接到 usr/share/zoneinfo/right/America/St_Johns
 usr/share/zoneinfo/right/Canada/Newfoundland
 usr/share/zoneinfo/right/America/Montreal
 usr/share/zoneinfo/right/America/Toronto
+cpio: 无法将 usr/share/zoneinfo/right/America/Toronto 连接到 usr/share/zoneinfo/right/Canada/Eastern: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Montreal 连接到 usr/share/zoneinfo/right/Canada/Eastern: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Eastern 连接到 usr/share/zoneinfo/right/America/Toronto
 cpio: usr/share/zoneinfo/right/Canada/Eastern 连接到 usr/share/zoneinfo/right/America/Montreal
 usr/share/zoneinfo/right/Canada/Eastern
 usr/share/zoneinfo/right/America/Vancouver
+cpio: 无法将 usr/share/zoneinfo/right/America/Vancouver 连接到 usr/share/zoneinfo/right/Canada/Pacific: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Pacific 连接到 usr/share/zoneinfo/right/America/Vancouver
 usr/share/zoneinfo/right/Canada/Pacific
 usr/share/zoneinfo/right/America/Whitehorse
+cpio: 无法将 usr/share/zoneinfo/right/America/Whitehorse 连接到 usr/share/zoneinfo/right/Canada/Yukon: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Yukon 连接到 usr/share/zoneinfo/right/America/Whitehorse
 usr/share/zoneinfo/right/Canada/Yukon
 usr/share/zoneinfo/right/America/Winnipeg
+cpio: 无法将 usr/share/zoneinfo/right/America/Winnipeg 连接到 usr/share/zoneinfo/right/Canada/Central: 不允许的操作
 cpio: usr/share/zoneinfo/right/Canada/Central 连接到 usr/share/zoneinfo/right/America/Winnipeg
 usr/share/zoneinfo/right/Canada/Central
 usr/share/zoneinfo/right/Chile
 usr/share/zoneinfo/right/America/Santiago
+cpio: 无法将 usr/share/zoneinfo/right/America/Santiago 连接到 usr/share/zoneinfo/right/Chile/Continental: 不允许的操作
 cpio: usr/share/zoneinfo/right/Chile/Continental 连接到 usr/share/zoneinfo/right/America/Santiago
 usr/share/zoneinfo/right/Chile/Continental
 usr/share/zoneinfo/right/Etc
@@ -3098,10 +4027,13 @@ usr/share/zoneinfo/right/Etc/GMT-9
 usr/share/zoneinfo/right/Europe
 usr/share/zoneinfo/right/Atlantic/Jan_Mayen
 usr/share/zoneinfo/right/Arctic/Longyearbyen
+cpio: 无法将 usr/share/zoneinfo/right/Arctic/Longyearbyen 连接到 usr/share/zoneinfo/right/Europe/Oslo: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Atlantic/Jan_Mayen 连接到 usr/share/zoneinfo/right/Europe/Oslo: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Oslo 连接到 usr/share/zoneinfo/right/Arctic/Longyearbyen
 cpio: usr/share/zoneinfo/right/Europe/Oslo 连接到 usr/share/zoneinfo/right/Atlantic/Jan_Mayen
 usr/share/zoneinfo/right/Europe/Oslo
 usr/share/zoneinfo/right/Asia/Nicosia
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Nicosia 连接到 usr/share/zoneinfo/right/Europe/Nicosia: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Nicosia 连接到 usr/share/zoneinfo/right/Asia/Nicosia
 usr/share/zoneinfo/right/Europe/Nicosia
 usr/share/zoneinfo/right/Europe/Amsterdam
@@ -3125,10 +4057,12 @@ usr/share/zoneinfo/right/Europe/Monaco
 usr/share/zoneinfo/right/Europe/Paris
 usr/share/zoneinfo/right/Europe/Riga
 usr/share/zoneinfo/right/Europe/Mariehamn
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Mariehamn 连接到 usr/share/zoneinfo/right/Europe/Helsinki: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Helsinki 连接到 usr/share/zoneinfo/right/Europe/Mariehamn
 usr/share/zoneinfo/right/Europe/Helsinki
 usr/share/zoneinfo/right/Europe/Samara
 usr/share/zoneinfo/right/Europe/Prague
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Prague 连接到 usr/share/zoneinfo/right/Europe/Bratislava: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Bratislava 连接到 usr/share/zoneinfo/right/Europe/Prague
 usr/share/zoneinfo/right/Europe/Bratislava
 usr/share/zoneinfo/right/Europe/Saratov
@@ -3142,11 +4076,14 @@ usr/share/zoneinfo/right/Europe/Uzhgorod
 usr/share/zoneinfo/right/Europe/Vienna
 usr/share/zoneinfo/right/Europe/Vilnius
 usr/share/zoneinfo/right/Europe/Tiraspol
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Tiraspol 连接到 usr/share/zoneinfo/right/Europe/Chisinau: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Chisinau 连接到 usr/share/zoneinfo/right/Europe/Tiraspol
 usr/share/zoneinfo/right/Europe/Chisinau
 usr/share/zoneinfo/right/Europe/Volgograd
 usr/share/zoneinfo/right/Europe/San_Marino
 usr/share/zoneinfo/right/Europe/Vatican
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Vatican 连接到 usr/share/zoneinfo/right/Europe/Rome: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/San_Marino 连接到 usr/share/zoneinfo/right/Europe/Rome: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Rome 连接到 usr/share/zoneinfo/right/Europe/Vatican
 cpio: usr/share/zoneinfo/right/Europe/Rome 连接到 usr/share/zoneinfo/right/Europe/San_Marino
 usr/share/zoneinfo/right/Europe/Rome
@@ -3156,6 +4093,11 @@ usr/share/zoneinfo/right/Europe/Podgorica
 usr/share/zoneinfo/right/Europe/Sarajevo
 usr/share/zoneinfo/right/Europe/Skopje
 usr/share/zoneinfo/right/Europe/Zagreb
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Zagreb 连接到 usr/share/zoneinfo/right/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Skopje 连接到 usr/share/zoneinfo/right/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Sarajevo 连接到 usr/share/zoneinfo/right/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Podgorica 连接到 usr/share/zoneinfo/right/Europe/Belgrade: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Ljubljana 连接到 usr/share/zoneinfo/right/Europe/Belgrade: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Belgrade 连接到 usr/share/zoneinfo/right/Europe/Zagreb
 cpio: usr/share/zoneinfo/right/Europe/Belgrade 连接到 usr/share/zoneinfo/right/Europe/Skopje
 cpio: usr/share/zoneinfo/right/Europe/Belgrade 连接到 usr/share/zoneinfo/right/Europe/Sarajevo
@@ -3164,6 +4106,8 @@ cpio: usr/share/zoneinfo/right/Europe/Belgrade 连接到 usr/share/zoneinfo/righ
 usr/share/zoneinfo/right/Europe/Belgrade
 usr/share/zoneinfo/right/Europe/Vaduz
 usr/share/zoneinfo/right/Europe/Zurich
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Zurich 连接到 usr/share/zoneinfo/right/Europe/Busingen: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Vaduz 连接到 usr/share/zoneinfo/right/Europe/Busingen: 不允许的操作
 cpio: usr/share/zoneinfo/right/Europe/Busingen 连接到 usr/share/zoneinfo/right/Europe/Zurich
 cpio: usr/share/zoneinfo/right/Europe/Busingen 连接到 usr/share/zoneinfo/right/Europe/Vaduz
 usr/share/zoneinfo/right/Europe/Busingen
@@ -3178,6 +4122,16 @@ usr/share/zoneinfo/right/Africa/Djibouti
 usr/share/zoneinfo/right/Africa/Kampala
 usr/share/zoneinfo/right/Africa/Mogadishu
 usr/share/zoneinfo/right/Africa/Nairobi
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Nairobi 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Mogadishu 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Kampala 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Djibouti 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Dar_es_Salaam 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Asmera 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Asmara 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Addis_Ababa 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Indian/Antananarivo 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Indian/Comoro 连接到 usr/share/zoneinfo/right/Indian/Mayotte: 不允许的操作
 cpio: usr/share/zoneinfo/right/Indian/Mayotte 连接到 usr/share/zoneinfo/right/Africa/Nairobi
 cpio: usr/share/zoneinfo/right/Indian/Mayotte 连接到 usr/share/zoneinfo/right/Africa/Mogadishu
 cpio: usr/share/zoneinfo/right/Indian/Mayotte 连接到 usr/share/zoneinfo/right/Africa/Kampala
@@ -3199,20 +4153,26 @@ usr/share/zoneinfo/right/Indian/Mauritius
 usr/share/zoneinfo/right/Indian/Reunion
 usr/share/zoneinfo/right/Mexico
 usr/share/zoneinfo/right/America/Mazatlan
+cpio: 无法将 usr/share/zoneinfo/right/America/Mazatlan 连接到 usr/share/zoneinfo/right/Mexico/BajaSur: 不允许的操作
 cpio: usr/share/zoneinfo/right/Mexico/BajaSur 连接到 usr/share/zoneinfo/right/America/Mazatlan
 usr/share/zoneinfo/right/Mexico/BajaSur
 usr/share/zoneinfo/right/America/Mexico_City
+cpio: 无法将 usr/share/zoneinfo/right/America/Mexico_City 连接到 usr/share/zoneinfo/right/Mexico/General: 不允许的操作
 cpio: usr/share/zoneinfo/right/Mexico/General 连接到 usr/share/zoneinfo/right/America/Mexico_City
 usr/share/zoneinfo/right/Mexico/General
 usr/share/zoneinfo/right/America/Ensenada
 usr/share/zoneinfo/right/America/Santa_Isabel
 usr/share/zoneinfo/right/America/Tijuana
+cpio: 无法将 usr/share/zoneinfo/right/America/Tijuana 连接到 usr/share/zoneinfo/right/Mexico/BajaNorte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Santa_Isabel 连接到 usr/share/zoneinfo/right/Mexico/BajaNorte: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Ensenada 连接到 usr/share/zoneinfo/right/Mexico/BajaNorte: 不允许的操作
 cpio: usr/share/zoneinfo/right/Mexico/BajaNorte 连接到 usr/share/zoneinfo/right/America/Tijuana
 cpio: usr/share/zoneinfo/right/Mexico/BajaNorte 连接到 usr/share/zoneinfo/right/America/Santa_Isabel
 cpio: usr/share/zoneinfo/right/Mexico/BajaNorte 连接到 usr/share/zoneinfo/right/America/Ensenada
 usr/share/zoneinfo/right/Mexico/BajaNorte
 usr/share/zoneinfo/right/Pacific
 usr/share/zoneinfo/right/Chile/EasterIsland
+cpio: 无法将 usr/share/zoneinfo/right/Chile/EasterIsland 连接到 usr/share/zoneinfo/right/Pacific/Easter: 不允许的操作
 cpio: usr/share/zoneinfo/right/Pacific/Easter 连接到 usr/share/zoneinfo/right/Chile/EasterIsland
 usr/share/zoneinfo/right/Pacific/Easter
 usr/share/zoneinfo/right/Pacific/Apia
@@ -3243,62 +4203,85 @@ usr/share/zoneinfo/right/Pacific/Tongatapu
 usr/share/zoneinfo/right/Pacific/Wake
 usr/share/zoneinfo/right/Pacific/Wallis
 usr/share/zoneinfo/right/Pacific/Ponape
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Ponape 连接到 usr/share/zoneinfo/right/Pacific/Pohnpei: 不允许的操作
 cpio: usr/share/zoneinfo/right/Pacific/Pohnpei 连接到 usr/share/zoneinfo/right/Pacific/Ponape
 usr/share/zoneinfo/right/Pacific/Pohnpei
 usr/share/zoneinfo/right/Pacific/Saipan
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Saipan 连接到 usr/share/zoneinfo/right/Pacific/Guam: 不允许的操作
 cpio: usr/share/zoneinfo/right/Pacific/Guam 连接到 usr/share/zoneinfo/right/Pacific/Saipan
 usr/share/zoneinfo/right/Pacific/Guam
 usr/share/zoneinfo/right/Pacific/Truk
 usr/share/zoneinfo/right/Pacific/Yap
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Yap 连接到 usr/share/zoneinfo/right/Pacific/Chuuk: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Truk 连接到 usr/share/zoneinfo/right/Pacific/Chuuk: 不允许的操作
 cpio: usr/share/zoneinfo/right/Pacific/Chuuk 连接到 usr/share/zoneinfo/right/Pacific/Yap
 cpio: usr/share/zoneinfo/right/Pacific/Chuuk 连接到 usr/share/zoneinfo/right/Pacific/Truk
 usr/share/zoneinfo/right/Pacific/Chuuk
 usr/share/zoneinfo/right/US
 usr/share/zoneinfo/right/America/Anchorage
+cpio: 无法将 usr/share/zoneinfo/right/America/Anchorage 连接到 usr/share/zoneinfo/right/US/Alaska: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Alaska 连接到 usr/share/zoneinfo/right/America/Anchorage
 usr/share/zoneinfo/right/US/Alaska
 usr/share/zoneinfo/right/America/Adak
 usr/share/zoneinfo/right/America/Atka
+cpio: 无法将 usr/share/zoneinfo/right/America/Atka 连接到 usr/share/zoneinfo/right/US/Aleutian: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Adak 连接到 usr/share/zoneinfo/right/US/Aleutian: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Aleutian 连接到 usr/share/zoneinfo/right/America/Atka
 cpio: usr/share/zoneinfo/right/US/Aleutian 连接到 usr/share/zoneinfo/right/America/Adak
 usr/share/zoneinfo/right/US/Aleutian
 usr/share/zoneinfo/right/America/Chicago
+cpio: 无法将 usr/share/zoneinfo/right/America/Chicago 连接到 usr/share/zoneinfo/right/US/Central: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Central 连接到 usr/share/zoneinfo/right/America/Chicago
 usr/share/zoneinfo/right/US/Central
 usr/share/zoneinfo/right/America/Detroit
+cpio: 无法将 usr/share/zoneinfo/right/America/Detroit 连接到 usr/share/zoneinfo/right/US/Michigan: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Michigan 连接到 usr/share/zoneinfo/right/America/Detroit
 usr/share/zoneinfo/right/US/Michigan
 usr/share/zoneinfo/right/America/Fort_Wayne
 usr/share/zoneinfo/right/America/Indianapolis
 usr/share/zoneinfo/right/America/Indiana/Indianapolis
+cpio: 无法将 usr/share/zoneinfo/right/America/Indiana/Indianapolis 连接到 usr/share/zoneinfo/right/US/East-Indiana: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Indianapolis 连接到 usr/share/zoneinfo/right/US/East-Indiana: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Fort_Wayne 连接到 usr/share/zoneinfo/right/US/East-Indiana: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/East-Indiana 连接到 usr/share/zoneinfo/right/America/Indiana/Indianapolis
 cpio: usr/share/zoneinfo/right/US/East-Indiana 连接到 usr/share/zoneinfo/right/America/Indianapolis
 cpio: usr/share/zoneinfo/right/US/East-Indiana 连接到 usr/share/zoneinfo/right/America/Fort_Wayne
 usr/share/zoneinfo/right/US/East-Indiana
 usr/share/zoneinfo/right/America/Knox_IN
 usr/share/zoneinfo/right/America/Indiana/Knox
+cpio: 无法将 usr/share/zoneinfo/right/America/Indiana/Knox 连接到 usr/share/zoneinfo/right/US/Indiana-Starke: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Knox_IN 连接到 usr/share/zoneinfo/right/US/Indiana-Starke: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Indiana-Starke 连接到 usr/share/zoneinfo/right/America/Indiana/Knox
 cpio: usr/share/zoneinfo/right/US/Indiana-Starke 连接到 usr/share/zoneinfo/right/America/Knox_IN
 usr/share/zoneinfo/right/US/Indiana-Starke
 usr/share/zoneinfo/right/US/Pacific
 usr/share/zoneinfo/right/America/Los_Angeles
+cpio: 无法将 usr/share/zoneinfo/right/America/Los_Angeles 连接到 usr/share/zoneinfo/right/US/Pacific-New: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/US/Pacific 连接到 usr/share/zoneinfo/right/US/Pacific-New: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Pacific-New 连接到 usr/share/zoneinfo/right/America/Los_Angeles
 cpio: usr/share/zoneinfo/right/US/Pacific-New 连接到 usr/share/zoneinfo/right/US/Pacific
 usr/share/zoneinfo/right/US/Pacific-New
 usr/share/zoneinfo/right/America/New_York
+cpio: 无法将 usr/share/zoneinfo/right/America/New_York 连接到 usr/share/zoneinfo/right/US/Eastern: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Eastern 连接到 usr/share/zoneinfo/right/America/New_York
 usr/share/zoneinfo/right/US/Eastern
 usr/share/zoneinfo/right/America/Phoenix
+cpio: 无法将 usr/share/zoneinfo/right/America/Phoenix 连接到 usr/share/zoneinfo/right/US/Arizona: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Arizona 连接到 usr/share/zoneinfo/right/America/Phoenix
 usr/share/zoneinfo/right/US/Arizona
 usr/share/zoneinfo/right/Pacific/Honolulu
 usr/share/zoneinfo/right/Pacific/Johnston
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Johnston 连接到 usr/share/zoneinfo/right/US/Hawaii: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Honolulu 连接到 usr/share/zoneinfo/right/US/Hawaii: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Hawaii 连接到 usr/share/zoneinfo/right/Pacific/Johnston
 cpio: usr/share/zoneinfo/right/US/Hawaii 连接到 usr/share/zoneinfo/right/Pacific/Honolulu
 usr/share/zoneinfo/right/US/Hawaii
 usr/share/zoneinfo/right/Pacific/Midway
 usr/share/zoneinfo/right/Pacific/Pago_Pago
 usr/share/zoneinfo/right/Pacific/Samoa
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Samoa 连接到 usr/share/zoneinfo/right/US/Samoa: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Pago_Pago 连接到 usr/share/zoneinfo/right/US/Samoa: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Midway 连接到 usr/share/zoneinfo/right/US/Samoa: 不允许的操作
 cpio: usr/share/zoneinfo/right/US/Samoa 连接到 usr/share/zoneinfo/right/Pacific/Samoa
 cpio: usr/share/zoneinfo/right/US/Samoa 连接到 usr/share/zoneinfo/right/Pacific/Pago_Pago
 cpio: usr/share/zoneinfo/right/US/Samoa 连接到 usr/share/zoneinfo/right/Pacific/Midway
@@ -3306,30 +4289,38 @@ usr/share/zoneinfo/right/US/Samoa
 usr/share/zoneinfo/right/CET
 usr/share/zoneinfo/right/CST6CDT
 usr/share/zoneinfo/right/America/Havana
+cpio: 无法将 usr/share/zoneinfo/right/America/Havana 连接到 usr/share/zoneinfo/right/Cuba: 不允许的操作
 cpio: usr/share/zoneinfo/right/Cuba 连接到 usr/share/zoneinfo/right/America/Havana
 usr/share/zoneinfo/right/Cuba
 usr/share/zoneinfo/right/EET
 usr/share/zoneinfo/right/EST
 usr/share/zoneinfo/right/EST5EDT
 usr/share/zoneinfo/right/Africa/Cairo
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Cairo 连接到 usr/share/zoneinfo/right/Egypt: 不允许的操作
 cpio: usr/share/zoneinfo/right/Egypt 连接到 usr/share/zoneinfo/right/Africa/Cairo
 usr/share/zoneinfo/right/Egypt
 usr/share/zoneinfo/right/Europe/Dublin
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Dublin 连接到 usr/share/zoneinfo/right/Eire: 不允许的操作
 cpio: usr/share/zoneinfo/right/Eire 连接到 usr/share/zoneinfo/right/Europe/Dublin
 usr/share/zoneinfo/right/Eire
 usr/share/zoneinfo/right/Factory
 usr/share/zoneinfo/right/HST
 usr/share/zoneinfo/right/Asia/Hong_Kong
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Hong_Kong 连接到 usr/share/zoneinfo/right/Hongkong: 不允许的操作
 cpio: usr/share/zoneinfo/right/Hongkong 连接到 usr/share/zoneinfo/right/Asia/Hong_Kong
 usr/share/zoneinfo/right/Hongkong
 usr/share/zoneinfo/right/Atlantic/Reykjavik
+cpio: 无法将 usr/share/zoneinfo/right/Atlantic/Reykjavik 连接到 usr/share/zoneinfo/right/Iceland: 不允许的操作
 cpio: usr/share/zoneinfo/right/Iceland 连接到 usr/share/zoneinfo/right/Atlantic/Reykjavik
 usr/share/zoneinfo/right/Iceland
 usr/share/zoneinfo/right/Asia/Tehran
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Tehran 连接到 usr/share/zoneinfo/right/Iran: 不允许的操作
 cpio: usr/share/zoneinfo/right/Iran 连接到 usr/share/zoneinfo/right/Asia/Tehran
 usr/share/zoneinfo/right/Iran
 usr/share/zoneinfo/right/Asia/Tel_Aviv
 usr/share/zoneinfo/right/Asia/Jerusalem
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Jerusalem 连接到 usr/share/zoneinfo/right/Israel: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Tel_Aviv 连接到 usr/share/zoneinfo/right/Israel: 不允许的操作
 cpio: usr/share/zoneinfo/right/Israel 连接到 usr/share/zoneinfo/right/Asia/Jerusalem
 cpio: usr/share/zoneinfo/right/Israel 连接到 usr/share/zoneinfo/right/Asia/Tel_Aviv
 usr/share/zoneinfo/right/Israel
@@ -3339,6 +4330,12 @@ usr/share/zoneinfo/right/Europe/Jersey
 usr/share/zoneinfo/right/Europe/Isle_of_Man
 usr/share/zoneinfo/right/Europe/Guernsey
 usr/share/zoneinfo/right/Europe/Belfast
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Belfast 连接到 usr/share/zoneinfo/right/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Guernsey 连接到 usr/share/zoneinfo/right/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Isle_of_Man 连接到 usr/share/zoneinfo/right/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Jersey 连接到 usr/share/zoneinfo/right/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/London 连接到 usr/share/zoneinfo/right/GB: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/GB-Eire 连接到 usr/share/zoneinfo/right/GB: 不允许的操作
 cpio: usr/share/zoneinfo/right/GB 连接到 usr/share/zoneinfo/right/Europe/Belfast
 cpio: usr/share/zoneinfo/right/GB 连接到 usr/share/zoneinfo/right/Europe/Guernsey
 cpio: usr/share/zoneinfo/right/GB 连接到 usr/share/zoneinfo/right/Europe/Isle_of_Man
@@ -3347,9 +4344,11 @@ cpio: usr/share/zoneinfo/right/GB 连接到 usr/share/zoneinfo/right/Europe/Lond
 cpio: usr/share/zoneinfo/right/GB 连接到 usr/share/zoneinfo/right/GB-Eire
 usr/share/zoneinfo/right/GB
 usr/share/zoneinfo/right/America/Jamaica
+cpio: 无法将 usr/share/zoneinfo/right/America/Jamaica 连接到 usr/share/zoneinfo/right/Jamaica: 不允许的操作
 cpio: usr/share/zoneinfo/right/Jamaica 连接到 usr/share/zoneinfo/right/America/Jamaica
 usr/share/zoneinfo/right/Jamaica
 usr/share/zoneinfo/right/Asia/Tokyo
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Tokyo 连接到 usr/share/zoneinfo/right/Japan: 不允许的操作
 cpio: usr/share/zoneinfo/right/Japan 连接到 usr/share/zoneinfo/right/Asia/Tokyo
 usr/share/zoneinfo/right/Japan
 usr/share/zoneinfo/right/GMT+0
@@ -3361,6 +4360,15 @@ usr/share/zoneinfo/right/Etc/GMT0
 usr/share/zoneinfo/right/Etc/GMT-0
 usr/share/zoneinfo/right/Etc/GMT+0
 usr/share/zoneinfo/right/Etc/GMT
+cpio: 无法将 usr/share/zoneinfo/right/Etc/GMT 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/GMT+0 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/GMT-0 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/GMT0 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/Greenwich 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Greenwich 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/GMT0 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/GMT-0 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/GMT+0 连接到 usr/share/zoneinfo/right/GMT: 不允许的操作
 cpio: usr/share/zoneinfo/right/GMT 连接到 usr/share/zoneinfo/right/Etc/GMT
 cpio: usr/share/zoneinfo/right/GMT 连接到 usr/share/zoneinfo/right/Etc/GMT+0
 cpio: usr/share/zoneinfo/right/GMT 连接到 usr/share/zoneinfo/right/Etc/GMT-0
@@ -3372,9 +4380,11 @@ cpio: usr/share/zoneinfo/right/GMT 连接到 usr/share/zoneinfo/right/GMT-0
 cpio: usr/share/zoneinfo/right/GMT 连接到 usr/share/zoneinfo/right/GMT+0
 usr/share/zoneinfo/right/GMT
 usr/share/zoneinfo/right/Pacific/Kwajalein
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Kwajalein 连接到 usr/share/zoneinfo/right/Kwajalein: 不允许的操作
 cpio: usr/share/zoneinfo/right/Kwajalein 连接到 usr/share/zoneinfo/right/Pacific/Kwajalein
 usr/share/zoneinfo/right/Kwajalein
 usr/share/zoneinfo/right/Africa/Tripoli
+cpio: 无法将 usr/share/zoneinfo/right/Africa/Tripoli 连接到 usr/share/zoneinfo/right/Libya: 不允许的操作
 cpio: usr/share/zoneinfo/right/Libya 连接到 usr/share/zoneinfo/right/Africa/Tripoli
 usr/share/zoneinfo/right/Libya
 usr/share/zoneinfo/right/MET
@@ -3383,16 +4393,23 @@ usr/share/zoneinfo/right/MST7MDT
 usr/share/zoneinfo/right/Pacific/Auckland
 usr/share/zoneinfo/right/Antarctica/South_Pole
 usr/share/zoneinfo/right/Antarctica/McMurdo
+cpio: 无法将 usr/share/zoneinfo/right/Antarctica/McMurdo 连接到 usr/share/zoneinfo/right/NZ: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Antarctica/South_Pole 连接到 usr/share/zoneinfo/right/NZ: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Auckland 连接到 usr/share/zoneinfo/right/NZ: 不允许的操作
 cpio: usr/share/zoneinfo/right/NZ 连接到 usr/share/zoneinfo/right/Antarctica/McMurdo
 cpio: usr/share/zoneinfo/right/NZ 连接到 usr/share/zoneinfo/right/Antarctica/South_Pole
 cpio: usr/share/zoneinfo/right/NZ 连接到 usr/share/zoneinfo/right/Pacific/Auckland
 usr/share/zoneinfo/right/NZ
 usr/share/zoneinfo/right/Pacific/Chatham
+cpio: 无法将 usr/share/zoneinfo/right/Pacific/Chatham 连接到 usr/share/zoneinfo/right/NZ-CHAT: 不允许的操作
 cpio: usr/share/zoneinfo/right/NZ-CHAT 连接到 usr/share/zoneinfo/right/Pacific/Chatham
 usr/share/zoneinfo/right/NZ-CHAT
 usr/share/zoneinfo/right/US/Mountain
 usr/share/zoneinfo/right/America/Shiprock
 usr/share/zoneinfo/right/America/Denver
+cpio: 无法将 usr/share/zoneinfo/right/America/Denver 连接到 usr/share/zoneinfo/right/Navajo: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/America/Shiprock 连接到 usr/share/zoneinfo/right/Navajo: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/US/Mountain 连接到 usr/share/zoneinfo/right/Navajo: 不允许的操作
 cpio: usr/share/zoneinfo/right/Navajo 连接到 usr/share/zoneinfo/right/America/Denver
 cpio: usr/share/zoneinfo/right/Navajo 连接到 usr/share/zoneinfo/right/America/Shiprock
 cpio: usr/share/zoneinfo/right/Navajo 连接到 usr/share/zoneinfo/right/US/Mountain
@@ -3401,6 +4418,10 @@ usr/share/zoneinfo/right/Asia/Shanghai
 usr/share/zoneinfo/right/Asia/Harbin
 usr/share/zoneinfo/right/Asia/Chungking
 usr/share/zoneinfo/right/Asia/Chongqing
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Chongqing 连接到 usr/share/zoneinfo/right/PRC: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Chungking 连接到 usr/share/zoneinfo/right/PRC: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Harbin 连接到 usr/share/zoneinfo/right/PRC: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Shanghai 连接到 usr/share/zoneinfo/right/PRC: 不允许的操作
 cpio: usr/share/zoneinfo/right/PRC 连接到 usr/share/zoneinfo/right/Asia/Chongqing
 cpio: usr/share/zoneinfo/right/PRC 连接到 usr/share/zoneinfo/right/Asia/Chungking
 cpio: usr/share/zoneinfo/right/PRC 连接到 usr/share/zoneinfo/right/Asia/Harbin
@@ -3408,26 +4429,34 @@ cpio: usr/share/zoneinfo/right/PRC 连接到 usr/share/zoneinfo/right/Asia/Shang
 usr/share/zoneinfo/right/PRC
 usr/share/zoneinfo/right/PST8PDT
 usr/share/zoneinfo/right/Europe/Warsaw
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Warsaw 连接到 usr/share/zoneinfo/right/Poland: 不允许的操作
 cpio: usr/share/zoneinfo/right/Poland 连接到 usr/share/zoneinfo/right/Europe/Warsaw
 usr/share/zoneinfo/right/Poland
 usr/share/zoneinfo/right/Europe/Lisbon
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Lisbon 连接到 usr/share/zoneinfo/right/Portugal: 不允许的操作
 cpio: usr/share/zoneinfo/right/Portugal 连接到 usr/share/zoneinfo/right/Europe/Lisbon
 usr/share/zoneinfo/right/Portugal
 usr/share/zoneinfo/right/Asia/Taipei
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Taipei 连接到 usr/share/zoneinfo/right/ROC: 不允许的操作
 cpio: usr/share/zoneinfo/right/ROC 连接到 usr/share/zoneinfo/right/Asia/Taipei
 usr/share/zoneinfo/right/ROC
 usr/share/zoneinfo/right/Asia/Seoul
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Seoul 连接到 usr/share/zoneinfo/right/ROK: 不允许的操作
 cpio: usr/share/zoneinfo/right/ROK 连接到 usr/share/zoneinfo/right/Asia/Seoul
 usr/share/zoneinfo/right/ROK
 usr/share/zoneinfo/right/Asia/Singapore
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Singapore 连接到 usr/share/zoneinfo/right/Singapore: 不允许的操作
 cpio: usr/share/zoneinfo/right/Singapore 连接到 usr/share/zoneinfo/right/Asia/Singapore
 usr/share/zoneinfo/right/Singapore
 usr/share/zoneinfo/right/Europe/Istanbul
 usr/share/zoneinfo/right/Asia/Istanbul
+cpio: 无法将 usr/share/zoneinfo/right/Asia/Istanbul 连接到 usr/share/zoneinfo/right/Turkey: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Istanbul 连接到 usr/share/zoneinfo/right/Turkey: 不允许的操作
 cpio: usr/share/zoneinfo/right/Turkey 连接到 usr/share/zoneinfo/right/Asia/Istanbul
 cpio: usr/share/zoneinfo/right/Turkey 连接到 usr/share/zoneinfo/right/Europe/Istanbul
 usr/share/zoneinfo/right/Turkey
 usr/share/zoneinfo/right/Europe/Moscow
+cpio: 无法将 usr/share/zoneinfo/right/Europe/Moscow 连接到 usr/share/zoneinfo/right/W-SU: 不允许的操作
 cpio: usr/share/zoneinfo/right/W-SU 连接到 usr/share/zoneinfo/right/Europe/Moscow
 usr/share/zoneinfo/right/W-SU
 usr/share/zoneinfo/right/WET
@@ -3438,6 +4467,13 @@ usr/share/zoneinfo/right/Etc/Zulu
 usr/share/zoneinfo/right/Etc/Universal
 usr/share/zoneinfo/right/Etc/UTC
 usr/share/zoneinfo/right/Etc/UCT
+cpio: 无法将 usr/share/zoneinfo/right/Etc/UCT 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/UTC 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/Universal 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Etc/Zulu 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Zulu 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/Universal 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
+cpio: 无法将 usr/share/zoneinfo/right/UTC 连接到 usr/share/zoneinfo/right/UCT: 不允许的操作
 cpio: usr/share/zoneinfo/right/UCT 连接到 usr/share/zoneinfo/right/Etc/UCT
 cpio: usr/share/zoneinfo/right/UCT 连接到 usr/share/zoneinfo/right/Etc/UTC
 cpio: usr/share/zoneinfo/right/UCT 连接到 usr/share/zoneinfo/right/Etc/Universal
@@ -3451,16 +4487,24 @@ usr/share/zoneinfo/zone.tab
 usr/share/zoneinfo/zone1970.tab
 usr/share/pci.ids.gz
 var
+cpio: var/cache：无法创建链接到 `../tmp": 不允许的操作
 var/cache
+cpio: var/lock：无法创建链接到 `../tmp": 不允许的操作
 var/lock
+cpio: var/log：无法创建链接到 `../tmp": 不允许的操作
 var/log
+cpio: var/run：无法创建链接到 `../run": 不允许的操作
 var/run
+cpio: var/spool：无法创建链接到 `../tmp": 不允许的操作
 var/spool
+cpio: var/tmp：无法创建链接到 `../tmp": 不允许的操作
 var/tmp
 var/empty
 var/lib
+cpio: var/lib/misc：无法创建链接到 `../../tmp": 不允许的操作
 var/lib/misc
 var/lib/arpd
 var/www
 init
+278648 块
 278648 块
