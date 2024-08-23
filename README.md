@@ -1,12 +1,81 @@
-# NPUcore-IMPACT!!!
+<div align=center><img width="350" height="350" src="./logo/logo.png"/></div>
 
-西北工业大学，“全国大学生计算机系统能力大赛 - 操作系统设计赛(全国)- OS内核实现赛道” 参赛作品。
+# NPUcore-IMPACT!!! [OSKernel2024 LA赛道#1]
 
-队名来源：具有影响力的NPUcore，三个感叹号代表三个队员。
+西北工业大学，“全国大学生计算机系统能力大赛 - 操作系统设计赛(全国)- OS内核实现赛道龙芯LA2K1000分赛道” 一等奖（无特等奖）参赛作品。
 
-队长：Yixu Feng （yixu-nwpu@mail.nwpu.edu.cn）
+队名来源：具有影响力的NPUcore，三个感叹号代表三个成员。
 
-队员：Yifei Zhang (yurzhang.oi@gmail.com), Hanchen Zhang (jackwill17611136817@outlook.com)
+被带飞的队长：[内核设计与适配/文档] Yixu Feng (yixu-nwpu@mail.nwpu.edu.cn)
+
+超级队员：[Debug高手] Yifei Zhang (yurzhang.oi@gmail.com), [硬件大神] Hanchen Zhang (jackwill17611136817@outlook.com), [场外支持] Huan Guo ([个人博客](https://guohuan78.github.io/))
+
+
+
+## ✨ News
+
+- **2024.08.20** 提交决赛答辩PPT。
+- **2024.08.19** 现场赛完成，上板成功。
+- **2024.07.31** 提交完整决赛报告。
+- **2024.06.01** 提交完整初赛报告。
+- **2024.05.12** FAT32文件系统解耦合。
+- **2024.03.31** 初赛测例满分。
+- **2024.03.20** 支持龙芯赛道的NPUcore适配成功。
+- **2024.3.2** 正式组队。
+
+
+
+## 📢 给看到这个仓库的人的一段话：
+
+致后面参加OS比赛龙芯赛道的西工大或者是其它学校的同学们：如果你们看到了这个仓库，说明你们找对了位置，这是我们NPUcore-IMPACT最原始的仓库，是基于`NPUcore+LA`的plus版（我们后续又重构了新的版本，但在这个仓库是找不到的）。这个仓库的`NPUcore-FF`分支是我们初赛满分（`fat32`文件系统）的分支，而`ext4`分支则是我们在决赛的时候对`ext4`文件系统进行适配的实验分支，**但请注意`ext4`分支是无法跑通的，因为它不是我们debug的最终版**！
+
+我们决赛最终阶段（线上赛+第二阶段）的代码决定不完全对外公布，原因是我们在决赛前的十五天内做了非常非常多的调整，比如：成功适配`ext4`，增加了很多新的`syscall`...。但是代价是，时间紧迫，我们的代码就是一大坨，我们真的不想把拉出来的低质量代码给大家看。因此我们仅把这个原始仓库公开给大家参考。下面是我推荐的参考链接：
+
+1. 如果你想使用`rust`版本基于LA的arch `crate`，请参考：[NPUcore-LA2K1000-Arch](./os/src/arch/la64)
+
+2. 如果你想了解我们初赛的Debug过程，请参考：[LA初赛测例修复](./Doc/LA初赛测例修复.md)
+
+3. 如果你想知道我们在决赛第一阶段做了什么，请参考：[决赛第一阶段文档](./Doc/决赛第一阶段文档.pdf)
+
+4. 如果你想知道我们的最终版`NPUcore-IMPACT`和别人不一样的地方，请参考：[决赛答辩](./Doc/决赛答辩.pptx)
+
+5. 如果你想知道我们现场赛做了什么，请参考：[现场赛](./Doc/现场赛.pdf)
+
+6. 如果你想知道我们最后是怎么答辩的，请参考：[决赛稿](./Doc/决赛稿.docx)
+
+7. 如果你想使用并修改我们的`logo`（需要学会使用AE），请参考：[LOGO](./logo/)
+
+8. 如果你在Debug的时候遇到了我们没提到的困难，请参考：[2024二等奖：NPUcore-重生之我是菜狗](https://gitlab.eduxiji.net/educg-group-26011-2376549/T202410699992491-3136/-/tree/live-splice-gh?ref_type=heads)、[2022一等奖：RISCV原版NPUcore](https://gitlab.eduxiji.net/2019301887/oskernel2022-npucore/-/tree/master/Doc)、[2023二等奖-NPUcore+LA](https://gitlab.eduxiji.net/educg-group-17066-1466467/202310699111039-2789)
+
+9. 如果你想学习`NPUcore`的搭建过程，请参考：[NPUcore-Book](./Doc/NPUcore-Book.pdf)
+
+10. 如果你想使用我们的代码作为baseline，我们推荐使用（我们修改的NPUcore-重生之我是菜狗队伍代码，包含部分ext4）：[NPUcore-lwext4](https://github.com/Fediory/NPUcore-lwext4)
+
+11. 如果你想参考我们Latex的文档格式与模板，请参考：[NPUcore-IMPACT-doc](https://github.com/Fediory/NPUcore-IMPACT-doc)
+
+12. 我们整理的龙芯参考文档：[百度网盘：密码1145](https://pan.baidu.com/s/1NsGT6fv7QUGebeAYfAHoOw?pwd=1145)
+
+13. 我们的比赛测例：[testcases](https://github.com/oscomp/testsuits-for-oskernel/tree/final-2024-la)
+
+    
+
+## 👨‍🏫 想对我的学弟学妹们说的参赛建议：
+
+1. 请一定要重视上板，在QEMU上跑通不是真正的跑通。（QEMU和板子的区别主要是地址映射，出现问题请往这个方向查找）
+1. 希望学弟学妹可以从头写一个新的`NPUcore`，而不是用我们这个老版，我希望这个版本仅作为你们的一个参考。
+1. 在学习阶段最好不要直接学习`NPUcore`，而是先做一下这个实验：[xv6-loongarch]([Junkher/xv6-loongarch: OS2022-Proj95 (github.com)](https://github.com/Junkher/xv6-loongarch))
+1. 我建议学弟学妹不要盲目用这个版本的`NPUcore-IMPACT`作为你的baseline，以为他的耦合度非常非常高，我们废了半天劲才解耦
+1. 如果仍然选择我们的`FAT32`版本的`NPUcore-IMPACT`作为你们的baseline，那请参考我们的[所有文档](./Doc)，并先实现`vfs`，把`fs`和`fat32`完全解耦，再考虑增加新的文件系统（如果明年仍然是`EXT4`为主流）和系统调用。
+1. 现在的`NPUcore-IMPACT`在功能性上仍有很多不足，如果明年仍然需要跑`ltp`测例，那一定要多加系统调用（据说明年要拿好名次，可能需要200个`syscall`）。
+1. `NPUcore2022`主要做了`cache`上的优化，但是它也导致了很多功能上的问题，如果后面出了很多新的bug，请务必考虑这里，必要时可以抛弃曾经的亮点。
+1. 对于我们现在的`NPUcore-IMPACT`，请把功能优先于性能考虑，虽然性能上仍有很多优化空间，但是功能上的不完善会导致一分都得不到。
+1. 如果你们选择了龙芯赛道（如果明年还有的话），那么请做好完全找不到头绪的准备。
+1. 如果你们时间比较充裕，在完善了功能的前提下，可以考虑参考[Pantheon](https://gitlab.eduxiji.net/T202410336992584/oskernel-2024-pantheon)进行性能优化。
+1. 如果是为了比赛，那么请在遵守规则的情况下，以拿到更高的分数为主，必要时候可能需要违背初心（但是我们极其不推荐，一定要注重提高自己的代码/文档/Debug水平）。
+1. 如果你有其它问题，请联系我们的邮箱，或者直接在QQ群里单杀我们。
+1. 如果你想复现我们的OS，请参考下方的教程。
+
+
 
 ## 基础环境配置
 1. make、Cmake安装（辅助编译工具）
@@ -53,12 +122,6 @@ sudo apt-get install cmake
 
 3. 缺少部分库文件和编译rust代码出现错误的问题
    建议尝试`make clean`后， 删除对应文件夹的Cargo.lock， 尝试在Cargo.toml中删除版本限制再重新编译。
-
-
-## 文档信息
-&emsp;&emsp;目前除了README， 还有开发文档： 见 Doc/dbg/dbg.pdf, 其中包含了本操作系统移植过程中的各项debug过程。
-&emsp;&emsp;Doc/mm.pdf, 其中包含了本操作系统移植过程中的内存布局的思路和技术细节。
-&emsp;&emsp;Doc/start.pdf, 其中包含了本操作系统移植过程中启动相关的原理和技术细节。
 
 ## 运行方式与运行效果
 直接在根目录命令行`make`即可。 第一次运行推荐先执行一遍从而方便环境的安装和熟悉。
@@ -392,11 +455,3 @@ I am child process: 5. iteration 2.
 ### 其他
 `make clean`: 清理已经编译的项目（包括用户程序， 系统和FAT镜像）
 
-## 相关问题汇总
-
-
-#### [2K1000上板流程](/Doc/2K1000上板流程.md)
-#### [支持LA2k1000Qemu的操作系统适配（初赛）](./Doc/支持LA2k1000Qemu的操作系统适配（初赛）.md)
-#### [添加ext4文件系统步骤](./Doc/添加ext4文件系统步骤.md)
-
-#### [LA初赛测例修复](./Doc/LA初赛测例修复.md)
