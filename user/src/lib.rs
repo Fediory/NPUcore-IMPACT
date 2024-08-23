@@ -3,7 +3,6 @@
 #![feature(asm_experimental_arch)]
 #![feature(panic_info_message)]
 #![feature(alloc_error_handler)]
-#![feature(global_asm)]
 #![feature(lang_items)]
 #[allow(dead_code)]
 #[macro_use]
@@ -30,13 +29,11 @@ static mut HEAP_SPACE: [u8; USER_HEAP_SIZE] = [0; USER_HEAP_SIZE];
 #[global_allocator]
 static HEAP: LockedHeap<32> = LockedHeap::empty();
 
-//#[cfg(target_arch = "riscv64")]
 #[alloc_error_handler]
 pub fn handle_alloc_error(layout: core::alloc::Layout) -> ! {
     panic!("Heap allocation error, layout = {:?}", layout);
 }
 
-#[cfg(target_arch = "loongarch64")]
 #[lang = "eh_personality"]
 extern "C" fn eh_personality() {}
 
@@ -97,7 +94,7 @@ bitflags! {
         const RDONLY = 0;
         const WRONLY = 1 << 0;
         const RDWR = 1 << 1;
-        const CREATE = 1 << 6;
-        const TRUNC = 1 << 9;
+        const CREATE = 1 << 9;
+        const TRUNC = 1 << 10;
     }
 }

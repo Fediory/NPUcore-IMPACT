@@ -1,0 +1,1 @@
+/home/fred/桌面/testsuits-for-oskernel-final-2024-la/lmbench/bin/loongarch64/lmbench_all hello "$@"

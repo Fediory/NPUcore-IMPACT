@@ -1,5 +1,4 @@
 TARGET := riscv64gc-unknown-none-elf
-TESTDIR := ./user_C_program/user
 MODE := debug
 
 ifeq ($(BOARD), 2k1000)
@@ -15,17 +14,13 @@ ifeq ($(ARCH), loongarch64)
 	BOARD ?= laqemu
 endif
 
-build: c-user rust-user
+build: rust-user
 
 env:
-	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add loongarch64-unknown-linux-gnu
+	-(rustup target list | grep "$(TARGET) (installed)") || rustup target add $(TARGET)
 	-cargo install --list |grep cargo-binutils |grep "v0.2.0">/dev/null || cargo install cargo-binutils --vers ~0.2
 	-rustup component add rust-src
 	-rustup component add llvm-tools-preview
-
-c-user:
-	cd ${TESTDIR} && make clean
-	cd ${TESTDIR} && make ARCH=${ARCH}
 
 rust-user: env $(APPS)
 ifeq ($(MODE),release)
@@ -38,4 +33,4 @@ clean:
 	@cargo clean
 	@cd ${TESTDIR} && make clean
 
-.PHONY: build c-user rust-user clean
+.PHONY: build rust-user clean

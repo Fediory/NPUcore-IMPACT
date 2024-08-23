@@ -1,10 +1,6 @@
 #![no_std]
 #![no_main]
-// use std::net::Shutdown;
-
-// use std::println;
-
-use user_lib::{exec, exit, fork, shutdown, wait, waitpid, yield_};
+use user_lib::{exit, exec, fork, wait, waitpid, yield_, shutdown};
 
 #[no_mangle]
 #[link_section = ".text.entry"]
@@ -26,53 +22,27 @@ fn main() -> i32 {
         "USER=root\0".as_ptr(),
         "SHLVL=0\0".as_ptr(),
         "OLDPWD=/root\0".as_ptr(),
-        "PS1=\x1b[1m\x1b[32mNPUcore-IMPACT\x1b[0m:\x1b[1m\x1b[34m\\w\x1b[0m\\$ \0".as_ptr(),
+        "PS1=\x1b[1m\x1b[32mNPUCore\x1b[0m:\x1b[1m\x1b[34m\\w\x1b[0m\\$ \0".as_ptr(),
         "_=/bin/bash\0".as_ptr(),
         "PATH=/:/bin\0".as_ptr(),
         "LD_LIBRARY_PATH=/\0".as_ptr(),
         core::ptr::null(),
     ];
-    if fork() == 0 {
-        exec(
-            path,
-            &[path.as_ptr() as *const u8, core::ptr::null()],
-            &environ,
-        );
+    let mut exit_code: i32 = 0;
+    let pid = fork();
+    if pid == 0 {
+        // 只启动bash
+        exec(path, &[path.as_ptr() as *const u8, core::ptr::null()], &environ);
+        // 执行初赛测例
+        // exec(path, &[path.as_ptr() as *const u8, "-c\0".as_ptr(), "./run-all.sh\0".as_ptr(), core::ptr::null()], &environ);
+        // 执行netperf测例
+        // exec(path, &[path.as_ptr() as *const u8, "-c\0".as_ptr(), "./netperf_testcode.sh\0".as_ptr(), core::ptr::null()], &environ);
+        // exec(path, &[path.as_ptr() as *const u8, "-c\0".as_ptr(), "./iperf_testcode.sh\0".as_ptr(), core::ptr::null()], &environ);
+        // exec(path, &[path.as_ptr() as *const u8, "-c\0".as_ptr(), "./time-test\0".as_ptr(), core::ptr::null()], &environ);
+        // exec(path, &[path.as_ptr() as *const u8, "-c\0".as_ptr(), "./testcode.sh\0".as_ptr(), core::ptr::null()], &environ);
     } else {
-        loop {
-            let mut exit_code: i32 = 0;
-            let pid = wait(&mut exit_code);
-            // ECHLD is -10
-            if pid == -10 {
-                yield_();
-                continue;
-            }
-            user_lib::println!(
-                "[initproc] Released a zombie process, pid={}, exit_code={}",
-                pid,
-                exit_code,
-            );
-        }
+        waitpid(pid as usize, &mut exit_code);
     }
-    //     let schedule_text: &str = "
-    // run-all.sh\0
-    // ";
-    //     let mut exit_code: i32 = 0;
-    //     for line in schedule_text.lines() {
-    //         let argv = [
-    //             path.as_ptr(),
-    //             "-c\0".as_ptr(),
-    //             line.as_ptr(),
-    //             core::ptr::null(),
-    //         ];
-    //         let pid = fork();
-    //         if pid == 0 {
-    //             exec(path, &argv, &environ);
-    //         } else {
-    //             waitpid(pid as usize, &mut exit_code);
-    //         }
-    //     }
-
     shutdown();
     0
 }
