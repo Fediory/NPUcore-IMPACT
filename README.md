@@ -49,31 +49,35 @@
 
 9. 如果你想学习`NPUcore`的搭建过程，请参考：[NPUcore-Book](./Doc/NPUcore-Book.pdf)
 
-10. 如果你想使用我们的代码作为baseline，我们推荐使用（我们修改的NPUcore-重生之我是菜狗队伍代码，包含部分ext4）：[NPUcore-lwext4](https://github.com/Fediory/NPUcore-lwext4)
+10. 如果你想使用我们的代码作为`baseline`，我们推荐使用（我们修改的`NPUcore-重生之我是菜狗`队伍代码，包含部分`ext4`）：[NPUcore-lwext4](https://github.com/Fediory/NPUcore-lwext4)
 
-11. 如果你想参考我们Latex的文档格式与模板，请参考：[NPUcore-IMPACT-doc](https://github.com/Fediory/NPUcore-IMPACT-doc)
+11. 如果你想参考我们`Latex`的文档格式与模板，请参考：[NPUcore-IMPACT-doc](https://github.com/Fediory/NPUcore-IMPACT-doc)
 
 12. 我们整理的龙芯参考文档：[百度网盘：密码1145](https://pan.baidu.com/s/1NsGT6fv7QUGebeAYfAHoOw?pwd=1145)
 
-13. 我们的比赛测例：[testcases](https://github.com/oscomp/testsuits-for-oskernel/tree/final-2024-la)
+13. 我们的比赛测例：[testcases源码](https://github.com/oscomp/testsuits-for-oskernel/tree/final-2024-la)，[testcases二进制文件](./user/testcas)
+
+14. 我们的QEMU环境：[QEMU](./util/qemu)
 
     
 
 ## 👨‍🏫 想对我的学弟学妹们说的参赛建议：
 
 1. 请一定要重视上板，在QEMU上跑通不是真正的跑通。（QEMU和板子的区别主要是地址映射，出现问题请往这个方向查找）
+1. 不要完全相信比赛的硬件以及他对应的文档，每块板子其实都是独一无二的。一旦出现位置bug，建议一看板子元件，二读uboot源码，别研究黑盒，不然只会越陷越深。
+1. 同一份代码，在板子的不同时间、不同温度、不同姿态下会跑出来不一样的结果。
 1. 希望学弟学妹可以从头写一个新的`NPUcore`，而不是用我们这个老版，我希望这个版本仅作为你们的一个参考。
 1. 在学习阶段最好不要直接学习`NPUcore`，而是先做一下这个实验：[xv6-loongarch]([Junkher/xv6-loongarch: OS2022-Proj95 (github.com)](https://github.com/Junkher/xv6-loongarch))
-1. 我建议学弟学妹不要盲目用这个版本的`NPUcore-IMPACT`作为你的baseline，以为他的耦合度非常非常高，我们废了半天劲才解耦
+1. 我建议学弟学妹不要盲目用这个版本的`NPUcore-IMPACT`作为你的baseline，以及它的耦合度非常非常高，我们废了半天劲才解耦
 1. 如果仍然选择我们的`FAT32`版本的`NPUcore-IMPACT`作为你们的baseline，那请参考我们的[所有文档](./Doc)，并先实现`vfs`，把`fs`和`fat32`完全解耦，再考虑增加新的文件系统（如果明年仍然是`EXT4`为主流）和系统调用。
 1. 现在的`NPUcore-IMPACT`在功能性上仍有很多不足，如果明年仍然需要跑`ltp`测例，那一定要多加系统调用（据说明年要拿好名次，可能需要200个`syscall`）。
 1. `NPUcore2022`主要做了`cache`上的优化，但是它也导致了很多功能上的问题，如果后面出了很多新的bug，请务必考虑这里，必要时可以抛弃曾经的亮点。
 1. 对于我们现在的`NPUcore-IMPACT`，请把功能优先于性能考虑，虽然性能上仍有很多优化空间，但是功能上的不完善会导致一分都得不到。
 1. 如果你们选择了龙芯赛道（如果明年还有的话），那么请做好完全找不到头绪的准备。
-1. 如果你们时间比较充裕，在完善了功能的前提下，可以考虑参考[Pantheon](https://gitlab.eduxiji.net/T202410336992584/oskernel-2024-pantheon)进行性能优化。
+1. 如果你们时间比较充裕，在完善了功能的前提下，可以考虑参考[Pantheon](https://gitlab.eduxiji.net/T202410336992584/oskernel-2024-pantheon)进行性能优化，并尝试参考[Alien](https://gitlab.eduxiji.net/202310007101563/Alien/-/tree/main/)添加UI界面。
 1. 如果是为了比赛，那么请在遵守规则的情况下，以拿到更高的分数为主，必要时候可能需要违背初心（但是我们极其不推荐，一定要注重提高自己的代码/文档/Debug水平）。
 1. 如果你有其它问题，请联系我们的邮箱，或者直接在QQ群里单杀我们。
-1. 如果你想复现我们的OS，请参考下方的教程。
+1. 如果你想复现我们的OS现象，请参考下方的教程。
 
 
 
