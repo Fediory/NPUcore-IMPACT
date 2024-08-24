@@ -57,17 +57,17 @@
 
 13. 我们的比赛测例：[testcases源码](https://github.com/oscomp/testsuits-for-oskernel/tree/final-2024-la)，[testcases二进制文件](./user/testcas)
 
-14. 我们的QEMU环境：[QEMU](./util/qemu)
+14. 我们的`QEMU`环境：[QEMU](./util/qemu)
 
     
 
 ## 👨‍🏫 想对我的学弟学妹们说的参赛建议：
 
-1. 请一定要重视上板，在QEMU上跑通不是真正的跑通。（QEMU和板子的区别主要是地址映射，出现问题请往这个方向查找）
-1. 不要完全相信比赛的硬件以及他对应的文档，每块板子其实都是独一无二的。一旦出现位置bug，建议一看板子元件，二读uboot源码，别研究黑盒，不然只会越陷越深。
+1. 请一定要重视上板，在`QEMU`上跑通不是真正的跑通。（`QEMU`和板子的区别主要是地址映射，出现问题请往这个方向查找）
+1. 不要完全相信比赛的硬件以及他对应的文档，每块板子其实都是独一无二的。一旦出现位置bug，建议一看板子元件，二读`uboot`源码，别研究黑盒。
 1. 同一份代码，在板子的不同时间、不同温度、不同姿态下会跑出来不一样的结果。
 1. 希望学弟学妹可以从头写一个新的`NPUcore`，而不是用我们这个老版，我希望这个版本仅作为你们的一个参考。
-1. 在学习阶段最好不要直接学习`NPUcore`，而是先做一下这个实验：[xv6-loongarch]([Junkher/xv6-loongarch: OS2022-Proj95 (github.com)](https://github.com/Junkher/xv6-loongarch))
+1. 在学习阶段最好不要直接学习`NPUcore`，而是先做一下这个实验：[xv6-loongarch](https://github.com/Junkher/xv6-loongarch)
 1. 我建议学弟学妹不要盲目用这个版本的`NPUcore-IMPACT`作为你的baseline，以及它的耦合度非常非常高，我们废了半天劲才解耦
 1. 如果仍然选择我们的`FAT32`版本的`NPUcore-IMPACT`作为你们的baseline，那请参考我们的[所有文档](./Doc)，并先实现`vfs`，把`fs`和`fat32`完全解耦，再考虑增加新的文件系统（如果明年仍然是`EXT4`为主流）和系统调用。
 1. 现在的`NPUcore-IMPACT`在功能性上仍有很多不足，如果明年仍然需要跑`ltp`测例，那一定要多加系统调用（据说明年要拿好名次，可能需要200个`syscall`）。
